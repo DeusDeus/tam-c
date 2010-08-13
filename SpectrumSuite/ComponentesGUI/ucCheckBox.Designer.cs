@@ -28,10 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.cbControl = new System.Windows.Forms.CheckBox();
+            this.SuspendLayout();
+            // 
+            // cbControl
+            // 
+            this.cbControl.AutoSize = true;
+            this.cbControl.Location = new System.Drawing.Point(3, 3);
+            this.cbControl.Name = "cbControl";
+            this.cbControl.Size = new System.Drawing.Size(80, 17);
+            this.cbControl.TabIndex = 0;
+            this.cbControl.Text = "checkBox1";
+            this.cbControl.UseVisualStyleBackColor = true;
+            // 
+            // ucCheckBox
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbControl);
+            this.Name = "ucCheckBox";
+            this.Size = new System.Drawing.Size(81, 22);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.CheckBox cbControl;
     }
 }

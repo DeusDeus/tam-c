@@ -28,10 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.cboControl = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
+            // 
+            // cboControl
+            // 
+            this.cboControl.FormattingEnabled = true;
+            this.cboControl.Location = new System.Drawing.Point(3, 3);
+            this.cboControl.Name = "cboControl";
+            this.cboControl.Size = new System.Drawing.Size(121, 21);
+            this.cboControl.TabIndex = 0;
+            // 
+            // ucComboBox
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cboControl);
+            this.Name = "ucComboBox";
+            this.Size = new System.Drawing.Size(126, 27);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox cboControl;
     }
 }

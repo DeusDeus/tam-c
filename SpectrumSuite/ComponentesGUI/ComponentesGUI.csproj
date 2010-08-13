@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{A529C2A7-A8B4-4E12-A992-8F057F38320D}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -89,6 +89,12 @@
     <EmbeddedResource Include="ucButton.resx">
       <DependentUpon>ucButton.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucCheckBox.resx">
+      <DependentUpon>ucCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucComboBox.resx">
+      <DependentUpon>ucComboBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucTextBox.resx">
       <DependentUpon>ucTextBox.cs</DependentUpon>

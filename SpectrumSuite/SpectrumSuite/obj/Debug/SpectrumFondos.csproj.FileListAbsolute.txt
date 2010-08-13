@@ -5,3 +5,13 @@ C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\Spect
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumFondos.csproj.GenerateResource.Cache
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.exe
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.pdb
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.exe
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.pdb
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\SpectrumSuite.exe
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\SpectrumSuite.pdb
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\ResolveAssemblyReference.cache
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.Properties.Resources.resources
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumFondos.csproj.GenerateResource.Cache
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesGUI.dll
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesGUI.pdb
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.Form1.resources

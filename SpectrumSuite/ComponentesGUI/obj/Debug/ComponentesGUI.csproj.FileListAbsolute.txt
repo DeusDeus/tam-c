@@ -5,3 +5,15 @@ C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\Compo
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.pdb
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.ucTextBox.resources
 C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.csproj.GenerateResource.Cache
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\bin\Debug\ComponentesGUI.dll
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\bin\Debug\ComponentesGUI.pdb
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ResolveAssemblyReference.cache
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.ucButton.resources
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.ucLabel.resources
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.ucTextBox.resources
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.csproj.GenerateResource.Cache
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.dll
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.pdb
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.ucCheckBox.resources
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.ucComboBox.resources
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.ucDateTimePicker.resources

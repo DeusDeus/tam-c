@@ -1,0 +1,7 @@
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesGUI\bin\Debug\ComponentesGUI.dll
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesGUI\bin\Debug\ComponentesGUI.pdb
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesGUI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.dll
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.pdb
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.ucTextBox.resources
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.csproj.GenerateResource.Cache

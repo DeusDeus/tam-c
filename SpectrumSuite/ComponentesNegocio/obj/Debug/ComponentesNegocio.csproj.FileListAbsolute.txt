@@ -1,0 +1,5 @@
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesNegocio.dll
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesNegocio.pdb
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesNegocio\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesNegocio\obj\Debug\ComponentesNegocio.dll
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\ComponentesNegocio\obj\Debug\ComponentesNegocio.pdb

@@ -1,0 +1,7 @@
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\SpectrumSuite\bin\Debug\SpectrumSuite.exe
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\SpectrumSuite\bin\Debug\SpectrumSuite.pdb
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\SpectrumSuite\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.Properties.Resources.resources
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumFondos.csproj.GenerateResource.Cache
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.exe
+C:\Users\Administrador\Documents\Visual Studio 2008\Projects\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.pdb

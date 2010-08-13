@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtControl = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtControl
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtControl.Location = new System.Drawing.Point(0, 0);
+            this.txtControl.Name = "txtControl";
+            this.txtControl.Size = new System.Drawing.Size(100, 20);
+            this.txtControl.TabIndex = 0;
             // 
             // ucTextBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtControl);
             this.Name = "ucTextBox";
             this.Size = new System.Drawing.Size(101, 21);
             this.ResumeLayout(false);
@@ -52,6 +52,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtControl;
     }
 }

@@ -28,10 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.dtpControl = new System.Windows.Forms.DateTimePicker();
+            this.SuspendLayout();
+            // 
+            // dtpControl
+            // 
+            this.dtpControl.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpControl.Location = new System.Drawing.Point(0, 0);
+            this.dtpControl.Name = "dtpControl";
+            this.dtpControl.Size = new System.Drawing.Size(83, 20);
+            this.dtpControl.TabIndex = 0;
+            // 
+            // ucDateTimePicker
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dtpControl);
+            this.Name = "ucDateTimePicker";
+            this.Size = new System.Drawing.Size(84, 22);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DateTimePicker dtpControl;
     }
 }

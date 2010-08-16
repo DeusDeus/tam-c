@@ -3,19 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
-using ComponentesGUI;
 using System.Data;
+using ComponentesDatos;
 
 namespace ComponentesNegocio
 {
     public class clsNegocio
     {
-        public static bool EjecutarServicio(XmlDocument xmlArchivo, ucButton cmdBoton){
-        
-            return true;
-        }
-
-        public static DataSet ConsultarServicio(XmlDocument xmlArchivo, ucButton cmdBoton)
+        public static DataSet CargarFormulario(string strNombreFormulario)
         {
             return null;
         }

@@ -9,8 +9,13 @@ using System.Windows.Forms;
 
 namespace ComponentesGUI
 {
-    public partial class ucCheckBox : UserControl
+    public partial class ucCheckBox : CheckBox 
     {
+        public ucCheckBox()
+        {
+            InitializeComponent();
+        }
+
         public enum TipoDato : int
         {
             Int = 0,
@@ -20,27 +25,22 @@ namespace ComponentesGUI
             Bool = 4
         }
 
-        TipoDato tipo_dato;
-        public bool solo_lectura;
-        public bool es_obligatorio;
-        public bool flag_BD;
-        public string nombre_campo;
-        public string nombre_control;
-
-        public ucCheckBox()
-        {
-            InitializeComponent();
-        }
+        TipoDato td;
+        public bool blnSoloLectura;
+        public bool blnObligatorio;
+        public bool blnIndBaseDatos;
+        public string strNombreCampoBaseDatos;
+        public string strNombreControl;
 
         public TipoDato Tipo_Dato
         {
             get
             {
-                return tipo_dato;
+                return td;
             }
             set
             {
-                tipo_dato = value;
+                td = value;
             }
         }
 
@@ -48,16 +48,19 @@ namespace ComponentesGUI
         {
             get
             {
-                return solo_lectura;
+                return blnSoloLectura;
             }
 
             set
             {
-                solo_lectura = value;
-                if (solo_lectura == true)
+                blnSoloLectura = value;
+                if (blnSoloLectura == true)
                 {
-                    cbControl.Enabled= false;
-                    cbControl.BackColor= Color.AliceBlue;
+                    this.Enabled = false;
+                }
+                else
+                {
+                    this.Enabled = true;
                 }
             }
         }
@@ -66,12 +69,12 @@ namespace ComponentesGUI
         {
             get
             {
-                return es_obligatorio;
+                return blnObligatorio;
             }
 
             set
             {
-                es_obligatorio = value;
+                blnObligatorio = value;
             }
         }
 
@@ -79,12 +82,12 @@ namespace ComponentesGUI
         {
             get
             {
-                return flag_BD;
+                return blnIndBaseDatos;
             }
 
             set
             {
-                flag_BD = value;
+                blnIndBaseDatos = value;
             }
         }
 
@@ -92,11 +95,11 @@ namespace ComponentesGUI
         {
             get
             {
-                return nombre_campo;
+                return strNombreCampoBaseDatos;
             }
             set
             {
-                nombre_campo = value;
+                strNombreCampoBaseDatos = value;
             }
         }
 
@@ -104,11 +107,11 @@ namespace ComponentesGUI
         {
             get
             {
-                return nombre_control;
+                return strNombreControl;
             }
             set
             {
-                nombre_control = value;
+                strNombreControl = value;
             }
         }
     }

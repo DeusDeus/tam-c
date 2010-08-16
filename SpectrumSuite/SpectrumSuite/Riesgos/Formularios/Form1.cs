@@ -9,11 +9,16 @@ using System.Windows.Forms;
 
 namespace SpectrumSuite
 {
-    public partial class Form1 : Form
+    public partial class frmPlaza : Form
     {
-        public Form1()
+        public frmPlaza()
         {
             InitializeComponent();
+        }
+
+        private void cmdSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

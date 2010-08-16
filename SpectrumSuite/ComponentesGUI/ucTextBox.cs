@@ -9,23 +9,11 @@ using System.Windows.Forms;
 
 namespace ComponentesGUI
 {
-    public partial class ucTextBox : UserControl
+    public partial class ucTextBox : TextBox
     {
         public ucTextBox()
         {
             InitializeComponent();
-        }
-
-        public override string Text
-        {
-            get
-            {
-                return txtControl.Text;
-            }
-            set
-            {
-                txtControl.Text = value;
-            }
         }
 
         public enum TipoDato : int
@@ -68,8 +56,13 @@ namespace ComponentesGUI
                 blnSoloLectura = value;
                 if (blnSoloLectura == true)
                 {
-                    txtControl.Enabled = false;
-                    txtControl.BackColor = Color.AliceBlue;
+                    this.Enabled = false;
+                    this.BackColor = Color.AliceBlue;
+                }
+                else
+                {
+                    this.Enabled = true;
+                    this.BackColor = Color.White;
                 }
             }
         }

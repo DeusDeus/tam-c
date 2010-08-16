@@ -28,31 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmdControl = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // cmdControl
-            // 
-            this.cmdControl.Location = new System.Drawing.Point(0, 0);
-            this.cmdControl.Name = "cmdControl";
-            this.cmdControl.Size = new System.Drawing.Size(75, 23);
-            this.cmdControl.TabIndex = 0;
-            this.cmdControl.Text = "button1";
-            this.cmdControl.UseVisualStyleBackColor = true;
-            // 
-            // ucButton
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.cmdControl);
-            this.Name = "ucButton";
-            this.Size = new System.Drawing.Size(76, 24);
-            this.ResumeLayout(false);
-
+            components = new System.ComponentModel.Container();
+            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         }
 
         #endregion
-
-        private System.Windows.Forms.Button cmdControl;
     }
 }

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ComponentesGUI
 {
-    public partial class ucLabel : UserControl
+    public partial class ucLabel : Label
     {
         public ucLabel()
         {
@@ -26,7 +26,8 @@ namespace ComponentesGUI
         }
 
         TipoDato td;
-        
+        public bool blnSoloLectura;
+        public bool blnObligatorio;
         public bool blnIndBaseDatos;
         public string strNombreCampoBaseDatos;
         public string strNombreControl;
@@ -40,6 +41,40 @@ namespace ComponentesGUI
             set
             {
                 td = value;
+            }
+        }
+
+        public bool Solo_Lectura
+        {
+            get
+            {
+                return blnSoloLectura;
+            }
+
+            set
+            {
+                blnSoloLectura = value;
+                if (blnSoloLectura == true)
+                {
+                    this.Enabled = false;
+                }
+                else
+                {
+                    this.Enabled = true;
+                }
+            }
+        }
+
+        public bool Es_Obligatorio
+        {
+            get
+            {
+                return blnObligatorio;
+            }
+
+            set
+            {
+                blnObligatorio = value;
             }
         }
 

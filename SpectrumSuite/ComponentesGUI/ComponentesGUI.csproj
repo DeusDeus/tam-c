@@ -49,64 +49,41 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ucButton.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ucButton.Designer.cs">
       <DependentUpon>ucButton.cs</DependentUpon>
     </Compile>
     <Compile Include="ucCheckBox.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ucCheckBox.Designer.cs">
       <DependentUpon>ucCheckBox.cs</DependentUpon>
     </Compile>
     <Compile Include="ucComboBox.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ucComboBox.Designer.cs">
       <DependentUpon>ucComboBox.cs</DependentUpon>
     </Compile>
     <Compile Include="ucDateTimePicker.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ucDateTimePicker.Designer.cs">
       <DependentUpon>ucDateTimePicker.cs</DependentUpon>
     </Compile>
     <Compile Include="ucLabel.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ucLabel.Designer.cs">
       <DependentUpon>ucLabel.cs</DependentUpon>
     </Compile>
     <Compile Include="ucTextBox.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ucTextBox.Designer.cs">
       <DependentUpon>ucTextBox.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ucButton.resx">
-      <DependentUpon>ucButton.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucCheckBox.resx">
-      <DependentUpon>ucCheckBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucComboBox.resx">
-      <DependentUpon>ucComboBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucDateTimePicker.resx">
-      <DependentUpon>ucDateTimePicker.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucLabel.resx">
-      <DependentUpon>ucLabel.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ucTextBox.resx">
-      <DependentUpon>ucTextBox.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

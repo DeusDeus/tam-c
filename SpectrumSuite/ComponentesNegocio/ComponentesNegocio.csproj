@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{580E6CCA-9724-4D0D-A27C-C17C2BD090BB}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -50,6 +50,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ComponentesDatos\ComponentesDatos.csproj">
+      <Project>{1222E0B2-FC64-4AEC-94E2-77C2A2662EEF}</Project>
+      <Name>ComponentesDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ComponentesGUI\ComponentesGUI.csproj">
       <Project>{A529C2A7-A8B4-4E12-A992-8F057F38320D}</Project>
       <Name>ComponentesGUI</Name>

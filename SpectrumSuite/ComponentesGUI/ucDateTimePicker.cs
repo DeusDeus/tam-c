@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ComponentesGUI
 {
-    public partial class ucDateTimePicker : UserControl
+    public partial class ucDateTimePicker : DateTimePicker 
     {
         public ucDateTimePicker()
         {
@@ -56,8 +56,11 @@ namespace ComponentesGUI
                 blnSoloLectura = value;
                 if (blnSoloLectura == true)
                 {
-                    dtpControl.Enabled = false;
-                    dtpControl.BackColor = Color.AliceBlue;
+                    this.Enabled = false;
+                }
+                else
+                {
+                    this.Enabled = true;
                 }
             }
         }

@@ -83,6 +83,10 @@
       <Project>{A529C2A7-A8B4-4E12-A992-8F057F38320D}</Project>
       <Name>ComponentesGUI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ComponentesNegocio\ComponentesNegocio.csproj">
+      <Project>{580E6CCA-9724-4D0D-A27C-C17C2BD090BB}</Project>
+      <Name>ComponentesNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

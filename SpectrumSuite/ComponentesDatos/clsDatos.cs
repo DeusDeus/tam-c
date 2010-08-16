@@ -5,16 +5,50 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Xml;
 using System.Data;
+using System.Windows.Forms;
 
 namespace ComponentesDatos
 {
     public class clsDatos
     {
-        private static SqlConnection cnn;
+        private const string strServidor = "192.168.0.4";
+        private const string strCatalogo = "riesgos";
+        private const string strUsuario = "sa";
+        private const string strContrasena = "sa";
 
-        public static DataSet Consultar(string strComandoSql)
+        public static SqlConnection Conectar()
         {
-            return null;
+            SqlConnection cnn = new SqlConnection();
+            cnn.ConnectionString = "Server = " + strServidor + "; initial catalog = " + strCatalogo + "; user id = " + strUsuario + "; password = " + strContrasena + "; Trusted_Connection = FALSE";
+            return cnn;
+        }
+
+        public static SqlConnection Conectar(string pstrUsuario, string pstrContrasena)
+        {
+            SqlConnection cnn = new SqlConnection();
+            cnn.ConnectionString = "Server = " + strServidor + "; initial catalog = " + strCatalogo + ";user id = " + pstrUsuario + ";password = " + pstrContrasena + ";Trusted_Connection = FALSE";
+            return cnn;
+        }
+
+        public static DataTable Consultar(string strComandoSql)
+        {
+            try
+            {
+                SqlConnection cnn = Conectar();
+                SqlCommand sqlComando = new SqlCommand(strComandoSql, cnn);
+                cnn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(sqlComando);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cnn.Close();
+
+                return dt;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Ocurrió un Error \n" + e,"Error",MessageBoxButtons.AbortRetryIgnore,MessageBoxIcon.Error);
+                return null;
+            }
         }
     }
 }

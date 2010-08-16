@@ -10,9 +10,9 @@ namespace ComponentesNegocio
 {
     public class clsNegocio
     {
-        public static DataSet CargarFormulario(string strNombreFormulario)
+        public static DataTable CargarFormulario(string strNombreFormulario)
         {
-            return null;
+           return clsDatos.Consultar("SELECT * FROM Formulario_Control_Metadata WHERE Parent = '" + strNombreFormulario + "'");
         }
     }
 }

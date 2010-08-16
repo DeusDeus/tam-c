@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ComponentesNegocio;
 
 namespace SpectrumSuite
 {
@@ -19,6 +20,13 @@ namespace SpectrumSuite
         private void cmdSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void frmPlaza_Load(object sender, EventArgs e)
+        {
+            DataTable dt = clsNegocio.CargarFormulario(this.Name);
+
+            dgvPlaza.DataSource = dt;
         }
     }
 }

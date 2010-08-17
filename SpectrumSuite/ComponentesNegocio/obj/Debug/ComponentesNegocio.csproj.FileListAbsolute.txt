@@ -8,3 +8,7 @@ C:\TEMP\Repositorio\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesNegoci
 C:\TEMP\Repositorio\SpectrumSuite\ComponentesNegocio\obj\Debug\ResolveAssemblyReference.cache
 C:\TEMP\Repositorio\SpectrumSuite\ComponentesNegocio\obj\Debug\ComponentesNegocio.dll
 C:\TEMP\Repositorio\SpectrumSuite\ComponentesNegocio\obj\Debug\ComponentesNegocio.pdb
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesGUI.dll
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesGUI.pdb
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesDatos.dll
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesDatos.pdb

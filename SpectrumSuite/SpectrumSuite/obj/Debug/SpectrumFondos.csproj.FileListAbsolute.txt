@@ -14,4 +14,8 @@ C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.Properti
 C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumFondos.csproj.GenerateResource.Cache
 C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesGUI.dll
 C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesGUI.pdb
-C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.Form1.resources
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.frmPlaza.resources
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesNegocio.dll
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesNegocio.pdb
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesDatos.dll
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesDatos.pdb

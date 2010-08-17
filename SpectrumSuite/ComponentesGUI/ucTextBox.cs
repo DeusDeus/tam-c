@@ -16,33 +16,12 @@ namespace ComponentesGUI
             InitializeComponent();
         }
 
-        public enum TipoDato : int
-        {
-            Int = 0,
-            Double = 1,
-            Char = 2,
-            Date = 3,
-            Bool = 4
-        }
-
-        TipoDato td;
         public bool blnSoloLectura;
         public bool blnObligatorio;
         public bool blnIndBaseDatos;
         public string strNombreCampoBaseDatos;
         public string strNombreControl;
-
-        public TipoDato Tipo_Dato
-        {
-            get
-            {
-                return td;
-            }
-            set
-            {
-                td = value;
-            }
-        }
+        public string strTipoDato;
 
         public bool Solo_Lectura
         {
@@ -114,6 +93,18 @@ namespace ComponentesGUI
             set
             {
                 strNombreControl = value;
+            }
+        }
+
+        public string Tipo_Dato
+        {
+            get
+            {
+                return strTipoDato;
+            }
+            set
+            {
+                strTipoDato = value;
             }
         }
     }

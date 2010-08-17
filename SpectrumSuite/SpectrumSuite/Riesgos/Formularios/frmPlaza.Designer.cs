@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tbcPlaza = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvPlaza = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -64,7 +64,7 @@
             this.cmdSalir = new ComponentesGUI.ucButton();
             this.ucTextBox1 = new ComponentesGUI.ucTextBox();
             this.ucLabel1 = new ComponentesGUI.ucLabel();
-            this.tabControl1.SuspendLayout();
+            this.tbcPlaza.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaza)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -75,15 +75,15 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tbcPlaza
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(426, 421);
-            this.tabControl1.TabIndex = 18;
+            this.tbcPlaza.Controls.Add(this.tabPage1);
+            this.tbcPlaza.Controls.Add(this.tabPage2);
+            this.tbcPlaza.Location = new System.Drawing.Point(0, 0);
+            this.tbcPlaza.Name = "tbcPlaza";
+            this.tbcPlaza.SelectedIndex = 0;
+            this.tbcPlaza.Size = new System.Drawing.Size(426, 421);
+            this.tbcPlaza.TabIndex = 18;
             // 
             // tabPage1
             // 
@@ -136,7 +136,7 @@
             this.txtDescripcion.Size = new System.Drawing.Size(317, 20);
             this.txtDescripcion.Solo_Lectura = false;
             this.txtDescripcion.TabIndex = 3;
-            this.txtDescripcion.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
+            //this.txtDescripcion.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
             // 
             // lblDescripcion
             // 
@@ -151,7 +151,7 @@
             this.lblDescripcion.Solo_Lectura = false;
             this.lblDescripcion.TabIndex = 2;
             this.lblDescripcion.Text = "Descripción";
-            this.lblDescripcion.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            //this.lblDescripcion.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
             // 
             // tabPage2
             // 
@@ -203,7 +203,7 @@
             this.cmdCancelar.Solo_Lectura = false;
             this.cmdCancelar.TabIndex = 12;
             this.cmdCancelar.Text = "Cancelar";
-            this.cmdCancelar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            //this.cmdCancelar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
             this.cmdCancelar.UseVisualStyleBackColor = true;
             // 
             // cmdGuardar
@@ -218,7 +218,7 @@
             this.cmdGuardar.Solo_Lectura = false;
             this.cmdGuardar.TabIndex = 11;
             this.cmdGuardar.Text = "Guardar";
-            this.cmdGuardar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            //this.cmdGuardar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
             this.cmdGuardar.UseVisualStyleBackColor = true;
             // 
             // cmdEliminar2
@@ -233,7 +233,7 @@
             this.cmdEliminar2.Solo_Lectura = false;
             this.cmdEliminar2.TabIndex = 10;
             this.cmdEliminar2.Text = "Eliminar";
-            this.cmdEliminar2.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            //this.cmdEliminar2.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
             this.cmdEliminar2.UseVisualStyleBackColor = true;
             // 
             // cmdAgregar
@@ -248,7 +248,7 @@
             this.cmdAgregar.Solo_Lectura = false;
             this.cmdAgregar.TabIndex = 9;
             this.cmdAgregar.Text = "Agregar";
-            this.cmdAgregar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            //this.cmdAgregar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
             this.cmdAgregar.UseVisualStyleBackColor = true;
             // 
             // cboMoneda
@@ -263,7 +263,7 @@
             this.cboMoneda.Size = new System.Drawing.Size(190, 21);
             this.cboMoneda.Solo_Lectura = false;
             this.cboMoneda.TabIndex = 8;
-            this.cboMoneda.Tipo_Dato = ComponentesGUI.ucComboBox.TipoDato.Int;
+            //this.cboMoneda.Tipo_Dato = ComponentesGUI.ucComboBox.TipoDato.Int;
             // 
             // lblMoneda
             // 
@@ -278,7 +278,7 @@
             this.lblMoneda.Solo_Lectura = false;
             this.lblMoneda.TabIndex = 7;
             this.lblMoneda.Text = "Moneda";
-            this.lblMoneda.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            //this.lblMoneda.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
             // 
             // groupBox4
             // 
@@ -306,7 +306,7 @@
             this.txtDescripcion2.Size = new System.Drawing.Size(281, 20);
             this.txtDescripcion2.Solo_Lectura = false;
             this.txtDescripcion2.TabIndex = 12;
-            this.txtDescripcion2.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
+            //this.txtDescripcion2.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
             // 
             // txtAbreviatura
             // 
@@ -320,7 +320,7 @@
             this.txtAbreviatura.Size = new System.Drawing.Size(109, 20);
             this.txtAbreviatura.Solo_Lectura = false;
             this.txtAbreviatura.TabIndex = 11;
-            this.txtAbreviatura.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
+            //this.txtAbreviatura.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
             // 
             // txtCodigo
             // 
@@ -334,7 +334,7 @@
             this.txtCodigo.Size = new System.Drawing.Size(109, 20);
             this.txtCodigo.Solo_Lectura = false;
             this.txtCodigo.TabIndex = 10;
-            this.txtCodigo.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
+            //this.txtCodigo.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
             // 
             // lblAbreviatura
             // 
@@ -349,7 +349,7 @@
             this.lblAbreviatura.Solo_Lectura = false;
             this.lblAbreviatura.TabIndex = 9;
             this.lblAbreviatura.Text = "Abreviatura";
-            this.lblAbreviatura.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            //this.lblAbreviatura.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
             // 
             // lblDescripcion2
             // 
@@ -364,7 +364,7 @@
             this.lblDescripcion2.Solo_Lectura = false;
             this.lblDescripcion2.TabIndex = 8;
             this.lblDescripcion2.Text = "Descripción";
-            this.lblDescripcion2.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            //this.lblDescripcion2.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
             // 
             // lblCodigo
             // 
@@ -379,7 +379,7 @@
             this.lblCodigo.Solo_Lectura = false;
             this.lblCodigo.TabIndex = 7;
             this.lblCodigo.Text = "Código";
-            this.lblCodigo.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            //this.lblCodigo.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
             // 
             // groupBox2
             // 
@@ -455,7 +455,7 @@
             this.cmdNuevo.Solo_Lectura = false;
             this.cmdNuevo.TabIndex = 19;
             this.cmdNuevo.Text = "Nuevo";
-            this.cmdNuevo.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            //this.cmdNuevo.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
             this.cmdNuevo.UseVisualStyleBackColor = true;
             // 
             // cmdModificar
@@ -470,7 +470,7 @@
             this.cmdModificar.Solo_Lectura = false;
             this.cmdModificar.TabIndex = 20;
             this.cmdModificar.Text = "Modificar";
-            this.cmdModificar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            //this.cmdModificar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
             this.cmdModificar.UseVisualStyleBackColor = true;
             // 
             // cmdEliminar
@@ -485,7 +485,7 @@
             this.cmdEliminar.Solo_Lectura = false;
             this.cmdEliminar.TabIndex = 21;
             this.cmdEliminar.Text = "Eliminar";
-            this.cmdEliminar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            //this.cmdEliminar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
             this.cmdEliminar.UseVisualStyleBackColor = true;
             // 
             // cmdBuscar
@@ -500,7 +500,7 @@
             this.cmdBuscar.Solo_Lectura = false;
             this.cmdBuscar.TabIndex = 22;
             this.cmdBuscar.Text = "Buscar";
-            this.cmdBuscar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            //this.cmdBuscar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
             this.cmdBuscar.UseVisualStyleBackColor = true;
             // 
             // cmdSalir
@@ -515,7 +515,7 @@
             this.cmdSalir.Solo_Lectura = false;
             this.cmdSalir.TabIndex = 23;
             this.cmdSalir.Text = "Salir";
-            this.cmdSalir.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            //this.cmdSalir.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
             this.cmdSalir.UseVisualStyleBackColor = true;
             this.cmdSalir.Click += new System.EventHandler(this.cmdSalir_Click);
             // 
@@ -531,7 +531,7 @@
             this.ucTextBox1.Size = new System.Drawing.Size(317, 20);
             this.ucTextBox1.Solo_Lectura = false;
             this.ucTextBox1.TabIndex = 3;
-            this.ucTextBox1.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
+            //this.ucTextBox1.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
             // 
             // ucLabel1
             // 
@@ -546,7 +546,7 @@
             this.ucLabel1.Solo_Lectura = false;
             this.ucLabel1.TabIndex = 2;
             this.ucLabel1.Text = "Descripción";
-            this.ucLabel1.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            //this.ucLabel1.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
             // 
             // frmPlaza
             // 
@@ -558,14 +558,14 @@
             this.Controls.Add(this.cmdEliminar);
             this.Controls.Add(this.cmdModificar);
             this.Controls.Add(this.cmdNuevo);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tbcPlaza);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmPlaza";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plazas";
             this.Load += new System.EventHandler(this.frmPlaza_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tbcPlaza.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaza)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -584,7 +584,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tbcPlaza;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dgvPlaza;
         private System.Windows.Forms.GroupBox groupBox1;

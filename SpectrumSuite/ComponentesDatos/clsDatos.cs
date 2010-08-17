@@ -30,7 +30,7 @@ namespace ComponentesDatos
             return cnn;
         }
 
-        public static DataTable Consultar(string strComandoSql)
+        public static DataSet Consultar(string strComandoSql)
         {
             try
             {
@@ -38,11 +38,11 @@ namespace ComponentesDatos
                 SqlCommand sqlComando = new SqlCommand(strComandoSql, cnn);
                 cnn.Open();
                 SqlDataAdapter da = new SqlDataAdapter(sqlComando);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
                 cnn.Close();
 
-                return dt;
+                return ds;
             }
             catch(Exception e)
             {

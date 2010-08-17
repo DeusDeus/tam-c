@@ -62,6 +62,8 @@
             this.cmdEliminar = new ComponentesGUI.ucButton();
             this.cmdBuscar = new ComponentesGUI.ucButton();
             this.cmdSalir = new ComponentesGUI.ucButton();
+            this.ucTextBox1 = new ComponentesGUI.ucTextBox();
+            this.ucLabel1 = new ComponentesGUI.ucLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaza)).BeginInit();
@@ -517,6 +519,35 @@
             this.cmdSalir.UseVisualStyleBackColor = true;
             this.cmdSalir.Click += new System.EventHandler(this.cmdSalir_Click);
             // 
+            // ucTextBox1
+            // 
+            this.ucTextBox1.BackColor = System.Drawing.Color.White;
+            this.ucTextBox1.Es_Obligatorio = false;
+            this.ucTextBox1.Flag_BD = false;
+            this.ucTextBox1.Location = new System.Drawing.Point(75, 28);
+            this.ucTextBox1.Name = "ucTextBox1";
+            this.ucTextBox1.Nombre_Campo = null;
+            this.ucTextBox1.Nombre_Control = null;
+            this.ucTextBox1.Size = new System.Drawing.Size(317, 20);
+            this.ucTextBox1.Solo_Lectura = false;
+            this.ucTextBox1.TabIndex = 3;
+            this.ucTextBox1.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
+            // 
+            // ucLabel1
+            // 
+            this.ucLabel1.AutoSize = true;
+            this.ucLabel1.Es_Obligatorio = false;
+            this.ucLabel1.Flag_BD = false;
+            this.ucLabel1.Location = new System.Drawing.Point(6, 31);
+            this.ucLabel1.Name = "ucLabel1";
+            this.ucLabel1.Nombre_Campo = null;
+            this.ucLabel1.Nombre_Control = null;
+            this.ucLabel1.Size = new System.Drawing.Size(63, 13);
+            this.ucLabel1.Solo_Lectura = false;
+            this.ucLabel1.TabIndex = 2;
+            this.ucLabel1.Text = "Descripción";
+            this.ucLabel1.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            // 
             // frmPlaza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -587,6 +618,8 @@
         private ComponentesGUI.ucButton cmdCancelar;
         private ComponentesGUI.ucButton cmdGuardar;
         private System.Windows.Forms.DataGridView dgvMoneda;
+        private ComponentesGUI.ucTextBox ucTextBox1;
+        private ComponentesGUI.ucLabel ucLabel1;
 
 
     }

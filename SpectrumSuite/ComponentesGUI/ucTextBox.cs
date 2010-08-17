@@ -16,6 +16,7 @@ namespace ComponentesGUI
             InitializeComponent();
         }
 
+
         public bool blnSoloLectura;
         public bool blnObligatorio;
         public bool blnIndBaseDatos;

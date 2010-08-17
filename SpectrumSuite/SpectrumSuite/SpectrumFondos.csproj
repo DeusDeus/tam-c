@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C94A993F-DE53-40C0-B60E-812497AB1BAE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -48,16 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Riesgos\Formularios\Form1.cs">
+    <Compile Include="Riesgos\Formularios\frmPlaza.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Riesgos\Formularios\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Riesgos\Formularios\frmPlaza.Designer.cs">
+      <DependentUpon>frmPlaza.cs</DependentUpon>
     </Compile>
     <Compile Include="SpectrumFondos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Riesgos\Formularios\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Riesgos\Formularios\frmPlaza.resx">
+      <DependentUpon>frmPlaza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

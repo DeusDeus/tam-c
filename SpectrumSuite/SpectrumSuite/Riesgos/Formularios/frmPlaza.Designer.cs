@@ -32,6 +32,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvPlaza = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTipoLista = new ComponentesGUI.ucLabel();
             this.txtDescripcion = new ComponentesGUI.ucTextBox();
             this.lblDescripcion = new ComponentesGUI.ucLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -64,6 +65,9 @@
             this.cmdSalir = new ComponentesGUI.ucButton();
             this.ucTextBox1 = new ComponentesGUI.ucTextBox();
             this.ucLabel1 = new ComponentesGUI.ucLabel();
+            this.lblCodigoPlaza = new ComponentesGUI.ucLabel();
+            this.lblDescripcionPlaza = new ComponentesGUI.ucLabel();
+            this.lblDescripcionPlazaCorta = new ComponentesGUI.ucLabel();
             this.tbcPlaza.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaza)).BeginInit();
@@ -115,6 +119,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblDescripcionPlazaCorta);
+            this.groupBox1.Controls.Add(this.lblDescripcionPlaza);
+            this.groupBox1.Controls.Add(this.lblCodigoPlaza);
+            this.groupBox1.Controls.Add(this.lblTipoLista);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.lblDescripcion);
             this.groupBox1.Location = new System.Drawing.Point(8, 17);
@@ -123,6 +131,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
+            // 
+            // lblTipoLista
+            // 
+            this.lblTipoLista.AutoSize = true;
+            this.lblTipoLista.Es_Obligatorio = false;
+            this.lblTipoLista.Flag_BD = false;
+            this.lblTipoLista.Location = new System.Drawing.Point(6, 58);
+            this.lblTipoLista.Name = "lblTipoLista";
+            this.lblTipoLista.Nombre_Campo = null;
+            this.lblTipoLista.Nombre_Control = null;
+            this.lblTipoLista.Size = new System.Drawing.Size(50, 13);
+            this.lblTipoLista.Solo_Lectura = false;
+            this.lblTipoLista.TabIndex = 2;
+            this.lblTipoLista.Text = "TipoLista";
+            this.lblTipoLista.Tipo_Dato = null;
+            this.lblTipoLista.Valor = null;
             // 
             // txtDescripcion
             // 
@@ -136,7 +160,8 @@
             this.txtDescripcion.Size = new System.Drawing.Size(317, 20);
             this.txtDescripcion.Solo_Lectura = false;
             this.txtDescripcion.TabIndex = 3;
-            //this.txtDescripcion.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
+            this.txtDescripcion.Tipo_Dato = null;
+            this.txtDescripcion.Valor = null;
             // 
             // lblDescripcion
             // 
@@ -151,7 +176,8 @@
             this.lblDescripcion.Solo_Lectura = false;
             this.lblDescripcion.TabIndex = 2;
             this.lblDescripcion.Text = "Descripción";
-            //this.lblDescripcion.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            this.lblDescripcion.Tipo_Dato = null;
+            this.lblDescripcion.Valor = null;
             // 
             // tabPage2
             // 
@@ -203,8 +229,9 @@
             this.cmdCancelar.Solo_Lectura = false;
             this.cmdCancelar.TabIndex = 12;
             this.cmdCancelar.Text = "Cancelar";
-            //this.cmdCancelar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            this.cmdCancelar.Tipo_Dato = null;
             this.cmdCancelar.UseVisualStyleBackColor = true;
+            this.cmdCancelar.Valor = null;
             // 
             // cmdGuardar
             // 
@@ -218,8 +245,9 @@
             this.cmdGuardar.Solo_Lectura = false;
             this.cmdGuardar.TabIndex = 11;
             this.cmdGuardar.Text = "Guardar";
-            //this.cmdGuardar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            this.cmdGuardar.Tipo_Dato = null;
             this.cmdGuardar.UseVisualStyleBackColor = true;
+            this.cmdGuardar.Valor = null;
             // 
             // cmdEliminar2
             // 
@@ -233,8 +261,9 @@
             this.cmdEliminar2.Solo_Lectura = false;
             this.cmdEliminar2.TabIndex = 10;
             this.cmdEliminar2.Text = "Eliminar";
-            //this.cmdEliminar2.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            this.cmdEliminar2.Tipo_Dato = null;
             this.cmdEliminar2.UseVisualStyleBackColor = true;
+            this.cmdEliminar2.Valor = null;
             // 
             // cmdAgregar
             // 
@@ -248,8 +277,9 @@
             this.cmdAgregar.Solo_Lectura = false;
             this.cmdAgregar.TabIndex = 9;
             this.cmdAgregar.Text = "Agregar";
-            //this.cmdAgregar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            this.cmdAgregar.Tipo_Dato = null;
             this.cmdAgregar.UseVisualStyleBackColor = true;
+            this.cmdAgregar.Valor = null;
             // 
             // cboMoneda
             // 
@@ -263,7 +293,8 @@
             this.cboMoneda.Size = new System.Drawing.Size(190, 21);
             this.cboMoneda.Solo_Lectura = false;
             this.cboMoneda.TabIndex = 8;
-            //this.cboMoneda.Tipo_Dato = ComponentesGUI.ucComboBox.TipoDato.Int;
+            this.cboMoneda.Tipo_Dato = null;
+            this.cboMoneda.Valor = null;
             // 
             // lblMoneda
             // 
@@ -278,7 +309,8 @@
             this.lblMoneda.Solo_Lectura = false;
             this.lblMoneda.TabIndex = 7;
             this.lblMoneda.Text = "Moneda";
-            //this.lblMoneda.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            this.lblMoneda.Tipo_Dato = null;
+            this.lblMoneda.Valor = null;
             // 
             // groupBox4
             // 
@@ -306,7 +338,8 @@
             this.txtDescripcion2.Size = new System.Drawing.Size(281, 20);
             this.txtDescripcion2.Solo_Lectura = false;
             this.txtDescripcion2.TabIndex = 12;
-            //this.txtDescripcion2.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
+            this.txtDescripcion2.Tipo_Dato = null;
+            this.txtDescripcion2.Valor = null;
             // 
             // txtAbreviatura
             // 
@@ -320,7 +353,8 @@
             this.txtAbreviatura.Size = new System.Drawing.Size(109, 20);
             this.txtAbreviatura.Solo_Lectura = false;
             this.txtAbreviatura.TabIndex = 11;
-            //this.txtAbreviatura.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
+            this.txtAbreviatura.Tipo_Dato = null;
+            this.txtAbreviatura.Valor = null;
             // 
             // txtCodigo
             // 
@@ -334,7 +368,8 @@
             this.txtCodigo.Size = new System.Drawing.Size(109, 20);
             this.txtCodigo.Solo_Lectura = false;
             this.txtCodigo.TabIndex = 10;
-            //this.txtCodigo.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
+            this.txtCodigo.Tipo_Dato = null;
+            this.txtCodigo.Valor = null;
             // 
             // lblAbreviatura
             // 
@@ -349,7 +384,8 @@
             this.lblAbreviatura.Solo_Lectura = false;
             this.lblAbreviatura.TabIndex = 9;
             this.lblAbreviatura.Text = "Abreviatura";
-            //this.lblAbreviatura.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            this.lblAbreviatura.Tipo_Dato = null;
+            this.lblAbreviatura.Valor = null;
             // 
             // lblDescripcion2
             // 
@@ -364,7 +400,8 @@
             this.lblDescripcion2.Solo_Lectura = false;
             this.lblDescripcion2.TabIndex = 8;
             this.lblDescripcion2.Text = "Descripción";
-            //this.lblDescripcion2.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            this.lblDescripcion2.Tipo_Dato = null;
+            this.lblDescripcion2.Valor = null;
             // 
             // lblCodigo
             // 
@@ -379,7 +416,8 @@
             this.lblCodigo.Solo_Lectura = false;
             this.lblCodigo.TabIndex = 7;
             this.lblCodigo.Text = "Código";
-            //this.lblCodigo.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            this.lblCodigo.Tipo_Dato = null;
+            this.lblCodigo.Valor = null;
             // 
             // groupBox2
             // 
@@ -455,8 +493,9 @@
             this.cmdNuevo.Solo_Lectura = false;
             this.cmdNuevo.TabIndex = 19;
             this.cmdNuevo.Text = "Nuevo";
-            //this.cmdNuevo.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            this.cmdNuevo.Tipo_Dato = null;
             this.cmdNuevo.UseVisualStyleBackColor = true;
+            this.cmdNuevo.Valor = null;
             // 
             // cmdModificar
             // 
@@ -470,8 +509,9 @@
             this.cmdModificar.Solo_Lectura = false;
             this.cmdModificar.TabIndex = 20;
             this.cmdModificar.Text = "Modificar";
-            //this.cmdModificar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            this.cmdModificar.Tipo_Dato = null;
             this.cmdModificar.UseVisualStyleBackColor = true;
+            this.cmdModificar.Valor = null;
             // 
             // cmdEliminar
             // 
@@ -485,8 +525,9 @@
             this.cmdEliminar.Solo_Lectura = false;
             this.cmdEliminar.TabIndex = 21;
             this.cmdEliminar.Text = "Eliminar";
-            //this.cmdEliminar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            this.cmdEliminar.Tipo_Dato = null;
             this.cmdEliminar.UseVisualStyleBackColor = true;
+            this.cmdEliminar.Valor = null;
             // 
             // cmdBuscar
             // 
@@ -500,8 +541,9 @@
             this.cmdBuscar.Solo_Lectura = false;
             this.cmdBuscar.TabIndex = 22;
             this.cmdBuscar.Text = "Buscar";
-            //this.cmdBuscar.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            this.cmdBuscar.Tipo_Dato = null;
             this.cmdBuscar.UseVisualStyleBackColor = true;
+            this.cmdBuscar.Valor = null;
             // 
             // cmdSalir
             // 
@@ -515,8 +557,9 @@
             this.cmdSalir.Solo_Lectura = false;
             this.cmdSalir.TabIndex = 23;
             this.cmdSalir.Text = "Salir";
-            //this.cmdSalir.Tipo_Dato = ComponentesGUI.ucButton.TipoDato.Int;
+            this.cmdSalir.Tipo_Dato = null;
             this.cmdSalir.UseVisualStyleBackColor = true;
+            this.cmdSalir.Valor = null;
             this.cmdSalir.Click += new System.EventHandler(this.cmdSalir_Click);
             // 
             // ucTextBox1
@@ -531,7 +574,8 @@
             this.ucTextBox1.Size = new System.Drawing.Size(317, 20);
             this.ucTextBox1.Solo_Lectura = false;
             this.ucTextBox1.TabIndex = 3;
-            //this.ucTextBox1.Tipo_Dato = ComponentesGUI.ucTextBox.TipoDato.Int;
+            this.ucTextBox1.Tipo_Dato = null;
+            this.ucTextBox1.Valor = null;
             // 
             // ucLabel1
             // 
@@ -546,7 +590,56 @@
             this.ucLabel1.Solo_Lectura = false;
             this.ucLabel1.TabIndex = 2;
             this.ucLabel1.Text = "Descripción";
-            //this.ucLabel1.Tipo_Dato = ComponentesGUI.ucLabel.TipoDato.Int;
+            this.ucLabel1.Tipo_Dato = null;
+            this.ucLabel1.Valor = null;
+            // 
+            // lblCodigoPlaza
+            // 
+            this.lblCodigoPlaza.AutoSize = true;
+            this.lblCodigoPlaza.Es_Obligatorio = false;
+            this.lblCodigoPlaza.Flag_BD = false;
+            this.lblCodigoPlaza.Location = new System.Drawing.Point(72, 58);
+            this.lblCodigoPlaza.Name = "lblCodigoPlaza";
+            this.lblCodigoPlaza.Nombre_Campo = null;
+            this.lblCodigoPlaza.Nombre_Control = null;
+            this.lblCodigoPlaza.Size = new System.Drawing.Size(66, 13);
+            this.lblCodigoPlaza.Solo_Lectura = false;
+            this.lblCodigoPlaza.TabIndex = 4;
+            this.lblCodigoPlaza.Text = "CodigoPlaza";
+            this.lblCodigoPlaza.Tipo_Dato = null;
+            this.lblCodigoPlaza.Valor = null;
+            // 
+            // lblDescripcionPlaza
+            // 
+            this.lblDescripcionPlaza.AutoSize = true;
+            this.lblDescripcionPlaza.Es_Obligatorio = false;
+            this.lblDescripcionPlaza.Flag_BD = false;
+            this.lblDescripcionPlaza.Location = new System.Drawing.Point(157, 58);
+            this.lblDescripcionPlaza.Name = "lblDescripcionPlaza";
+            this.lblDescripcionPlaza.Nombre_Campo = null;
+            this.lblDescripcionPlaza.Nombre_Control = null;
+            this.lblDescripcionPlaza.Size = new System.Drawing.Size(89, 13);
+            this.lblDescripcionPlaza.Solo_Lectura = false;
+            this.lblDescripcionPlaza.TabIndex = 5;
+            this.lblDescripcionPlaza.Text = "DescripcionPlaza";
+            this.lblDescripcionPlaza.Tipo_Dato = null;
+            this.lblDescripcionPlaza.Valor = null;
+            // 
+            // lblDescripcionPlazaCorta
+            // 
+            this.lblDescripcionPlazaCorta.AutoSize = true;
+            this.lblDescripcionPlazaCorta.Es_Obligatorio = false;
+            this.lblDescripcionPlazaCorta.Flag_BD = false;
+            this.lblDescripcionPlazaCorta.Location = new System.Drawing.Point(265, 58);
+            this.lblDescripcionPlazaCorta.Name = "lblDescripcionPlazaCorta";
+            this.lblDescripcionPlazaCorta.Nombre_Campo = null;
+            this.lblDescripcionPlazaCorta.Nombre_Control = null;
+            this.lblDescripcionPlazaCorta.Size = new System.Drawing.Size(114, 13);
+            this.lblDescripcionPlazaCorta.Solo_Lectura = false;
+            this.lblDescripcionPlazaCorta.TabIndex = 6;
+            this.lblDescripcionPlazaCorta.Text = "DescripcionPlazaCorta";
+            this.lblDescripcionPlazaCorta.Tipo_Dato = null;
+            this.lblDescripcionPlazaCorta.Valor = null;
             // 
             // frmPlaza
             // 
@@ -620,6 +713,10 @@
         private System.Windows.Forms.DataGridView dgvMoneda;
         private ComponentesGUI.ucTextBox ucTextBox1;
         private ComponentesGUI.ucLabel ucLabel1;
+        private ComponentesGUI.ucLabel lblTipoLista;
+        private ComponentesGUI.ucLabel lblDescripcionPlazaCorta;
+        private ComponentesGUI.ucLabel lblDescripcionPlaza;
+        private ComponentesGUI.ucLabel lblCodigoPlaza;
 
 
     }

@@ -19,3 +19,5 @@ C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesNegocio.dll
 C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesNegocio.pdb
 C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesDatos.dll
 C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesDatos.pdb
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesComun.dll
+C:\TEMP\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesComun.pdb

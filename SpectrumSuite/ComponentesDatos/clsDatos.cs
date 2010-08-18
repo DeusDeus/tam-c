@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.SqlClient;
-using System.Xml;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace ComponentesDatos
 {
@@ -26,7 +23,7 @@ namespace ComponentesDatos
         public static SqlConnection Conectar(string pstrUsuario, string pstrContrasena)
         {
             SqlConnection cnn = new SqlConnection();
-            cnn.ConnectionString = "Server = " + strServidor + "; initial catalog = " + strCatalogo + ";user id = " + pstrUsuario + ";password = " + pstrContrasena + ";Trusted_Connection = FALSE";
+            cnn.ConnectionString = "Server = " + strServidor + "; initial catalog = " + strCatalogo + "; user id = " + pstrUsuario + "; password = " + pstrContrasena + "; Trusted_Connection = FALSE";
             return cnn;
         }
 
@@ -47,6 +44,82 @@ namespace ComponentesDatos
             catch(Exception e)
             {
                 MessageBox.Show("Ocurrió un Error \n" + e,"Error",MessageBoxButtons.AbortRetryIgnore,MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        public static DataSet Consultar(String pstrNombreStoredProcedure, XmlDocument pxmlArchivo)
+        {
+            try
+            {
+                SqlConnection cnn = Conectar("sa", "sa");
+                cnn.Open();
+
+                SqlCommand sqlComando = new SqlCommand(pstrNombreStoredProcedure, cnn);
+                sqlComando.CommandType = CommandType.StoredProcedure;
+                SqlParameter sqlParametro = new SqlParameter();
+
+                XmlNodeList lstParametros = pxmlArchivo.GetElementsByTagName("Parametros");
+                XmlNodeList lstParametro = ((XmlElement)lstParametros[0]).GetElementsByTagName("Parametro");
+                foreach (XmlElement nodo in lstParametro)
+                {
+                    int i = 0;
+                    XmlNodeList xmlNodoNombre = nodo.GetElementsByTagName("Nombre");
+                    XmlNodeList xmlNodoTipo = nodo.GetElementsByTagName("Tipo");
+                    XmlNodeList xmlNodoValor = nodo.GetElementsByTagName("Valor");
+                    XmlNodeList xmlNodoPrecision = nodo.GetElementsByTagName("Precision");
+                    XmlNodeList xmlNodoLongitud = nodo.GetElementsByTagName("Longitud");
+                    XmlNodeList xmlNodoIO = nodo.GetElementsByTagName("IO");
+
+                    switch (xmlNodoTipo[i].InnerText)
+                    {
+                        case "int":
+                            sqlParametro = new SqlParameter();
+                            sqlParametro.ParameterName = xmlNodoNombre[i].InnerText;
+                            sqlParametro.Value = Int32.Parse(xmlNodoValor[i].InnerText);
+                            break;
+                        case "double":
+                            sqlParametro = new SqlParameter();
+                            sqlParametro.ParameterName = xmlNodoNombre[i].InnerText;
+                            sqlParametro.Value = Double.Parse(xmlNodoValor[i].InnerText);
+                            sqlParametro.Precision = Byte.Parse(xmlNodoPrecision[i].InnerText);
+                            break;
+                        case "date":
+                            sqlParametro = new SqlParameter();
+                            sqlParametro.ParameterName = xmlNodoNombre[i].InnerText;
+                            sqlParametro.Value = DateTime.Parse(xmlNodoValor[i].InnerText);
+                            break;
+                        default:
+                            sqlParametro = new SqlParameter();
+                            sqlParametro.ParameterName = xmlNodoNombre[i].InnerText;
+                            sqlParametro.Value = xmlNodoValor[i].InnerText;
+                            break;
+                    }
+
+                    if (xmlNodoIO[i].InnerText.CompareTo("I") == 0)
+                    {
+                        sqlParametro.Direction = System.Data.ParameterDirection.Input;
+                    }
+                    else
+                    {
+                        sqlParametro.Direction = System.Data.ParameterDirection.Output;
+                    }
+
+                    sqlComando.Parameters.Add(sqlParametro);
+                    i++;
+                }
+
+                SqlDataAdapter da = new SqlDataAdapter(sqlComando);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                
+                cnn.Close();
+                
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }

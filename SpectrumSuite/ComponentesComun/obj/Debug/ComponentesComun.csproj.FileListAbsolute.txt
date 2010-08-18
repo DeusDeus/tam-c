@@ -1,0 +1,7 @@
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesComun.dll
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesComun.pdb
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesComun\obj\Debug\ResolveAssemblyReference.cache
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.dll
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.pdb
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesGUI.dll
+C:\TEMP\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesGUI.pdb

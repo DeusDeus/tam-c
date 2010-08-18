@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace ComponentesGUI
@@ -16,13 +10,20 @@ namespace ComponentesGUI
             InitializeComponent();
         }
 
-
-        public bool blnSoloLectura;
-        public bool blnObligatorio;
-        public bool blnIndBaseDatos;
-        public string strNombreCampoBaseDatos;
-        public string strNombreControl;
-        public string strTipoDato;
+        private bool blnSoloLectura;
+        private bool blnObligatorio;
+        private bool blnIndBaseDatos;
+        private bool blnIndCalculado;
+        private bool blnIndicador = false;
+        private string strNombreCampoBaseDatos;
+        private string strNombreControl;
+        private string strValor;
+        private string strTipoDato;
+        private string strLongitud;
+        private string strPrecision;
+        private string strIO;
+        private string strCalculo;
+        private string strFormula;
 
         public bool Solo_Lectura
         {
@@ -73,6 +74,19 @@ namespace ComponentesGUI
             }
         }
 
+        public bool Indicador
+        {
+            get
+            {
+                return blnIndicador;
+            }
+
+            set
+            {
+                blnIndicador = value;
+            }
+        }
+
         public string Nombre_Campo
         {
             get
@@ -106,6 +120,91 @@ namespace ComponentesGUI
             set
             {
                 strTipoDato = value;
+            }
+        }
+
+        public string Valor
+        {
+            get
+            {
+                return strValor;
+            }
+            set
+            {
+                strValor = value;
+            }
+        }
+
+        public string Longitud
+        {
+            get
+            {
+                return strLongitud;
+            }
+            set
+            {
+                strLongitud = value;
+            }
+        }
+
+        public string Precision
+        {
+            get
+            {
+                return strPrecision;
+            }
+            set
+            {
+                strPrecision = value;
+            }
+        }
+
+        public string IO
+        {
+            get
+            {
+                return strIO;
+            }
+            set
+            {
+                strIO = value;
+            }
+        }
+
+        public string Calculo
+        {
+            get
+            {
+                return strCalculo;
+            }
+            set
+            {
+                strCalculo = value;
+            }
+        }
+
+        public string Formula
+        {
+            get
+            {
+                return strFormula;
+            }
+            set
+            {
+                strFormula = value;
+            }
+        }
+
+        public bool Es_Calculado
+        {
+            get
+            {
+                return blnIndCalculado;
+            }
+
+            set
+            {
+                blnIndCalculado = value;
             }
         }
     }

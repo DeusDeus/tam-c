@@ -68,6 +68,9 @@
             this.cmdSalir = new ComponentesGUI.ucButton();
             this.ucTextBox1 = new ComponentesGUI.ucTextBox();
             this.ucLabel1 = new ComponentesGUI.ucLabel();
+            this.lblCodigoMoneda = new ComponentesGUI.ucLabel();
+            this.lblDescripcionMoneda = new ComponentesGUI.ucLabel();
+            this.lblTipoListaMoneda = new ComponentesGUI.ucLabel();
             this.tbcPlaza.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaza)).BeginInit();
@@ -91,6 +94,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblTipoListaMoneda);
             this.tabPage1.Controls.Add(this.dgvPlaza);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -119,6 +123,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblDescripcionMoneda);
+            this.groupBox1.Controls.Add(this.lblCodigoMoneda);
             this.groupBox1.Controls.Add(this.lblDescripcionPlazaCorta);
             this.groupBox1.Controls.Add(this.lblDescripcionPlaza);
             this.groupBox1.Controls.Add(this.lblCodigoPlaza);
@@ -402,6 +408,7 @@
             // cboMoneda
             // 
             this.cboMoneda.Calculo = null;
+            this.cboMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMoneda.Es_Calculado = false;
             this.cboMoneda.Es_Obligatorio = false;
             this.cboMoneda.Flag_BD = false;
@@ -816,6 +823,75 @@
             this.ucLabel1.Tipo_Dato = null;
             this.ucLabel1.Valor = null;
             // 
+            // lblCodigoMoneda
+            // 
+            this.lblCodigoMoneda.AutoSize = true;
+            this.lblCodigoMoneda.Calculo = null;
+            this.lblCodigoMoneda.Es_Calculado = false;
+            this.lblCodigoMoneda.Es_Obligatorio = false;
+            this.lblCodigoMoneda.Flag_BD = false;
+            this.lblCodigoMoneda.Formula = null;
+            this.lblCodigoMoneda.Indicador = false;
+            this.lblCodigoMoneda.IO = null;
+            this.lblCodigoMoneda.Location = new System.Drawing.Point(72, 73);
+            this.lblCodigoMoneda.Longitud = null;
+            this.lblCodigoMoneda.Name = "lblCodigoMoneda";
+            this.lblCodigoMoneda.Nombre_Campo = null;
+            this.lblCodigoMoneda.Nombre_Control = null;
+            this.lblCodigoMoneda.Precision = null;
+            this.lblCodigoMoneda.Size = new System.Drawing.Size(79, 13);
+            this.lblCodigoMoneda.Solo_Lectura = false;
+            this.lblCodigoMoneda.TabIndex = 2;
+            this.lblCodigoMoneda.Text = "CodigoMoneda";
+            this.lblCodigoMoneda.Tipo_Dato = null;
+            this.lblCodigoMoneda.Valor = null;
+            // 
+            // lblDescripcionMoneda
+            // 
+            this.lblDescripcionMoneda.AutoSize = true;
+            this.lblDescripcionMoneda.Calculo = null;
+            this.lblDescripcionMoneda.Es_Calculado = false;
+            this.lblDescripcionMoneda.Es_Obligatorio = false;
+            this.lblDescripcionMoneda.Flag_BD = false;
+            this.lblDescripcionMoneda.Formula = null;
+            this.lblDescripcionMoneda.Indicador = false;
+            this.lblDescripcionMoneda.IO = null;
+            this.lblDescripcionMoneda.Location = new System.Drawing.Point(157, 73);
+            this.lblDescripcionMoneda.Longitud = null;
+            this.lblDescripcionMoneda.Name = "lblDescripcionMoneda";
+            this.lblDescripcionMoneda.Nombre_Campo = null;
+            this.lblDescripcionMoneda.Nombre_Control = null;
+            this.lblDescripcionMoneda.Precision = null;
+            this.lblDescripcionMoneda.Size = new System.Drawing.Size(102, 13);
+            this.lblDescripcionMoneda.Solo_Lectura = false;
+            this.lblDescripcionMoneda.TabIndex = 2;
+            this.lblDescripcionMoneda.Text = "DescripcionMoneda";
+            this.lblDescripcionMoneda.Tipo_Dato = null;
+            this.lblDescripcionMoneda.Valor = null;
+            // 
+            // lblTipoListaMoneda
+            // 
+            this.lblTipoListaMoneda.AutoSize = true;
+            this.lblTipoListaMoneda.Calculo = null;
+            this.lblTipoListaMoneda.Es_Calculado = false;
+            this.lblTipoListaMoneda.Es_Obligatorio = false;
+            this.lblTipoListaMoneda.Flag_BD = false;
+            this.lblTipoListaMoneda.Formula = null;
+            this.lblTipoListaMoneda.Indicador = false;
+            this.lblTipoListaMoneda.IO = null;
+            this.lblTipoListaMoneda.Location = new System.Drawing.Point(14, 90);
+            this.lblTipoListaMoneda.Longitud = null;
+            this.lblTipoListaMoneda.Name = "lblTipoListaMoneda";
+            this.lblTipoListaMoneda.Nombre_Campo = null;
+            this.lblTipoListaMoneda.Nombre_Control = null;
+            this.lblTipoListaMoneda.Precision = null;
+            this.lblTipoListaMoneda.Size = new System.Drawing.Size(50, 13);
+            this.lblTipoListaMoneda.Solo_Lectura = false;
+            this.lblTipoListaMoneda.TabIndex = 2;
+            this.lblTipoListaMoneda.Text = "TipoLista";
+            this.lblTipoListaMoneda.Tipo_Dato = null;
+            this.lblTipoListaMoneda.Valor = null;
+            // 
             // frmPlaza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,6 +911,7 @@
             this.Load += new System.EventHandler(this.frmPlaza_Load);
             this.tbcPlaza.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaza)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -892,6 +969,9 @@
         private ComponentesGUI.ucLabel lblDescripcionPlazaCorta;
         private ComponentesGUI.ucLabel lblDescripcionPlaza;
         private ComponentesGUI.ucLabel lblCodigoPlaza;
+        private ComponentesGUI.ucLabel lblTipoListaMoneda;
+        private ComponentesGUI.ucLabel lblDescripcionMoneda;
+        private ComponentesGUI.ucLabel lblCodigoMoneda;
 
 
     }

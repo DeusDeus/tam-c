@@ -31,6 +31,12 @@ namespace ComponentesComun
                             {
                                 ((ucButton)pctr).Es_Obligatorio = false;
                             }
+                            ((ucButton)pctr).Nombre_Campo = pdr["NombreCampoBD"].ToString();
+                            ((ucButton)pctr).Valor = pdr["Valor"].ToString();
+                            ((ucButton)pctr).Tipo_Dato = pdr["TipoDato"].ToString();
+                            ((ucButton)pctr).Longitud = pdr["Longitud"].ToString();
+                            ((ucButton)pctr).Precision = pdr["Precision"].ToString();
+                            ((ucButton)pctr).IO = pdr["IO"].ToString();
                             break;
                         }
                     case "cbx":
@@ -51,6 +57,12 @@ namespace ComponentesComun
                             {
                                 ((ucCheckBox)pctr).Es_Obligatorio = false;
                             }
+                            ((ucCheckBox)pctr).Nombre_Campo = pdr["NombreCampoBD"].ToString();
+                            ((ucCheckBox)pctr).Valor = pdr["Valor"].ToString();
+                            ((ucCheckBox)pctr).Tipo_Dato = pdr["TipoDato"].ToString();
+                            ((ucCheckBox)pctr).Longitud = pdr["Longitud"].ToString();
+                            ((ucCheckBox)pctr).Precision = pdr["Precision"].ToString();
+                            ((ucCheckBox)pctr).IO = pdr["IO"].ToString();
                             break;
                         }
                     case "cbo":
@@ -71,6 +83,12 @@ namespace ComponentesComun
                             {
                                 ((ucComboBox)pctr).Es_Obligatorio = false;
                             }
+                            ((ucComboBox)pctr).Nombre_Campo = pdr["NombreCampoBD"].ToString();
+                            ((ucComboBox)pctr).Valor = pdr["Valor"].ToString();
+                            ((ucComboBox)pctr).Tipo_Dato = pdr["TipoDato"].ToString();
+                            ((ucComboBox)pctr).Longitud = pdr["Longitud"].ToString();
+                            ((ucComboBox)pctr).Precision = pdr["Precision"].ToString();
+                            ((ucComboBox)pctr).IO = pdr["IO"].ToString();
                             break;
                         }
                     case "dtp":
@@ -91,6 +109,12 @@ namespace ComponentesComun
                             {
                                 ((ucDateTimePicker)pctr).Es_Obligatorio = false;
                             }
+                            ((ucDateTimePicker)pctr).Nombre_Campo = pdr["NombreCampoBD"].ToString();
+                            ((ucDateTimePicker)pctr).Valor = pdr["Valor"].ToString();
+                            ((ucDateTimePicker)pctr).Tipo_Dato = pdr["TipoDato"].ToString();
+                            ((ucDateTimePicker)pctr).Longitud = pdr["Longitud"].ToString();
+                            ((ucDateTimePicker)pctr).Precision = pdr["Precision"].ToString();
+                            ((ucDateTimePicker)pctr).IO = pdr["IO"].ToString();
                             break;
                         }
                     case "lbl":
@@ -137,6 +161,12 @@ namespace ComponentesComun
                             {
                                 ((ucTextBox)pctr).Es_Obligatorio = false;
                             }
+                            ((ucTextBox)pctr).Nombre_Campo = pdr["NombreCampoBD"].ToString();
+                            ((ucTextBox)pctr).Valor = pdr["Valor"].ToString();
+                            ((ucTextBox)pctr).Tipo_Dato = pdr["TipoDato"].ToString();
+                            ((ucTextBox)pctr).Longitud = pdr["Longitud"].ToString();
+                            ((ucTextBox)pctr).Precision = pdr["Precision"].ToString();
+                            ((ucTextBox)pctr).IO = pdr["IO"].ToString();
                             break;
                         }
                 }

@@ -41,6 +41,8 @@ namespace SpectrumSuite
             dsPlaza = clsNegocio.ConsultarServicio(lstControles, "TRX002");
 
             dgvPlaza.DataSource = dsPlaza.Tables[0];
+
+            for (int i = 0; i < dgvPlaza.Rows.Count; i++) dgvPlaza.Columns[i].ReadOnly = true;
         }
     }
 }

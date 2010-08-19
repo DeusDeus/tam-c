@@ -32,28 +32,10 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvPlaza = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblDescripcionPlazaCorta = new ComponentesGUI.ucLabel();
-            this.lblDescripcionPlaza = new ComponentesGUI.ucLabel();
-            this.lblCodigoPlaza = new ComponentesGUI.ucLabel();
-            this.lblTipoLista = new ComponentesGUI.ucLabel();
-            this.txtDescripcion = new ComponentesGUI.ucTextBox();
-            this.lblDescripcion = new ComponentesGUI.ucLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvMoneda = new System.Windows.Forms.DataGridView();
-            this.cmdCancelar = new ComponentesGUI.ucButton();
-            this.cmdGuardar = new ComponentesGUI.ucButton();
-            this.cmdEliminar2 = new ComponentesGUI.ucButton();
-            this.cmdAgregar = new ComponentesGUI.ucButton();
-            this.cboMoneda = new ComponentesGUI.ucComboBox();
-            this.lblMoneda = new ComponentesGUI.ucLabel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtDescripcion2 = new ComponentesGUI.ucTextBox();
-            this.txtAbreviatura = new ComponentesGUI.ucTextBox();
-            this.txtCodigo = new ComponentesGUI.ucTextBox();
-            this.lblAbreviatura = new ComponentesGUI.ucLabel();
-            this.lblDescripcion2 = new ComponentesGUI.ucLabel();
-            this.lblCodigo = new ComponentesGUI.ucLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textAbreviatura = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,16 +43,34 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textcodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmdNuevo = new ComponentesGUI.ucButton();
-            this.cmdModificar = new ComponentesGUI.ucButton();
-            this.cmdEliminar = new ComponentesGUI.ucButton();
-            this.cmdBuscar = new ComponentesGUI.ucButton();
             this.cmdSalir = new ComponentesGUI.ucButton();
+            this.cmdBuscar = new ComponentesGUI.ucButton();
+            this.cmdEliminar = new ComponentesGUI.ucButton();
+            this.cmdModificar = new ComponentesGUI.ucButton();
+            this.cmdNuevo = new ComponentesGUI.ucButton();
+            this.lblTipoListaMoneda = new ComponentesGUI.ucLabel();
+            this.lblDescripcionMoneda = new ComponentesGUI.ucLabel();
+            this.lblCodigoMoneda = new ComponentesGUI.ucLabel();
+            this.lblDescripcionPlazaCorta = new ComponentesGUI.ucLabel();
+            this.lblDescripcionPlaza = new ComponentesGUI.ucLabel();
+            this.lblCodigoPlaza = new ComponentesGUI.ucLabel();
+            this.lblTipoLista = new ComponentesGUI.ucLabel();
+            this.txtDescripcion = new ComponentesGUI.ucTextBox();
+            this.lblDescripcion = new ComponentesGUI.ucLabel();
+            this.cmdCancelar = new ComponentesGUI.ucButton();
+            this.cmdGuardar = new ComponentesGUI.ucButton();
+            this.cmdEliminar2 = new ComponentesGUI.ucButton();
+            this.cmdAgregar = new ComponentesGUI.ucButton();
+            this.cboMoneda = new ComponentesGUI.ucComboBox();
+            this.lblMoneda = new ComponentesGUI.ucLabel();
+            this.txtDescripcion2 = new ComponentesGUI.ucTextBox();
+            this.txtAbreviatura = new ComponentesGUI.ucTextBox();
+            this.txtCodigo = new ComponentesGUI.ucTextBox();
+            this.lblAbreviatura = new ComponentesGUI.ucLabel();
+            this.lblDescripcion2 = new ComponentesGUI.ucLabel();
+            this.lblCodigo = new ComponentesGUI.ucLabel();
             this.ucTextBox1 = new ComponentesGUI.ucTextBox();
             this.ucLabel1 = new ComponentesGUI.ucLabel();
-            this.lblCodigoMoneda = new ComponentesGUI.ucLabel();
-            this.lblDescripcionMoneda = new ComponentesGUI.ucLabel();
-            this.lblTipoListaMoneda = new ComponentesGUI.ucLabel();
             this.tbcPlaza.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaza)).BeginInit();
@@ -91,6 +91,8 @@
             this.tbcPlaza.SelectedIndex = 0;
             this.tbcPlaza.Size = new System.Drawing.Size(426, 421);
             this.tbcPlaza.TabIndex = 18;
+            this.tbcPlaza.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tbcPlaza_Selecting);
+            this.tbcPlaza.SelectedIndexChanged += new System.EventHandler(this.tbcPlaza_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -137,6 +139,309 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox3);
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(418, 395);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Datos Principales";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvMoneda);
+            this.groupBox3.Controls.Add(this.cmdCancelar);
+            this.groupBox3.Controls.Add(this.cmdGuardar);
+            this.groupBox3.Controls.Add(this.cmdEliminar2);
+            this.groupBox3.Controls.Add(this.cmdAgregar);
+            this.groupBox3.Controls.Add(this.cboMoneda);
+            this.groupBox3.Controls.Add(this.lblMoneda);
+            this.groupBox3.Location = new System.Drawing.Point(15, 138);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(384, 251);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Monedas";
+            // 
+            // dgvMoneda
+            // 
+            this.dgvMoneda.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvMoneda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMoneda.Location = new System.Drawing.Point(13, 58);
+            this.dgvMoneda.Name = "dgvMoneda";
+            this.dgvMoneda.Size = new System.Drawing.Size(260, 143);
+            this.dgvMoneda.TabIndex = 13;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtDescripcion2);
+            this.groupBox4.Controls.Add(this.txtAbreviatura);
+            this.groupBox4.Controls.Add(this.txtCodigo);
+            this.groupBox4.Controls.Add(this.lblAbreviatura);
+            this.groupBox4.Controls.Add(this.lblDescripcion2);
+            this.groupBox4.Controls.Add(this.lblCodigo);
+            this.groupBox4.Location = new System.Drawing.Point(15, 18);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(384, 112);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textAbreviatura);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.textDescrip);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.textcodigo);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Location = new System.Drawing.Point(15, 18);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(384, 112);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            // 
+            // textAbreviatura
+            // 
+            this.textAbreviatura.Location = new System.Drawing.Point(83, 80);
+            this.textAbreviatura.Name = "textAbreviatura";
+            this.textAbreviatura.Size = new System.Drawing.Size(75, 20);
+            this.textAbreviatura.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 83);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Abreviatura";
+            // 
+            // textDescrip
+            // 
+            this.textDescrip.Location = new System.Drawing.Point(83, 46);
+            this.textDescrip.Name = "textDescrip";
+            this.textDescrip.Size = new System.Drawing.Size(271, 20);
+            this.textDescrip.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Descripción";
+            // 
+            // textcodigo
+            // 
+            this.textcodigo.Location = new System.Drawing.Point(83, 13);
+            this.textcodigo.Name = "textcodigo";
+            this.textcodigo.Size = new System.Drawing.Size(75, 20);
+            this.textcodigo.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Código";
+            // 
+            // cmdSalir
+            // 
+            this.cmdSalir.Calculo = null;
+            this.cmdSalir.Es_Calculado = false;
+            this.cmdSalir.Es_Obligatorio = false;
+            this.cmdSalir.Flag_BD = false;
+            this.cmdSalir.Formula = null;
+            this.cmdSalir.Indicador = false;
+            this.cmdSalir.IO = null;
+            this.cmdSalir.Location = new System.Drawing.Point(334, 427);
+            this.cmdSalir.Longitud = null;
+            this.cmdSalir.Name = "cmdSalir";
+            this.cmdSalir.Nombre_Campo = null;
+            this.cmdSalir.Nombre_Control = null;
+            this.cmdSalir.Precision = null;
+            this.cmdSalir.Size = new System.Drawing.Size(75, 23);
+            this.cmdSalir.Solo_Lectura = false;
+            this.cmdSalir.TabIndex = 23;
+            this.cmdSalir.Text = "Salir";
+            this.cmdSalir.Tipo_Dato = null;
+            this.cmdSalir.UseVisualStyleBackColor = true;
+            this.cmdSalir.Valor = null;
+            this.cmdSalir.Click += new System.EventHandler(this.cmdSalir_Click);
+            // 
+            // cmdBuscar
+            // 
+            this.cmdBuscar.Calculo = null;
+            this.cmdBuscar.Es_Calculado = false;
+            this.cmdBuscar.Es_Obligatorio = false;
+            this.cmdBuscar.Flag_BD = false;
+            this.cmdBuscar.Formula = null;
+            this.cmdBuscar.Indicador = false;
+            this.cmdBuscar.IO = null;
+            this.cmdBuscar.Location = new System.Drawing.Point(253, 427);
+            this.cmdBuscar.Longitud = null;
+            this.cmdBuscar.Name = "cmdBuscar";
+            this.cmdBuscar.Nombre_Campo = null;
+            this.cmdBuscar.Nombre_Control = null;
+            this.cmdBuscar.Precision = null;
+            this.cmdBuscar.Size = new System.Drawing.Size(75, 23);
+            this.cmdBuscar.Solo_Lectura = false;
+            this.cmdBuscar.TabIndex = 22;
+            this.cmdBuscar.Text = "Buscar";
+            this.cmdBuscar.Tipo_Dato = null;
+            this.cmdBuscar.UseVisualStyleBackColor = true;
+            this.cmdBuscar.Valor = null;
+            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
+            // 
+            // cmdEliminar
+            // 
+            this.cmdEliminar.Calculo = null;
+            this.cmdEliminar.Es_Calculado = false;
+            this.cmdEliminar.Es_Obligatorio = false;
+            this.cmdEliminar.Flag_BD = false;
+            this.cmdEliminar.Formula = null;
+            this.cmdEliminar.Indicador = false;
+            this.cmdEliminar.IO = null;
+            this.cmdEliminar.Location = new System.Drawing.Point(172, 427);
+            this.cmdEliminar.Longitud = null;
+            this.cmdEliminar.Name = "cmdEliminar";
+            this.cmdEliminar.Nombre_Campo = null;
+            this.cmdEliminar.Nombre_Control = null;
+            this.cmdEliminar.Precision = null;
+            this.cmdEliminar.Size = new System.Drawing.Size(75, 23);
+            this.cmdEliminar.Solo_Lectura = false;
+            this.cmdEliminar.TabIndex = 21;
+            this.cmdEliminar.Text = "Eliminar";
+            this.cmdEliminar.Tipo_Dato = null;
+            this.cmdEliminar.UseVisualStyleBackColor = true;
+            this.cmdEliminar.Valor = null;
+            this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
+            // 
+            // cmdModificar
+            // 
+            this.cmdModificar.Calculo = null;
+            this.cmdModificar.Es_Calculado = false;
+            this.cmdModificar.Es_Obligatorio = false;
+            this.cmdModificar.Flag_BD = false;
+            this.cmdModificar.Formula = null;
+            this.cmdModificar.Indicador = false;
+            this.cmdModificar.IO = null;
+            this.cmdModificar.Location = new System.Drawing.Point(91, 427);
+            this.cmdModificar.Longitud = null;
+            this.cmdModificar.Name = "cmdModificar";
+            this.cmdModificar.Nombre_Campo = null;
+            this.cmdModificar.Nombre_Control = null;
+            this.cmdModificar.Precision = null;
+            this.cmdModificar.Size = new System.Drawing.Size(75, 23);
+            this.cmdModificar.Solo_Lectura = false;
+            this.cmdModificar.TabIndex = 20;
+            this.cmdModificar.Text = "Modificar";
+            this.cmdModificar.Tipo_Dato = null;
+            this.cmdModificar.UseVisualStyleBackColor = true;
+            this.cmdModificar.Valor = null;
+            this.cmdModificar.Click += new System.EventHandler(this.cmdModificar_Click);
+            // 
+            // cmdNuevo
+            // 
+            this.cmdNuevo.Calculo = null;
+            this.cmdNuevo.Es_Calculado = false;
+            this.cmdNuevo.Es_Obligatorio = false;
+            this.cmdNuevo.Flag_BD = false;
+            this.cmdNuevo.Formula = null;
+            this.cmdNuevo.Indicador = false;
+            this.cmdNuevo.IO = null;
+            this.cmdNuevo.Location = new System.Drawing.Point(10, 427);
+            this.cmdNuevo.Longitud = null;
+            this.cmdNuevo.Name = "cmdNuevo";
+            this.cmdNuevo.Nombre_Campo = null;
+            this.cmdNuevo.Nombre_Control = null;
+            this.cmdNuevo.Precision = null;
+            this.cmdNuevo.Size = new System.Drawing.Size(75, 23);
+            this.cmdNuevo.Solo_Lectura = false;
+            this.cmdNuevo.TabIndex = 19;
+            this.cmdNuevo.Text = "Nuevo";
+            this.cmdNuevo.Tipo_Dato = null;
+            this.cmdNuevo.UseVisualStyleBackColor = true;
+            this.cmdNuevo.Valor = null;
+            this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
+            // 
+            // lblTipoListaMoneda
+            // 
+            this.lblTipoListaMoneda.AutoSize = true;
+            this.lblTipoListaMoneda.Calculo = null;
+            this.lblTipoListaMoneda.Es_Calculado = false;
+            this.lblTipoListaMoneda.Es_Obligatorio = false;
+            this.lblTipoListaMoneda.Flag_BD = false;
+            this.lblTipoListaMoneda.Formula = null;
+            this.lblTipoListaMoneda.Indicador = false;
+            this.lblTipoListaMoneda.IO = null;
+            this.lblTipoListaMoneda.Location = new System.Drawing.Point(14, 90);
+            this.lblTipoListaMoneda.Longitud = null;
+            this.lblTipoListaMoneda.Name = "lblTipoListaMoneda";
+            this.lblTipoListaMoneda.Nombre_Campo = null;
+            this.lblTipoListaMoneda.Nombre_Control = null;
+            this.lblTipoListaMoneda.Precision = null;
+            this.lblTipoListaMoneda.Size = new System.Drawing.Size(50, 13);
+            this.lblTipoListaMoneda.Solo_Lectura = false;
+            this.lblTipoListaMoneda.TabIndex = 2;
+            this.lblTipoListaMoneda.Text = "TipoLista";
+            this.lblTipoListaMoneda.Tipo_Dato = null;
+            this.lblTipoListaMoneda.Valor = null;
+            // 
+            // lblDescripcionMoneda
+            // 
+            this.lblDescripcionMoneda.AutoSize = true;
+            this.lblDescripcionMoneda.Calculo = null;
+            this.lblDescripcionMoneda.Es_Calculado = false;
+            this.lblDescripcionMoneda.Es_Obligatorio = false;
+            this.lblDescripcionMoneda.Flag_BD = false;
+            this.lblDescripcionMoneda.Formula = null;
+            this.lblDescripcionMoneda.Indicador = false;
+            this.lblDescripcionMoneda.IO = null;
+            this.lblDescripcionMoneda.Location = new System.Drawing.Point(157, 73);
+            this.lblDescripcionMoneda.Longitud = null;
+            this.lblDescripcionMoneda.Name = "lblDescripcionMoneda";
+            this.lblDescripcionMoneda.Nombre_Campo = null;
+            this.lblDescripcionMoneda.Nombre_Control = null;
+            this.lblDescripcionMoneda.Precision = null;
+            this.lblDescripcionMoneda.Size = new System.Drawing.Size(102, 13);
+            this.lblDescripcionMoneda.Solo_Lectura = false;
+            this.lblDescripcionMoneda.TabIndex = 2;
+            this.lblDescripcionMoneda.Text = "DescripcionMoneda";
+            this.lblDescripcionMoneda.Tipo_Dato = null;
+            this.lblDescripcionMoneda.Valor = null;
+            // 
+            // lblCodigoMoneda
+            // 
+            this.lblCodigoMoneda.AutoSize = true;
+            this.lblCodigoMoneda.Calculo = null;
+            this.lblCodigoMoneda.Es_Calculado = false;
+            this.lblCodigoMoneda.Es_Obligatorio = false;
+            this.lblCodigoMoneda.Flag_BD = false;
+            this.lblCodigoMoneda.Formula = null;
+            this.lblCodigoMoneda.Indicador = false;
+            this.lblCodigoMoneda.IO = null;
+            this.lblCodigoMoneda.Location = new System.Drawing.Point(72, 73);
+            this.lblCodigoMoneda.Longitud = null;
+            this.lblCodigoMoneda.Name = "lblCodigoMoneda";
+            this.lblCodigoMoneda.Nombre_Campo = null;
+            this.lblCodigoMoneda.Nombre_Control = null;
+            this.lblCodigoMoneda.Precision = null;
+            this.lblCodigoMoneda.Size = new System.Drawing.Size(79, 13);
+            this.lblCodigoMoneda.Solo_Lectura = false;
+            this.lblCodigoMoneda.TabIndex = 2;
+            this.lblCodigoMoneda.Text = "CodigoMoneda";
+            this.lblCodigoMoneda.Tipo_Dato = null;
+            this.lblCodigoMoneda.Valor = null;
             // 
             // lblDescripcionPlazaCorta
             // 
@@ -275,44 +580,6 @@
             this.lblDescripcion.Tipo_Dato = null;
             this.lblDescripcion.Valor = null;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(418, 395);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Datos Principales";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgvMoneda);
-            this.groupBox3.Controls.Add(this.cmdCancelar);
-            this.groupBox3.Controls.Add(this.cmdGuardar);
-            this.groupBox3.Controls.Add(this.cmdEliminar2);
-            this.groupBox3.Controls.Add(this.cmdAgregar);
-            this.groupBox3.Controls.Add(this.cboMoneda);
-            this.groupBox3.Controls.Add(this.lblMoneda);
-            this.groupBox3.Location = new System.Drawing.Point(15, 138);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(384, 251);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Monedas";
-            // 
-            // dgvMoneda
-            // 
-            this.dgvMoneda.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvMoneda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMoneda.Location = new System.Drawing.Point(13, 58);
-            this.dgvMoneda.Name = "dgvMoneda";
-            this.dgvMoneda.Size = new System.Drawing.Size(260, 143);
-            this.dgvMoneda.TabIndex = 13;
-            // 
             // cmdCancelar
             // 
             this.cmdCancelar.Calculo = null;
@@ -335,6 +602,7 @@
             this.cmdCancelar.Tipo_Dato = null;
             this.cmdCancelar.UseVisualStyleBackColor = true;
             this.cmdCancelar.Valor = null;
+            this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
             // 
             // cmdGuardar
             // 
@@ -358,6 +626,7 @@
             this.cmdGuardar.Tipo_Dato = null;
             this.cmdGuardar.UseVisualStyleBackColor = true;
             this.cmdGuardar.Valor = null;
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // cmdEliminar2
             // 
@@ -381,6 +650,7 @@
             this.cmdEliminar2.Tipo_Dato = null;
             this.cmdEliminar2.UseVisualStyleBackColor = true;
             this.cmdEliminar2.Valor = null;
+            this.cmdEliminar2.Click += new System.EventHandler(this.cmdEliminar2_Click);
             // 
             // cmdAgregar
             // 
@@ -404,6 +674,7 @@
             this.cmdAgregar.Tipo_Dato = null;
             this.cmdAgregar.UseVisualStyleBackColor = true;
             this.cmdAgregar.Valor = null;
+            this.cmdAgregar.Click += new System.EventHandler(this.cmdAgregar_Click);
             // 
             // cboMoneda
             // 
@@ -450,20 +721,6 @@
             this.lblMoneda.Text = "Moneda";
             this.lblMoneda.Tipo_Dato = null;
             this.lblMoneda.Valor = null;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txtDescripcion2);
-            this.groupBox4.Controls.Add(this.txtAbreviatura);
-            this.groupBox4.Controls.Add(this.txtCodigo);
-            this.groupBox4.Controls.Add(this.lblAbreviatura);
-            this.groupBox4.Controls.Add(this.lblDescripcion2);
-            this.groupBox4.Controls.Add(this.lblCodigo);
-            this.groupBox4.Location = new System.Drawing.Point(15, 18);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(384, 112);
-            this.groupBox4.TabIndex = 0;
-            this.groupBox4.TabStop = false;
             // 
             // txtDescripcion2
             // 
@@ -600,184 +857,6 @@
             this.lblCodigo.Tipo_Dato = null;
             this.lblCodigo.Valor = null;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textAbreviatura);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textDescrip);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textcodigo);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(15, 18);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(384, 112);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            // 
-            // textAbreviatura
-            // 
-            this.textAbreviatura.Location = new System.Drawing.Point(83, 80);
-            this.textAbreviatura.Name = "textAbreviatura";
-            this.textAbreviatura.Size = new System.Drawing.Size(75, 20);
-            this.textAbreviatura.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 83);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Abreviatura";
-            // 
-            // textDescrip
-            // 
-            this.textDescrip.Location = new System.Drawing.Point(83, 46);
-            this.textDescrip.Name = "textDescrip";
-            this.textDescrip.Size = new System.Drawing.Size(271, 20);
-            this.textDescrip.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Descripción";
-            // 
-            // textcodigo
-            // 
-            this.textcodigo.Location = new System.Drawing.Point(83, 13);
-            this.textcodigo.Name = "textcodigo";
-            this.textcodigo.Size = new System.Drawing.Size(75, 20);
-            this.textcodigo.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Código";
-            // 
-            // cmdNuevo
-            // 
-            this.cmdNuevo.Calculo = null;
-            this.cmdNuevo.Es_Calculado = false;
-            this.cmdNuevo.Es_Obligatorio = false;
-            this.cmdNuevo.Flag_BD = false;
-            this.cmdNuevo.Formula = null;
-            this.cmdNuevo.Indicador = false;
-            this.cmdNuevo.IO = null;
-            this.cmdNuevo.Location = new System.Drawing.Point(10, 427);
-            this.cmdNuevo.Longitud = null;
-            this.cmdNuevo.Name = "cmdNuevo";
-            this.cmdNuevo.Nombre_Campo = null;
-            this.cmdNuevo.Nombre_Control = null;
-            this.cmdNuevo.Precision = null;
-            this.cmdNuevo.Size = new System.Drawing.Size(75, 23);
-            this.cmdNuevo.Solo_Lectura = false;
-            this.cmdNuevo.TabIndex = 19;
-            this.cmdNuevo.Text = "Nuevo";
-            this.cmdNuevo.Tipo_Dato = null;
-            this.cmdNuevo.UseVisualStyleBackColor = true;
-            this.cmdNuevo.Valor = null;
-            // 
-            // cmdModificar
-            // 
-            this.cmdModificar.Calculo = null;
-            this.cmdModificar.Es_Calculado = false;
-            this.cmdModificar.Es_Obligatorio = false;
-            this.cmdModificar.Flag_BD = false;
-            this.cmdModificar.Formula = null;
-            this.cmdModificar.Indicador = false;
-            this.cmdModificar.IO = null;
-            this.cmdModificar.Location = new System.Drawing.Point(91, 427);
-            this.cmdModificar.Longitud = null;
-            this.cmdModificar.Name = "cmdModificar";
-            this.cmdModificar.Nombre_Campo = null;
-            this.cmdModificar.Nombre_Control = null;
-            this.cmdModificar.Precision = null;
-            this.cmdModificar.Size = new System.Drawing.Size(75, 23);
-            this.cmdModificar.Solo_Lectura = false;
-            this.cmdModificar.TabIndex = 20;
-            this.cmdModificar.Text = "Modificar";
-            this.cmdModificar.Tipo_Dato = null;
-            this.cmdModificar.UseVisualStyleBackColor = true;
-            this.cmdModificar.Valor = null;
-            // 
-            // cmdEliminar
-            // 
-            this.cmdEliminar.Calculo = null;
-            this.cmdEliminar.Es_Calculado = false;
-            this.cmdEliminar.Es_Obligatorio = false;
-            this.cmdEliminar.Flag_BD = false;
-            this.cmdEliminar.Formula = null;
-            this.cmdEliminar.Indicador = false;
-            this.cmdEliminar.IO = null;
-            this.cmdEliminar.Location = new System.Drawing.Point(172, 427);
-            this.cmdEliminar.Longitud = null;
-            this.cmdEliminar.Name = "cmdEliminar";
-            this.cmdEliminar.Nombre_Campo = null;
-            this.cmdEliminar.Nombre_Control = null;
-            this.cmdEliminar.Precision = null;
-            this.cmdEliminar.Size = new System.Drawing.Size(75, 23);
-            this.cmdEliminar.Solo_Lectura = false;
-            this.cmdEliminar.TabIndex = 21;
-            this.cmdEliminar.Text = "Eliminar";
-            this.cmdEliminar.Tipo_Dato = null;
-            this.cmdEliminar.UseVisualStyleBackColor = true;
-            this.cmdEliminar.Valor = null;
-            // 
-            // cmdBuscar
-            // 
-            this.cmdBuscar.Calculo = null;
-            this.cmdBuscar.Es_Calculado = false;
-            this.cmdBuscar.Es_Obligatorio = false;
-            this.cmdBuscar.Flag_BD = false;
-            this.cmdBuscar.Formula = null;
-            this.cmdBuscar.Indicador = false;
-            this.cmdBuscar.IO = null;
-            this.cmdBuscar.Location = new System.Drawing.Point(253, 427);
-            this.cmdBuscar.Longitud = null;
-            this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Nombre_Campo = null;
-            this.cmdBuscar.Nombre_Control = null;
-            this.cmdBuscar.Precision = null;
-            this.cmdBuscar.Size = new System.Drawing.Size(75, 23);
-            this.cmdBuscar.Solo_Lectura = false;
-            this.cmdBuscar.TabIndex = 22;
-            this.cmdBuscar.Text = "Buscar";
-            this.cmdBuscar.Tipo_Dato = null;
-            this.cmdBuscar.UseVisualStyleBackColor = true;
-            this.cmdBuscar.Valor = null;
-            // 
-            // cmdSalir
-            // 
-            this.cmdSalir.Calculo = null;
-            this.cmdSalir.Es_Calculado = false;
-            this.cmdSalir.Es_Obligatorio = false;
-            this.cmdSalir.Flag_BD = false;
-            this.cmdSalir.Formula = null;
-            this.cmdSalir.Indicador = false;
-            this.cmdSalir.IO = null;
-            this.cmdSalir.Location = new System.Drawing.Point(334, 427);
-            this.cmdSalir.Longitud = null;
-            this.cmdSalir.Name = "cmdSalir";
-            this.cmdSalir.Nombre_Campo = null;
-            this.cmdSalir.Nombre_Control = null;
-            this.cmdSalir.Precision = null;
-            this.cmdSalir.Size = new System.Drawing.Size(75, 23);
-            this.cmdSalir.Solo_Lectura = false;
-            this.cmdSalir.TabIndex = 23;
-            this.cmdSalir.Text = "Salir";
-            this.cmdSalir.Tipo_Dato = null;
-            this.cmdSalir.UseVisualStyleBackColor = true;
-            this.cmdSalir.Valor = null;
-            this.cmdSalir.Click += new System.EventHandler(this.cmdSalir_Click);
-            // 
             // ucTextBox1
             // 
             this.ucTextBox1.BackColor = System.Drawing.Color.White;
@@ -822,75 +901,6 @@
             this.ucLabel1.Text = "Descripción";
             this.ucLabel1.Tipo_Dato = null;
             this.ucLabel1.Valor = null;
-            // 
-            // lblCodigoMoneda
-            // 
-            this.lblCodigoMoneda.AutoSize = true;
-            this.lblCodigoMoneda.Calculo = null;
-            this.lblCodigoMoneda.Es_Calculado = false;
-            this.lblCodigoMoneda.Es_Obligatorio = false;
-            this.lblCodigoMoneda.Flag_BD = false;
-            this.lblCodigoMoneda.Formula = null;
-            this.lblCodigoMoneda.Indicador = false;
-            this.lblCodigoMoneda.IO = null;
-            this.lblCodigoMoneda.Location = new System.Drawing.Point(72, 73);
-            this.lblCodigoMoneda.Longitud = null;
-            this.lblCodigoMoneda.Name = "lblCodigoMoneda";
-            this.lblCodigoMoneda.Nombre_Campo = null;
-            this.lblCodigoMoneda.Nombre_Control = null;
-            this.lblCodigoMoneda.Precision = null;
-            this.lblCodigoMoneda.Size = new System.Drawing.Size(79, 13);
-            this.lblCodigoMoneda.Solo_Lectura = false;
-            this.lblCodigoMoneda.TabIndex = 2;
-            this.lblCodigoMoneda.Text = "CodigoMoneda";
-            this.lblCodigoMoneda.Tipo_Dato = null;
-            this.lblCodigoMoneda.Valor = null;
-            // 
-            // lblDescripcionMoneda
-            // 
-            this.lblDescripcionMoneda.AutoSize = true;
-            this.lblDescripcionMoneda.Calculo = null;
-            this.lblDescripcionMoneda.Es_Calculado = false;
-            this.lblDescripcionMoneda.Es_Obligatorio = false;
-            this.lblDescripcionMoneda.Flag_BD = false;
-            this.lblDescripcionMoneda.Formula = null;
-            this.lblDescripcionMoneda.Indicador = false;
-            this.lblDescripcionMoneda.IO = null;
-            this.lblDescripcionMoneda.Location = new System.Drawing.Point(157, 73);
-            this.lblDescripcionMoneda.Longitud = null;
-            this.lblDescripcionMoneda.Name = "lblDescripcionMoneda";
-            this.lblDescripcionMoneda.Nombre_Campo = null;
-            this.lblDescripcionMoneda.Nombre_Control = null;
-            this.lblDescripcionMoneda.Precision = null;
-            this.lblDescripcionMoneda.Size = new System.Drawing.Size(102, 13);
-            this.lblDescripcionMoneda.Solo_Lectura = false;
-            this.lblDescripcionMoneda.TabIndex = 2;
-            this.lblDescripcionMoneda.Text = "DescripcionMoneda";
-            this.lblDescripcionMoneda.Tipo_Dato = null;
-            this.lblDescripcionMoneda.Valor = null;
-            // 
-            // lblTipoListaMoneda
-            // 
-            this.lblTipoListaMoneda.AutoSize = true;
-            this.lblTipoListaMoneda.Calculo = null;
-            this.lblTipoListaMoneda.Es_Calculado = false;
-            this.lblTipoListaMoneda.Es_Obligatorio = false;
-            this.lblTipoListaMoneda.Flag_BD = false;
-            this.lblTipoListaMoneda.Formula = null;
-            this.lblTipoListaMoneda.Indicador = false;
-            this.lblTipoListaMoneda.IO = null;
-            this.lblTipoListaMoneda.Location = new System.Drawing.Point(14, 90);
-            this.lblTipoListaMoneda.Longitud = null;
-            this.lblTipoListaMoneda.Name = "lblTipoListaMoneda";
-            this.lblTipoListaMoneda.Nombre_Campo = null;
-            this.lblTipoListaMoneda.Nombre_Control = null;
-            this.lblTipoListaMoneda.Precision = null;
-            this.lblTipoListaMoneda.Size = new System.Drawing.Size(50, 13);
-            this.lblTipoListaMoneda.Solo_Lectura = false;
-            this.lblTipoListaMoneda.TabIndex = 2;
-            this.lblTipoListaMoneda.Text = "TipoLista";
-            this.lblTipoListaMoneda.Tipo_Dato = null;
-            this.lblTipoListaMoneda.Valor = null;
             // 
             // frmPlaza
             // 

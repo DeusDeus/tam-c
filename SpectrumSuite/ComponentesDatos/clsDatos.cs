@@ -61,6 +61,7 @@ namespace ComponentesDatos
 
                 XmlNodeList lstParametros = pxmlArchivo.GetElementsByTagName("Parametros");
                 XmlNodeList lstParametro = ((XmlElement)lstParametros[0]).GetElementsByTagName("Parametro");
+
                 foreach (XmlElement nodo in lstParametro)
                 {
                     int i = 0;

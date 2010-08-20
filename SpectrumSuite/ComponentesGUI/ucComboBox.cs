@@ -14,6 +14,8 @@ namespace ComponentesGUI
         private bool blnIndBaseDatos;
         private bool blnIndCalculado;
         private bool blnIndicador = false;
+        private bool blnIndicadorXML = false;
+        private string strNombreTagXML;
         private string strNombreCampoBaseDatos;
         private string strNombreControl;
         private string strValor;
@@ -81,6 +83,19 @@ namespace ComponentesGUI
             set
             {
                 blnIndicador = value;
+            }
+        }
+
+        public bool IndicadorXML
+        {
+            get
+            {
+                return blnIndicadorXML;
+            }
+
+            set
+            {
+                blnIndicadorXML = value;
             }
         }
 
@@ -202,6 +217,18 @@ namespace ComponentesGUI
             set
             {
                 blnIndCalculado = value;
+            }
+        }
+
+        public string NombreTagXML
+        {
+            get
+            {
+                return strNombreTagXML;
+            }
+            set
+            {
+                strNombreTagXML = value;
             }
         }
     }

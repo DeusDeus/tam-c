@@ -5,3 +5,10 @@ C:\TEMP\Repositorio\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.dl
 C:\TEMP\Repositorio\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.pdb
 C:\TEMP\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesGUI.dll
 C:\TEMP\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesGUI.pdb
+C:\TEMP\C#\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesComun.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesComun.pdb
+C:\TEMP\C#\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesGUI.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesGUI.pdb
+C:\TEMP\C#\SpectrumSuite\ComponentesComun\obj\Debug\ResolveAssemblyReference.cache
+C:\TEMP\C#\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.pdb

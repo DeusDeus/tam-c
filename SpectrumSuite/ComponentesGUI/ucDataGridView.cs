@@ -1,10 +1,17 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
 
 namespace ComponentesGUI
 {
-    public partial class ucLabel : Label
+    public partial class ucDataGridView : DataGridView
     {
-        public ucLabel()
+        public ucDataGridView()
         {
             InitializeComponent();
         }

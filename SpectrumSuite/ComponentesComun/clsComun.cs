@@ -37,6 +37,7 @@ namespace ComponentesComun
                             ((ucButton)pctr).Longitud = pdr["Longitud"].ToString();
                             ((ucButton)pctr).Precision = pdr["Precision"].ToString();
                             ((ucButton)pctr).IO = pdr["IO"].ToString();
+                            ((ucButton)pctr).NombreTagXML = pdr["TagXML"].ToString();
                             break;
                         }
                     case "cbx":
@@ -63,6 +64,7 @@ namespace ComponentesComun
                             ((ucCheckBox)pctr).Longitud = pdr["Longitud"].ToString();
                             ((ucCheckBox)pctr).Precision = pdr["Precision"].ToString();
                             ((ucCheckBox)pctr).IO = pdr["IO"].ToString();
+                            ((ucCheckBox)pctr).NombreTagXML = pdr["TagXML"].ToString();
                             break;
                         }
                     case "cbo":
@@ -89,6 +91,34 @@ namespace ComponentesComun
                             ((ucComboBox)pctr).Longitud = pdr["Longitud"].ToString();
                             ((ucComboBox)pctr).Precision = pdr["Precision"].ToString();
                             ((ucComboBox)pctr).IO = pdr["IO"].ToString();
+                            ((ucComboBox)pctr).NombreTagXML = pdr["TagXML"].ToString();
+                            break;
+                        }
+                    case "dgv":
+                        {
+                            if (pdr["IndVisible"].ToString().CompareTo("X") == 0)
+                            {
+                                ((ucDataGridView)pctr).Visible = true;
+                            }
+                            else
+                            {
+                                ((ucDataGridView)pctr).Visible = false;
+                            }
+                            if (pdr["Obligatorio"].ToString().CompareTo("X") == 0)
+                            {
+                                ((ucDataGridView)pctr).Es_Obligatorio = true;
+                            }
+                            else
+                            {
+                                ((ucDataGridView)pctr).Es_Obligatorio = false;
+                            }
+                            ((ucDataGridView)pctr).Nombre_Campo = pdr["NombreCampoBD"].ToString();
+                            ((ucDataGridView)pctr).Valor = pdr["Valor"].ToString();
+                            ((ucDataGridView)pctr).Tipo_Dato = pdr["TipoDato"].ToString();
+                            ((ucDataGridView)pctr).Longitud = pdr["Longitud"].ToString();
+                            ((ucDataGridView)pctr).Precision = pdr["Precision"].ToString();
+                            ((ucDataGridView)pctr).IO = pdr["IO"].ToString();
+                            ((ucDataGridView)pctr).NombreTagXML = pdr["TagXML"].ToString();
                             break;
                         }
                     case "dtp":
@@ -115,6 +145,7 @@ namespace ComponentesComun
                             ((ucDateTimePicker)pctr).Longitud = pdr["Longitud"].ToString();
                             ((ucDateTimePicker)pctr).Precision = pdr["Precision"].ToString();
                             ((ucDateTimePicker)pctr).IO = pdr["IO"].ToString();
+                            ((ucDateTimePicker)pctr).NombreTagXML = pdr["TagXML"].ToString();
                             break;
                         }
                     case "lbl":
@@ -141,6 +172,7 @@ namespace ComponentesComun
                             ((ucLabel)pctr).Longitud = pdr["Longitud"].ToString();
                             ((ucLabel)pctr).Precision = pdr["Precision"].ToString();
                             ((ucLabel)pctr).IO = pdr["IO"].ToString();
+                            ((ucLabel)pctr).NombreTagXML = pdr["TagXML"].ToString();
                             break;
                         }
                     case "txt":
@@ -167,6 +199,7 @@ namespace ComponentesComun
                             ((ucTextBox)pctr).Longitud = pdr["Longitud"].ToString();
                             ((ucTextBox)pctr).Precision = pdr["Precision"].ToString();
                             ((ucTextBox)pctr).IO = pdr["IO"].ToString();
+                            ((ucTextBox)pctr).NombreTagXML = pdr["TagXML"].ToString();
                             break;
                         }
                 }
@@ -201,21 +234,28 @@ namespace ComponentesComun
                     }
                     else
                     {
-                        if (pctr is ucDateTimePicker)
+                        if (pctr is DataGridView)
                         {
-                            ((ucDateTimePicker)pctr).Indicador = false;
+                            ((ucDataGridView)pctr).Indicador = false;
                         }
                         else
                         {
-                            if (pctr is ucLabel)
+                            if (pctr is ucDateTimePicker)
                             {
-                                ((ucLabel)pctr).Indicador = false;
+                                ((ucDateTimePicker)pctr).Indicador = false;
                             }
                             else
                             {
-                                if (pctr is ucTextBox)
+                                if (pctr is ucLabel)
                                 {
-                                    ((ucTextBox)pctr).Indicador = false;
+                                    ((ucLabel)pctr).Indicador = false;
+                                }
+                                else
+                                {
+                                    if (pctr is ucTextBox)
+                                    {
+                                        ((ucTextBox)pctr).Indicador = false;
+                                    }
                                 }
                             }
                         }
@@ -244,21 +284,28 @@ namespace ComponentesComun
                     }
                     else
                     {
-                        if (pctr is ucDateTimePicker)
+                        if (pctr is DataGridView)
                         {
-                            ((ucDateTimePicker)pctr).Indicador = true;
+                            ((ucDataGridView)pctr).Indicador = true;
                         }
                         else
                         {
-                            if (pctr is ucLabel)
+                            if (pctr is ucDateTimePicker)
                             {
-                                ((ucLabel)pctr).Indicador = true;
+                                ((ucDateTimePicker)pctr).Indicador = true;
                             }
                             else
                             {
-                                if (pctr is ucTextBox)
+                                if (pctr is ucLabel)
                                 {
-                                    ((ucTextBox)pctr).Indicador = true;
+                                    ((ucLabel)pctr).Indicador = true;
+                                }
+                                else
+                                {
+                                    if (pctr is ucTextBox)
+                                    {
+                                        ((ucTextBox)pctr).Indicador = true;
+                                    }
                                 }
                             }
                         }

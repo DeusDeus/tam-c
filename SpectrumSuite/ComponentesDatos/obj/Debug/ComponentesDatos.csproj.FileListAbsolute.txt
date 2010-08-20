@@ -8,3 +8,8 @@ C:\TEMP\Repositorio\SpectrumSuite\ComponentesDatos\bin\Debug\ComponentesDatos.pd
 C:\TEMP\Repositorio\SpectrumSuite\ComponentesDatos\obj\Debug\ResolveAssemblyReference.cache
 C:\TEMP\Repositorio\SpectrumSuite\ComponentesDatos\obj\Debug\ComponentesDatos.dll
 C:\TEMP\Repositorio\SpectrumSuite\ComponentesDatos\obj\Debug\ComponentesDatos.pdb
+C:\TEMP\C#\SpectrumSuite\ComponentesDatos\bin\Debug\ComponentesDatos.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesDatos\bin\Debug\ComponentesDatos.pdb
+C:\TEMP\C#\SpectrumSuite\ComponentesDatos\obj\Debug\ResolveAssemblyReference.cache
+C:\TEMP\C#\SpectrumSuite\ComponentesDatos\obj\Debug\ComponentesDatos.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesDatos\obj\Debug\ComponentesDatos.pdb

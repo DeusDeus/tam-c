@@ -66,6 +66,12 @@
     <Compile Include="ucComboBox.Designer.cs">
       <DependentUpon>ucComboBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ucDataGridView.Designer.cs">
+      <DependentUpon>ucDataGridView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucDateTimePicker.cs">
       <SubType>Component</SubType>
     </Compile>

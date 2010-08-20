@@ -10,7 +10,7 @@ namespace SpectrumSuite
     public partial class frmPlaza : Form
     {
         private List<Control> lstControles = new List<Control>();
-        int numIndicador;
+        int numIndicador = 0;
         
         public frmPlaza()
         {
@@ -52,7 +52,7 @@ namespace SpectrumSuite
 
             dgvPlaza.DataSource = dsPlaza.Tables[0];
 
-            for (int i = 0; i < dgvPlaza.Rows.Count; i++) dgvPlaza.Columns[i].ReadOnly = true;
+            for (int i = 0; i < dgvPlaza.Rows.Count; i++) dgvPlaza.Rows[i].ReadOnly = true;
             
             clsComun.DesactivarControl(lblTipoLista);
             clsComun.DesactivarControl(lblCodigoPlaza);
@@ -359,47 +359,27 @@ namespace SpectrumSuite
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
-            //if (textDescrip.Text.Trim().Length != 0)
-            //{
-            //    tabPage1.Enabled = true;
-            //    List<Moneda> listmonedas = new List<Moneda>();
-            //    int i = 0;
-            //    for (i = 0; i < dgvMoneda.Rows.Count; i++)
-            //    {
-            //        Moneda moneda = new Moneda();
-            //        moneda.pcodmoneda = dgvMoneda.Rows[i].Cells[0].Value.ToString();
-            //        moneda.pdescripmoneda = dgvMoneda.Rows[i].Cells[1].Value.ToString();
-            //        listmonedas.Add(moneda);
-            //    }
+            if (ValidarVentana())
+            {
+                if (numIndicador == 0)
+                {
+                    txtCodigo.IndicadorXML = true;
+                    txtDescripcion2.IndicadorXML = true;
+                    txtAbreviatura.IndicadorXML = true;
+                    dgvMoneda.IndicadorXML = true;
 
-            //    Plaza plaza = new Plaza(textcodigo.Text, textDescrip.Text, textAbreviatura.Text, listmonedas);
 
-            //    string stringxml = null;
-            //    stringxml = plaza.serializar_plaza(plaza);
+                }
+                else
+                {
 
-            //    stringxml = stringxml.Trim();
-            //    //Console.WriteLine(stringxml);
-            //    try
-            //    {
-            //        dao.ejecutaProcedimiento("up_CRManPlaza", "@CodUsuario|@valTipoOperacion|@vchXML", "sa", numIndicador.ToString(), stringxml);
-            //        //dao.ejecutaProcedimiento("p_CRManPlaza", "@CodUsuario|@valTipoOperacion|@vchXML", "sa", numIndicador.ToString(), stringxml);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Ocurrió un error al momento de guardar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //        string s = "El error ocurrio en el formulario frmPlaza." + " El error fue: " + ex.Message;
-            //        //errores_log(s);
-            //    }
-            //    limpiar_formulario();
-            //    //Cargardgv1(text_descrip_list.Text);
-            //    CargarPlazas();
-            //    tbcPlaza.SelectTab(0);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Debe ingresar la descripción de la Plaza", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //    textDescrip.Focus();
-            //}
+                }
+            }
+        }
+
+        private bool ValidarVentana()
+        {
+            return true;
         }
 
         private void cmdEliminar2_Click(object sender, EventArgs e)

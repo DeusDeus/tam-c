@@ -43,7 +43,6 @@
             this.lblDescripcion = new ComponentesGUI.ucLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvMoneda = new System.Windows.Forms.DataGridView();
             this.cmdCancelar = new ComponentesGUI.ucButton();
             this.cmdGuardar = new ComponentesGUI.ucButton();
             this.cmdEliminar2 = new ComponentesGUI.ucButton();
@@ -71,6 +70,7 @@
             this.cmdNuevo = new ComponentesGUI.ucButton();
             this.ucTextBox1 = new ComponentesGUI.ucTextBox();
             this.ucLabel1 = new ComponentesGUI.ucLabel();
+            this.dgvMoneda = new ComponentesGUI.ucDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbcPlaza.SuspendLayout();
@@ -79,9 +79,9 @@
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMoneda)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMoneda)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcPlaza
@@ -118,12 +118,14 @@
             this.lblTipoListaMoneda.Flag_BD = false;
             this.lblTipoListaMoneda.Formula = null;
             this.lblTipoListaMoneda.Indicador = false;
+            this.lblTipoListaMoneda.IndicadorXML = false;
             this.lblTipoListaMoneda.IO = null;
             this.lblTipoListaMoneda.Location = new System.Drawing.Point(14, 90);
             this.lblTipoListaMoneda.Longitud = null;
             this.lblTipoListaMoneda.Name = "lblTipoListaMoneda";
             this.lblTipoListaMoneda.Nombre_Campo = null;
             this.lblTipoListaMoneda.Nombre_Control = null;
+            this.lblTipoListaMoneda.NombreTagXML = null;
             this.lblTipoListaMoneda.Precision = null;
             this.lblTipoListaMoneda.Size = new System.Drawing.Size(50, 13);
             this.lblTipoListaMoneda.Solo_Lectura = false;
@@ -175,12 +177,14 @@
             this.lblDescripcionMoneda.Flag_BD = false;
             this.lblDescripcionMoneda.Formula = null;
             this.lblDescripcionMoneda.Indicador = false;
+            this.lblDescripcionMoneda.IndicadorXML = false;
             this.lblDescripcionMoneda.IO = null;
             this.lblDescripcionMoneda.Location = new System.Drawing.Point(157, 73);
             this.lblDescripcionMoneda.Longitud = null;
             this.lblDescripcionMoneda.Name = "lblDescripcionMoneda";
             this.lblDescripcionMoneda.Nombre_Campo = null;
             this.lblDescripcionMoneda.Nombre_Control = null;
+            this.lblDescripcionMoneda.NombreTagXML = null;
             this.lblDescripcionMoneda.Precision = null;
             this.lblDescripcionMoneda.Size = new System.Drawing.Size(102, 13);
             this.lblDescripcionMoneda.Solo_Lectura = false;
@@ -198,12 +202,14 @@
             this.lblCodigoMoneda.Flag_BD = false;
             this.lblCodigoMoneda.Formula = null;
             this.lblCodigoMoneda.Indicador = false;
+            this.lblCodigoMoneda.IndicadorXML = false;
             this.lblCodigoMoneda.IO = null;
             this.lblCodigoMoneda.Location = new System.Drawing.Point(72, 73);
             this.lblCodigoMoneda.Longitud = null;
             this.lblCodigoMoneda.Name = "lblCodigoMoneda";
             this.lblCodigoMoneda.Nombre_Campo = null;
             this.lblCodigoMoneda.Nombre_Control = null;
+            this.lblCodigoMoneda.NombreTagXML = null;
             this.lblCodigoMoneda.Precision = null;
             this.lblCodigoMoneda.Size = new System.Drawing.Size(79, 13);
             this.lblCodigoMoneda.Solo_Lectura = false;
@@ -221,12 +227,14 @@
             this.lblDescripcionPlazaCorta.Flag_BD = false;
             this.lblDescripcionPlazaCorta.Formula = null;
             this.lblDescripcionPlazaCorta.Indicador = false;
+            this.lblDescripcionPlazaCorta.IndicadorXML = false;
             this.lblDescripcionPlazaCorta.IO = null;
             this.lblDescripcionPlazaCorta.Location = new System.Drawing.Point(265, 58);
             this.lblDescripcionPlazaCorta.Longitud = null;
             this.lblDescripcionPlazaCorta.Name = "lblDescripcionPlazaCorta";
             this.lblDescripcionPlazaCorta.Nombre_Campo = null;
             this.lblDescripcionPlazaCorta.Nombre_Control = null;
+            this.lblDescripcionPlazaCorta.NombreTagXML = null;
             this.lblDescripcionPlazaCorta.Precision = null;
             this.lblDescripcionPlazaCorta.Size = new System.Drawing.Size(114, 13);
             this.lblDescripcionPlazaCorta.Solo_Lectura = false;
@@ -244,12 +252,14 @@
             this.lblDescripcionPlaza.Flag_BD = false;
             this.lblDescripcionPlaza.Formula = null;
             this.lblDescripcionPlaza.Indicador = false;
+            this.lblDescripcionPlaza.IndicadorXML = false;
             this.lblDescripcionPlaza.IO = null;
             this.lblDescripcionPlaza.Location = new System.Drawing.Point(157, 58);
             this.lblDescripcionPlaza.Longitud = null;
             this.lblDescripcionPlaza.Name = "lblDescripcionPlaza";
             this.lblDescripcionPlaza.Nombre_Campo = null;
             this.lblDescripcionPlaza.Nombre_Control = null;
+            this.lblDescripcionPlaza.NombreTagXML = null;
             this.lblDescripcionPlaza.Precision = null;
             this.lblDescripcionPlaza.Size = new System.Drawing.Size(89, 13);
             this.lblDescripcionPlaza.Solo_Lectura = false;
@@ -267,12 +277,14 @@
             this.lblCodigoPlaza.Flag_BD = false;
             this.lblCodigoPlaza.Formula = null;
             this.lblCodigoPlaza.Indicador = false;
+            this.lblCodigoPlaza.IndicadorXML = false;
             this.lblCodigoPlaza.IO = null;
             this.lblCodigoPlaza.Location = new System.Drawing.Point(72, 58);
             this.lblCodigoPlaza.Longitud = null;
             this.lblCodigoPlaza.Name = "lblCodigoPlaza";
             this.lblCodigoPlaza.Nombre_Campo = null;
             this.lblCodigoPlaza.Nombre_Control = null;
+            this.lblCodigoPlaza.NombreTagXML = null;
             this.lblCodigoPlaza.Precision = null;
             this.lblCodigoPlaza.Size = new System.Drawing.Size(66, 13);
             this.lblCodigoPlaza.Solo_Lectura = false;
@@ -290,12 +302,14 @@
             this.lblTipoLista.Flag_BD = false;
             this.lblTipoLista.Formula = null;
             this.lblTipoLista.Indicador = false;
+            this.lblTipoLista.IndicadorXML = false;
             this.lblTipoLista.IO = null;
             this.lblTipoLista.Location = new System.Drawing.Point(6, 58);
             this.lblTipoLista.Longitud = null;
             this.lblTipoLista.Name = "lblTipoLista";
             this.lblTipoLista.Nombre_Campo = null;
             this.lblTipoLista.Nombre_Control = null;
+            this.lblTipoLista.NombreTagXML = null;
             this.lblTipoLista.Precision = null;
             this.lblTipoLista.Size = new System.Drawing.Size(50, 13);
             this.lblTipoLista.Solo_Lectura = false;
@@ -313,12 +327,14 @@
             this.txtDescripcion.Flag_BD = false;
             this.txtDescripcion.Formula = null;
             this.txtDescripcion.Indicador = false;
+            this.txtDescripcion.IndicadorXML = false;
             this.txtDescripcion.IO = null;
             this.txtDescripcion.Location = new System.Drawing.Point(75, 28);
             this.txtDescripcion.Longitud = null;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Nombre_Campo = null;
             this.txtDescripcion.Nombre_Control = null;
+            this.txtDescripcion.NombreTagXML = null;
             this.txtDescripcion.Precision = null;
             this.txtDescripcion.Size = new System.Drawing.Size(317, 20);
             this.txtDescripcion.Solo_Lectura = false;
@@ -335,12 +351,14 @@
             this.lblDescripcion.Flag_BD = false;
             this.lblDescripcion.Formula = null;
             this.lblDescripcion.Indicador = false;
+            this.lblDescripcion.IndicadorXML = false;
             this.lblDescripcion.IO = null;
             this.lblDescripcion.Location = new System.Drawing.Point(6, 31);
             this.lblDescripcion.Longitud = null;
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Nombre_Campo = null;
             this.lblDescripcion.Nombre_Control = null;
+            this.lblDescripcion.NombreTagXML = null;
             this.lblDescripcion.Precision = null;
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.Solo_Lectura = false;
@@ -378,24 +396,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Monedas";
             // 
-            // dgvMoneda
-            // 
-            this.dgvMoneda.AllowUserToAddRows = false;
-            this.dgvMoneda.AllowUserToDeleteRows = false;
-            this.dgvMoneda.AllowUserToResizeColumns = false;
-            this.dgvMoneda.AllowUserToResizeRows = false;
-            this.dgvMoneda.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvMoneda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMoneda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dgvMoneda.Location = new System.Drawing.Point(13, 58);
-            this.dgvMoneda.MultiSelect = false;
-            this.dgvMoneda.Name = "dgvMoneda";
-            this.dgvMoneda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMoneda.Size = new System.Drawing.Size(260, 143);
-            this.dgvMoneda.TabIndex = 13;
-            // 
             // cmdCancelar
             // 
             this.cmdCancelar.Calculo = null;
@@ -404,12 +404,14 @@
             this.cmdCancelar.Flag_BD = false;
             this.cmdCancelar.Formula = null;
             this.cmdCancelar.Indicador = false;
+            this.cmdCancelar.IndicadorXML = false;
             this.cmdCancelar.IO = null;
             this.cmdCancelar.Location = new System.Drawing.Point(117, 207);
             this.cmdCancelar.Longitud = null;
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Nombre_Campo = null;
             this.cmdCancelar.Nombre_Control = null;
+            this.cmdCancelar.NombreTagXML = null;
             this.cmdCancelar.Precision = null;
             this.cmdCancelar.Size = new System.Drawing.Size(75, 23);
             this.cmdCancelar.Solo_Lectura = false;
@@ -428,12 +430,14 @@
             this.cmdGuardar.Flag_BD = false;
             this.cmdGuardar.Formula = null;
             this.cmdGuardar.Indicador = false;
+            this.cmdGuardar.IndicadorXML = false;
             this.cmdGuardar.IO = null;
             this.cmdGuardar.Location = new System.Drawing.Point(13, 207);
             this.cmdGuardar.Longitud = null;
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Nombre_Campo = null;
             this.cmdGuardar.Nombre_Control = null;
+            this.cmdGuardar.NombreTagXML = null;
             this.cmdGuardar.Precision = null;
             this.cmdGuardar.Size = new System.Drawing.Size(75, 23);
             this.cmdGuardar.Solo_Lectura = false;
@@ -452,12 +456,14 @@
             this.cmdEliminar2.Flag_BD = false;
             this.cmdEliminar2.Formula = null;
             this.cmdEliminar2.Indicador = false;
+            this.cmdEliminar2.IndicadorXML = false;
             this.cmdEliminar2.IO = null;
             this.cmdEliminar2.Location = new System.Drawing.Point(279, 100);
             this.cmdEliminar2.Longitud = null;
             this.cmdEliminar2.Name = "cmdEliminar2";
             this.cmdEliminar2.Nombre_Campo = null;
             this.cmdEliminar2.Nombre_Control = null;
+            this.cmdEliminar2.NombreTagXML = null;
             this.cmdEliminar2.Precision = null;
             this.cmdEliminar2.Size = new System.Drawing.Size(75, 23);
             this.cmdEliminar2.Solo_Lectura = false;
@@ -476,12 +482,14 @@
             this.cmdAgregar.Flag_BD = false;
             this.cmdAgregar.Formula = null;
             this.cmdAgregar.Indicador = false;
+            this.cmdAgregar.IndicadorXML = false;
             this.cmdAgregar.IO = null;
             this.cmdAgregar.Location = new System.Drawing.Point(279, 58);
             this.cmdAgregar.Longitud = null;
             this.cmdAgregar.Name = "cmdAgregar";
             this.cmdAgregar.Nombre_Campo = null;
             this.cmdAgregar.Nombre_Control = null;
+            this.cmdAgregar.NombreTagXML = null;
             this.cmdAgregar.Precision = null;
             this.cmdAgregar.Size = new System.Drawing.Size(75, 23);
             this.cmdAgregar.Solo_Lectura = false;
@@ -502,12 +510,14 @@
             this.cboMoneda.FormattingEnabled = true;
             this.cboMoneda.Formula = null;
             this.cboMoneda.Indicador = false;
+            this.cboMoneda.IndicadorXML = false;
             this.cboMoneda.IO = null;
             this.cboMoneda.Location = new System.Drawing.Point(83, 19);
             this.cboMoneda.Longitud = null;
             this.cboMoneda.Name = "cboMoneda";
             this.cboMoneda.Nombre_Campo = null;
             this.cboMoneda.Nombre_Control = null;
+            this.cboMoneda.NombreTagXML = null;
             this.cboMoneda.Precision = null;
             this.cboMoneda.Size = new System.Drawing.Size(190, 21);
             this.cboMoneda.Solo_Lectura = false;
@@ -524,12 +534,14 @@
             this.lblMoneda.Flag_BD = false;
             this.lblMoneda.Formula = null;
             this.lblMoneda.Indicador = false;
+            this.lblMoneda.IndicadorXML = false;
             this.lblMoneda.IO = null;
             this.lblMoneda.Location = new System.Drawing.Point(10, 25);
             this.lblMoneda.Longitud = null;
             this.lblMoneda.Name = "lblMoneda";
             this.lblMoneda.Nombre_Campo = null;
             this.lblMoneda.Nombre_Control = null;
+            this.lblMoneda.NombreTagXML = null;
             this.lblMoneda.Precision = null;
             this.lblMoneda.Size = new System.Drawing.Size(46, 13);
             this.lblMoneda.Solo_Lectura = false;
@@ -561,12 +573,14 @@
             this.txtDescripcion2.Flag_BD = false;
             this.txtDescripcion2.Formula = null;
             this.txtDescripcion2.Indicador = false;
+            this.txtDescripcion2.IndicadorXML = false;
             this.txtDescripcion2.IO = null;
             this.txtDescripcion2.Location = new System.Drawing.Point(83, 46);
             this.txtDescripcion2.Longitud = null;
             this.txtDescripcion2.Name = "txtDescripcion2";
             this.txtDescripcion2.Nombre_Campo = null;
             this.txtDescripcion2.Nombre_Control = null;
+            this.txtDescripcion2.NombreTagXML = null;
             this.txtDescripcion2.Precision = null;
             this.txtDescripcion2.Size = new System.Drawing.Size(281, 20);
             this.txtDescripcion2.Solo_Lectura = false;
@@ -583,12 +597,14 @@
             this.txtAbreviatura.Flag_BD = false;
             this.txtAbreviatura.Formula = null;
             this.txtAbreviatura.Indicador = false;
+            this.txtAbreviatura.IndicadorXML = false;
             this.txtAbreviatura.IO = null;
             this.txtAbreviatura.Location = new System.Drawing.Point(83, 80);
             this.txtAbreviatura.Longitud = null;
             this.txtAbreviatura.Name = "txtAbreviatura";
             this.txtAbreviatura.Nombre_Campo = null;
             this.txtAbreviatura.Nombre_Control = null;
+            this.txtAbreviatura.NombreTagXML = null;
             this.txtAbreviatura.Precision = null;
             this.txtAbreviatura.Size = new System.Drawing.Size(109, 20);
             this.txtAbreviatura.Solo_Lectura = false;
@@ -605,12 +621,14 @@
             this.txtCodigo.Flag_BD = false;
             this.txtCodigo.Formula = null;
             this.txtCodigo.Indicador = false;
+            this.txtCodigo.IndicadorXML = false;
             this.txtCodigo.IO = null;
             this.txtCodigo.Location = new System.Drawing.Point(83, 13);
             this.txtCodigo.Longitud = null;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Nombre_Campo = null;
             this.txtCodigo.Nombre_Control = null;
+            this.txtCodigo.NombreTagXML = null;
             this.txtCodigo.Precision = null;
             this.txtCodigo.Size = new System.Drawing.Size(109, 20);
             this.txtCodigo.Solo_Lectura = false;
@@ -627,12 +645,14 @@
             this.lblAbreviatura.Flag_BD = false;
             this.lblAbreviatura.Formula = null;
             this.lblAbreviatura.Indicador = false;
+            this.lblAbreviatura.IndicadorXML = false;
             this.lblAbreviatura.IO = null;
             this.lblAbreviatura.Location = new System.Drawing.Point(10, 83);
             this.lblAbreviatura.Longitud = null;
             this.lblAbreviatura.Name = "lblAbreviatura";
             this.lblAbreviatura.Nombre_Campo = null;
             this.lblAbreviatura.Nombre_Control = null;
+            this.lblAbreviatura.NombreTagXML = null;
             this.lblAbreviatura.Precision = null;
             this.lblAbreviatura.Size = new System.Drawing.Size(61, 13);
             this.lblAbreviatura.Solo_Lectura = false;
@@ -650,12 +670,14 @@
             this.lblDescripcion2.Flag_BD = false;
             this.lblDescripcion2.Formula = null;
             this.lblDescripcion2.Indicador = false;
+            this.lblDescripcion2.IndicadorXML = false;
             this.lblDescripcion2.IO = null;
             this.lblDescripcion2.Location = new System.Drawing.Point(10, 49);
             this.lblDescripcion2.Longitud = null;
             this.lblDescripcion2.Name = "lblDescripcion2";
             this.lblDescripcion2.Nombre_Campo = null;
             this.lblDescripcion2.Nombre_Control = null;
+            this.lblDescripcion2.NombreTagXML = null;
             this.lblDescripcion2.Precision = null;
             this.lblDescripcion2.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion2.Solo_Lectura = false;
@@ -673,12 +695,14 @@
             this.lblCodigo.Flag_BD = false;
             this.lblCodigo.Formula = null;
             this.lblCodigo.Indicador = false;
+            this.lblCodigo.IndicadorXML = false;
             this.lblCodigo.IO = null;
             this.lblCodigo.Location = new System.Drawing.Point(10, 16);
             this.lblCodigo.Longitud = null;
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Nombre_Campo = null;
             this.lblCodigo.Nombre_Control = null;
+            this.lblCodigo.NombreTagXML = null;
             this.lblCodigo.Precision = null;
             this.lblCodigo.Size = new System.Drawing.Size(40, 13);
             this.lblCodigo.Solo_Lectura = false;
@@ -757,12 +781,14 @@
             this.cmdSalir.Flag_BD = false;
             this.cmdSalir.Formula = null;
             this.cmdSalir.Indicador = false;
+            this.cmdSalir.IndicadorXML = false;
             this.cmdSalir.IO = null;
             this.cmdSalir.Location = new System.Drawing.Point(334, 427);
             this.cmdSalir.Longitud = null;
             this.cmdSalir.Name = "cmdSalir";
             this.cmdSalir.Nombre_Campo = null;
             this.cmdSalir.Nombre_Control = null;
+            this.cmdSalir.NombreTagXML = null;
             this.cmdSalir.Precision = null;
             this.cmdSalir.Size = new System.Drawing.Size(75, 23);
             this.cmdSalir.Solo_Lectura = false;
@@ -781,12 +807,14 @@
             this.cmdBuscar.Flag_BD = false;
             this.cmdBuscar.Formula = null;
             this.cmdBuscar.Indicador = false;
+            this.cmdBuscar.IndicadorXML = false;
             this.cmdBuscar.IO = null;
             this.cmdBuscar.Location = new System.Drawing.Point(253, 427);
             this.cmdBuscar.Longitud = null;
             this.cmdBuscar.Name = "cmdBuscar";
             this.cmdBuscar.Nombre_Campo = null;
             this.cmdBuscar.Nombre_Control = null;
+            this.cmdBuscar.NombreTagXML = null;
             this.cmdBuscar.Precision = null;
             this.cmdBuscar.Size = new System.Drawing.Size(75, 23);
             this.cmdBuscar.Solo_Lectura = false;
@@ -805,12 +833,14 @@
             this.cmdEliminar.Flag_BD = false;
             this.cmdEliminar.Formula = null;
             this.cmdEliminar.Indicador = false;
+            this.cmdEliminar.IndicadorXML = false;
             this.cmdEliminar.IO = null;
             this.cmdEliminar.Location = new System.Drawing.Point(172, 427);
             this.cmdEliminar.Longitud = null;
             this.cmdEliminar.Name = "cmdEliminar";
             this.cmdEliminar.Nombre_Campo = null;
             this.cmdEliminar.Nombre_Control = null;
+            this.cmdEliminar.NombreTagXML = null;
             this.cmdEliminar.Precision = null;
             this.cmdEliminar.Size = new System.Drawing.Size(75, 23);
             this.cmdEliminar.Solo_Lectura = false;
@@ -829,12 +859,14 @@
             this.cmdModificar.Flag_BD = false;
             this.cmdModificar.Formula = null;
             this.cmdModificar.Indicador = false;
+            this.cmdModificar.IndicadorXML = false;
             this.cmdModificar.IO = null;
             this.cmdModificar.Location = new System.Drawing.Point(91, 427);
             this.cmdModificar.Longitud = null;
             this.cmdModificar.Name = "cmdModificar";
             this.cmdModificar.Nombre_Campo = null;
             this.cmdModificar.Nombre_Control = null;
+            this.cmdModificar.NombreTagXML = null;
             this.cmdModificar.Precision = null;
             this.cmdModificar.Size = new System.Drawing.Size(75, 23);
             this.cmdModificar.Solo_Lectura = false;
@@ -853,12 +885,14 @@
             this.cmdNuevo.Flag_BD = false;
             this.cmdNuevo.Formula = null;
             this.cmdNuevo.Indicador = false;
+            this.cmdNuevo.IndicadorXML = false;
             this.cmdNuevo.IO = null;
             this.cmdNuevo.Location = new System.Drawing.Point(10, 427);
             this.cmdNuevo.Longitud = null;
             this.cmdNuevo.Name = "cmdNuevo";
             this.cmdNuevo.Nombre_Campo = null;
             this.cmdNuevo.Nombre_Control = null;
+            this.cmdNuevo.NombreTagXML = null;
             this.cmdNuevo.Precision = null;
             this.cmdNuevo.Size = new System.Drawing.Size(75, 23);
             this.cmdNuevo.Solo_Lectura = false;
@@ -878,12 +912,14 @@
             this.ucTextBox1.Flag_BD = false;
             this.ucTextBox1.Formula = null;
             this.ucTextBox1.Indicador = false;
+            this.ucTextBox1.IndicadorXML = false;
             this.ucTextBox1.IO = null;
             this.ucTextBox1.Location = new System.Drawing.Point(75, 28);
             this.ucTextBox1.Longitud = null;
             this.ucTextBox1.Name = "ucTextBox1";
             this.ucTextBox1.Nombre_Campo = null;
             this.ucTextBox1.Nombre_Control = null;
+            this.ucTextBox1.NombreTagXML = null;
             this.ucTextBox1.Precision = null;
             this.ucTextBox1.Size = new System.Drawing.Size(317, 20);
             this.ucTextBox1.Solo_Lectura = false;
@@ -900,12 +936,14 @@
             this.ucLabel1.Flag_BD = false;
             this.ucLabel1.Formula = null;
             this.ucLabel1.Indicador = false;
+            this.ucLabel1.IndicadorXML = false;
             this.ucLabel1.IO = null;
             this.ucLabel1.Location = new System.Drawing.Point(6, 31);
             this.ucLabel1.Longitud = null;
             this.ucLabel1.Name = "ucLabel1";
             this.ucLabel1.Nombre_Campo = null;
             this.ucLabel1.Nombre_Control = null;
+            this.ucLabel1.NombreTagXML = null;
             this.ucLabel1.Precision = null;
             this.ucLabel1.Size = new System.Drawing.Size(63, 13);
             this.ucLabel1.Solo_Lectura = false;
@@ -914,17 +952,53 @@
             this.ucLabel1.Tipo_Dato = null;
             this.ucLabel1.Valor = null;
             // 
+            // dgvMoneda
+            // 
+            this.dgvMoneda.AllowUserToAddRows = false;
+            this.dgvMoneda.AllowUserToDeleteRows = false;
+            this.dgvMoneda.AllowUserToResizeColumns = false;
+            this.dgvMoneda.AllowUserToResizeRows = false;
+            this.dgvMoneda.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvMoneda.Calculo = null;
+            this.dgvMoneda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMoneda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.dgvMoneda.Es_Calculado = false;
+            this.dgvMoneda.Es_Obligatorio = false;
+            this.dgvMoneda.Flag_BD = false;
+            this.dgvMoneda.Formula = null;
+            this.dgvMoneda.Indicador = false;
+            this.dgvMoneda.IndicadorXML = false;
+            this.dgvMoneda.IO = null;
+            this.dgvMoneda.Location = new System.Drawing.Point(13, 57);
+            this.dgvMoneda.Longitud = null;
+            this.dgvMoneda.MultiSelect = false;
+            this.dgvMoneda.Name = "dgvMoneda";
+            this.dgvMoneda.Nombre_Campo = null;
+            this.dgvMoneda.Nombre_Control = null;
+            this.dgvMoneda.NombreTagXML = null;
+            this.dgvMoneda.Precision = null;
+            this.dgvMoneda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMoneda.Size = new System.Drawing.Size(260, 144);
+            this.dgvMoneda.Solo_Lectura = false;
+            this.dgvMoneda.TabIndex = 13;
+            this.dgvMoneda.Tipo_Dato = null;
+            this.dgvMoneda.Valor = null;
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "Código";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Descripción";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // frmPlaza
             // 
@@ -952,11 +1026,11 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMoneda)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMoneda)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -996,7 +1070,6 @@
         private ComponentesGUI.ucLabel lblCodigo;
         private ComponentesGUI.ucButton cmdCancelar;
         private ComponentesGUI.ucButton cmdGuardar;
-        private System.Windows.Forms.DataGridView dgvMoneda;
         private ComponentesGUI.ucTextBox ucTextBox1;
         private ComponentesGUI.ucLabel ucLabel1;
         private ComponentesGUI.ucLabel lblTipoLista;
@@ -1006,6 +1079,7 @@
         private ComponentesGUI.ucLabel lblTipoListaMoneda;
         private ComponentesGUI.ucLabel lblDescripcionMoneda;
         private ComponentesGUI.ucLabel lblCodigoMoneda;
+        private ComponentesGUI.ucDataGridView dgvMoneda;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
 

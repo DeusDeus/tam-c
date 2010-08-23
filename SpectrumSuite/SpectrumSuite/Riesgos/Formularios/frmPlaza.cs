@@ -96,6 +96,38 @@ namespace SpectrumSuite
 
             CargarMonedasPlaza(pstrCodigoPlaza);
         }
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+            if (ValidarVentana())
+            {
+                clsComun.ActivarControlXML(txtCodigo);
+                clsComun.ActivarControlXML(txtDescripcion2);
+                clsComun.ActivarControlXML(txtAbreviatura);
+                clsComun.ActivarControlXML(dgvMoneda);
+
+                clsComun.CrearListaControlesXML(this, lstControles);
+
+                txtCodigo.Valor = txtCodigo.Text;
+                txtDescripcion2.Valor = txtDescripcion2.Text;
+                txtAbreviatura.Valor = txtAbreviatura.Text;
+                lblTipoOperacion.Valor = numIndicador.ToString();
+                lblArchivoXML.Valor = clsComun.RutaXML(lstControles, lblCabecera.NombreTagXML);
+                lblArchivoXML.Tipo_Dato = "xml";
+
+                clsComun.DesactivarControlXML(txtCodigo);
+                clsComun.DesactivarControlXML(txtDescripcion2);
+                clsComun.DesactivarControlXML(txtAbreviatura);
+                clsComun.DesactivarControlXML(dgvMoneda);
+
+                lstControles.Clear();
+
+                clsComun.ActivarControl(lblTipoOperacion);
+                clsComun.ActivarControl(lblCodigoUsuario);
+                clsComun.ActivarControl(lblArchivoXML);
+
+                clsComun.CrearListaControles(this, lstControles);
+            }
+        }
 
         private void CargarMonedasPlaza(string pstrCodigoPlaza)
         {
@@ -353,26 +385,6 @@ namespace SpectrumSuite
                         dgvMoneda.Rows.RemoveAt(dgvMoneda.CurrentRow.Index);
                         cboMoneda.SelectedIndex = -1;
                     }
-                }
-            }
-        }
-
-        private void cmdGuardar_Click(object sender, EventArgs e)
-        {
-            if (ValidarVentana())
-            {
-                if (numIndicador == 0)
-                {
-                    txtCodigo.IndicadorXML = true;
-                    txtDescripcion2.IndicadorXML = true;
-                    txtAbreviatura.IndicadorXML = true;
-                    dgvMoneda.IndicadorXML = true;
-
-
-                }
-                else
-                {
-
                 }
             }
         }

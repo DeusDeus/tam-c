@@ -43,6 +43,9 @@
             this.lblDescripcion = new ComponentesGUI.ucLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvMoneda = new ComponentesGUI.ucDataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmdCancelar = new ComponentesGUI.ucButton();
             this.cmdGuardar = new ComponentesGUI.ucButton();
             this.cmdEliminar2 = new ComponentesGUI.ucButton();
@@ -70,18 +73,19 @@
             this.cmdNuevo = new ComponentesGUI.ucButton();
             this.ucTextBox1 = new ComponentesGUI.ucTextBox();
             this.ucLabel1 = new ComponentesGUI.ucLabel();
-            this.dgvMoneda = new ComponentesGUI.ucDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTipoOperacion = new ComponentesGUI.ucLabel();
+            this.lblCodigoUsuario = new ComponentesGUI.ucLabel();
+            this.lblArchivoXML = new ComponentesGUI.ucLabel();
+            this.lblCabecera = new ComponentesGUI.ucLabel();
             this.tbcPlaza.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaza)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMoneda)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMoneda)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcPlaza
@@ -98,6 +102,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblCabecera);
+            this.tabPage1.Controls.Add(this.lblArchivoXML);
             this.tabPage1.Controls.Add(this.lblTipoListaMoneda);
             this.tabPage1.Controls.Add(this.dgvPlaza);
             this.tabPage1.Controls.Add(this.groupBox1);
@@ -153,6 +159,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblCodigoUsuario);
+            this.groupBox1.Controls.Add(this.lblTipoOperacion);
             this.groupBox1.Controls.Add(this.lblDescripcionMoneda);
             this.groupBox1.Controls.Add(this.lblCodigoMoneda);
             this.groupBox1.Controls.Add(this.lblDescripcionPlazaCorta);
@@ -395,6 +403,54 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Monedas";
+            // 
+            // dgvMoneda
+            // 
+            this.dgvMoneda.AllowUserToAddRows = false;
+            this.dgvMoneda.AllowUserToDeleteRows = false;
+            this.dgvMoneda.AllowUserToResizeColumns = false;
+            this.dgvMoneda.AllowUserToResizeRows = false;
+            this.dgvMoneda.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvMoneda.Calculo = null;
+            this.dgvMoneda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMoneda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.dgvMoneda.Es_Calculado = false;
+            this.dgvMoneda.Es_Obligatorio = false;
+            this.dgvMoneda.Flag_BD = false;
+            this.dgvMoneda.Formula = null;
+            this.dgvMoneda.Indicador = false;
+            this.dgvMoneda.IndicadorXML = false;
+            this.dgvMoneda.IO = null;
+            this.dgvMoneda.Location = new System.Drawing.Point(13, 57);
+            this.dgvMoneda.Longitud = null;
+            this.dgvMoneda.MultiSelect = false;
+            this.dgvMoneda.Name = "dgvMoneda";
+            this.dgvMoneda.Nombre_Campo = null;
+            this.dgvMoneda.Nombre_Control = null;
+            this.dgvMoneda.NombreTagXML = null;
+            this.dgvMoneda.Precision = null;
+            this.dgvMoneda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMoneda.Size = new System.Drawing.Size(260, 144);
+            this.dgvMoneda.Solo_Lectura = false;
+            this.dgvMoneda.TabIndex = 13;
+            this.dgvMoneda.Tipo_Dato = null;
+            this.dgvMoneda.Valor = null;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Código";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Descripción";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // cmdCancelar
             // 
@@ -952,53 +1008,105 @@
             this.ucLabel1.Tipo_Dato = null;
             this.ucLabel1.Valor = null;
             // 
-            // dgvMoneda
+            // lblTipoOperacion
             // 
-            this.dgvMoneda.AllowUserToAddRows = false;
-            this.dgvMoneda.AllowUserToDeleteRows = false;
-            this.dgvMoneda.AllowUserToResizeColumns = false;
-            this.dgvMoneda.AllowUserToResizeRows = false;
-            this.dgvMoneda.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvMoneda.Calculo = null;
-            this.dgvMoneda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMoneda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dgvMoneda.Es_Calculado = false;
-            this.dgvMoneda.Es_Obligatorio = false;
-            this.dgvMoneda.Flag_BD = false;
-            this.dgvMoneda.Formula = null;
-            this.dgvMoneda.Indicador = false;
-            this.dgvMoneda.IndicadorXML = false;
-            this.dgvMoneda.IO = null;
-            this.dgvMoneda.Location = new System.Drawing.Point(13, 57);
-            this.dgvMoneda.Longitud = null;
-            this.dgvMoneda.MultiSelect = false;
-            this.dgvMoneda.Name = "dgvMoneda";
-            this.dgvMoneda.Nombre_Campo = null;
-            this.dgvMoneda.Nombre_Control = null;
-            this.dgvMoneda.NombreTagXML = null;
-            this.dgvMoneda.Precision = null;
-            this.dgvMoneda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMoneda.Size = new System.Drawing.Size(260, 144);
-            this.dgvMoneda.Solo_Lectura = false;
-            this.dgvMoneda.TabIndex = 13;
-            this.dgvMoneda.Tipo_Dato = null;
-            this.dgvMoneda.Valor = null;
+            this.lblTipoOperacion.AutoSize = true;
+            this.lblTipoOperacion.Calculo = null;
+            this.lblTipoOperacion.Es_Calculado = false;
+            this.lblTipoOperacion.Es_Obligatorio = false;
+            this.lblTipoOperacion.Flag_BD = false;
+            this.lblTipoOperacion.Formula = null;
+            this.lblTipoOperacion.Indicador = false;
+            this.lblTipoOperacion.IndicadorXML = false;
+            this.lblTipoOperacion.IO = null;
+            this.lblTipoOperacion.Location = new System.Drawing.Point(265, 73);
+            this.lblTipoOperacion.Longitud = null;
+            this.lblTipoOperacion.Name = "lblTipoOperacion";
+            this.lblTipoOperacion.Nombre_Campo = null;
+            this.lblTipoOperacion.Nombre_Control = null;
+            this.lblTipoOperacion.NombreTagXML = null;
+            this.lblTipoOperacion.Precision = null;
+            this.lblTipoOperacion.Size = new System.Drawing.Size(77, 13);
+            this.lblTipoOperacion.Solo_Lectura = false;
+            this.lblTipoOperacion.TabIndex = 7;
+            this.lblTipoOperacion.Text = "TipoOperacion";
+            this.lblTipoOperacion.Tipo_Dato = null;
+            this.lblTipoOperacion.Valor = null;
             // 
-            // Column1
+            // lblCodigoUsuario
             // 
-            this.Column1.HeaderText = "Código";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.lblCodigoUsuario.AutoSize = true;
+            this.lblCodigoUsuario.Calculo = null;
+            this.lblCodigoUsuario.Es_Calculado = false;
+            this.lblCodigoUsuario.Es_Obligatorio = false;
+            this.lblCodigoUsuario.Flag_BD = false;
+            this.lblCodigoUsuario.Formula = null;
+            this.lblCodigoUsuario.Indicador = false;
+            this.lblCodigoUsuario.IndicadorXML = false;
+            this.lblCodigoUsuario.IO = null;
+            this.lblCodigoUsuario.Location = new System.Drawing.Point(348, 73);
+            this.lblCodigoUsuario.Longitud = null;
+            this.lblCodigoUsuario.Name = "lblCodigoUsuario";
+            this.lblCodigoUsuario.Nombre_Campo = null;
+            this.lblCodigoUsuario.Nombre_Control = null;
+            this.lblCodigoUsuario.NombreTagXML = null;
+            this.lblCodigoUsuario.Precision = null;
+            this.lblCodigoUsuario.Size = new System.Drawing.Size(76, 13);
+            this.lblCodigoUsuario.Solo_Lectura = false;
+            this.lblCodigoUsuario.TabIndex = 3;
+            this.lblCodigoUsuario.Text = "CodigoUsuario";
+            this.lblCodigoUsuario.Tipo_Dato = null;
+            this.lblCodigoUsuario.Valor = null;
             // 
-            // Column2
+            // lblArchivoXML
             // 
-            this.Column2.HeaderText = "Descripción";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.lblArchivoXML.AutoSize = true;
+            this.lblArchivoXML.Calculo = null;
+            this.lblArchivoXML.Es_Calculado = false;
+            this.lblArchivoXML.Es_Obligatorio = false;
+            this.lblArchivoXML.Flag_BD = false;
+            this.lblArchivoXML.Formula = null;
+            this.lblArchivoXML.Indicador = false;
+            this.lblArchivoXML.IndicadorXML = false;
+            this.lblArchivoXML.IO = null;
+            this.lblArchivoXML.Location = new System.Drawing.Point(357, 103);
+            this.lblArchivoXML.Longitud = null;
+            this.lblArchivoXML.Name = "lblArchivoXML";
+            this.lblArchivoXML.Nombre_Campo = null;
+            this.lblArchivoXML.Nombre_Control = null;
+            this.lblArchivoXML.NombreTagXML = null;
+            this.lblArchivoXML.Precision = null;
+            this.lblArchivoXML.Size = new System.Drawing.Size(65, 13);
+            this.lblArchivoXML.Solo_Lectura = false;
+            this.lblArchivoXML.TabIndex = 3;
+            this.lblArchivoXML.Text = "ArchivoXML";
+            this.lblArchivoXML.Tipo_Dato = null;
+            this.lblArchivoXML.Valor = null;
+            // 
+            // lblCabecera
+            // 
+            this.lblCabecera.AutoSize = true;
+            this.lblCabecera.Calculo = null;
+            this.lblCabecera.Es_Calculado = false;
+            this.lblCabecera.Es_Obligatorio = false;
+            this.lblCabecera.Flag_BD = false;
+            this.lblCabecera.Formula = null;
+            this.lblCabecera.Indicador = false;
+            this.lblCabecera.IndicadorXML = false;
+            this.lblCabecera.IO = null;
+            this.lblCabecera.Location = new System.Drawing.Point(273, 102);
+            this.lblCabecera.Longitud = null;
+            this.lblCabecera.Name = "lblCabecera";
+            this.lblCabecera.Nombre_Campo = null;
+            this.lblCabecera.Nombre_Control = null;
+            this.lblCabecera.NombreTagXML = null;
+            this.lblCabecera.Precision = null;
+            this.lblCabecera.Size = new System.Drawing.Size(53, 13);
+            this.lblCabecera.Solo_Lectura = false;
+            this.lblCabecera.TabIndex = 4;
+            this.lblCabecera.Text = "Cabecera";
+            this.lblCabecera.Tipo_Dato = null;
+            this.lblCabecera.Valor = null;
             // 
             // frmPlaza
             // 
@@ -1026,11 +1134,11 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMoneda)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMoneda)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1082,6 +1190,10 @@
         private ComponentesGUI.ucDataGridView dgvMoneda;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private ComponentesGUI.ucLabel lblTipoOperacion;
+        private ComponentesGUI.ucLabel lblCodigoUsuario;
+        private ComponentesGUI.ucLabel lblArchivoXML;
+        private ComponentesGUI.ucLabel lblCabecera;
 
 
     }

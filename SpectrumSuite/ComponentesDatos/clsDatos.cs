@@ -90,6 +90,17 @@ namespace ComponentesDatos
                             sqlParametro.ParameterName = xmlNodoNombre[i].InnerText;
                             sqlParametro.Value = DateTime.Parse(xmlNodoValor[i].InnerText);
                             break;
+                        case "frm":
+                            //No hace nada
+                            break;
+                        case "xml":
+                            sqlParametro = new SqlParameter();
+                            sqlParametro.ParameterName = xmlNodoNombre[i].InnerText;
+                            string strRutaXML = xmlNodoValor[i].InnerText;
+                            XmlDocument xmlDocumento = new XmlDocument();
+                            xmlDocumento.Load(strRutaXML);
+                            sqlParametro.Value = xmlDocumento;
+                            break;
                         default:
                             sqlParametro = new SqlParameter();
                             sqlParametro.ParameterName = xmlNodoNombre[i].InnerText;

@@ -12,3 +12,5 @@ C:\TEMP\C#\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesGUI.pdb
 C:\TEMP\C#\SpectrumSuite\ComponentesComun\obj\Debug\ResolveAssemblyReference.cache
 C:\TEMP\C#\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.dll
 C:\TEMP\C#\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.pdb
+C:\TEMP\C#\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesDatos.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesDatos.pdb

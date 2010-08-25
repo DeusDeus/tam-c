@@ -126,6 +126,9 @@ namespace SpectrumSuite
                 clsComun.ActivarControl(lblArchivoXML);
 
                 clsComun.CrearListaControles(this, lstControles);
+
+                clsNegocio.EjecutarServicio(lstControles, "TRX003");
+
             }
         }
 

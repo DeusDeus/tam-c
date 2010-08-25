@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using ComponentesGUI;
 using System.Xml;
 using ComponentesDatos;
+using System.IO;
+using System;
 
 namespace ComponentesComun
 {
@@ -603,7 +605,7 @@ namespace ComponentesComun
 
                                 Elemento = xmlDocumento.CreateElement(((ucDataGridView)plstControles[i]).NombreTagXML);
                                 Cabecera.AppendChild(Elemento);
-                                DataSet ds = clsDatos.Consultar("SELECT D.Cabecera, D.Tag FROM Formulario_Control_Metadata F, Detalle D WHERE F.IdObjeto = D.IdMetadata AND F.NombreObjeto = '" + ((ucDataGridView)plstControles[i]).Name + "'");
+                                DataSet ds = clsDatos.Consultar("SELECT D.Cabecera, D.Tag FROM Metadata M, MetadataDetalle D WHERE M.IdObjeto = D.IdObjeto AND M.Nombre = '" + ((ucDataGridView)plstControles[i]).Name + "'");
                                 DataTable dt = ds.Tables[0];
 
                                 for (int k = 0; k < ((ucDataGridView)plstControles[i]).Rows.Count; k++)
@@ -651,10 +653,17 @@ namespace ComponentesComun
                 }
             }
 
+            string strRutaArchivoXML;
 
+            strRutaArchivoXML = "C:\\TEMP\\" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".xml";
+           
+            StreamWriter sw = new StreamWriter(strRutaArchivoXML);
+            
+            xmlDocumento.Save(sw);
 
+            sw.Close();
 
-            return "";
+            return strRutaArchivoXML;
         }
     }
 }

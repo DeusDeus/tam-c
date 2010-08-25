@@ -35,6 +35,26 @@ namespace ComponentesNegocio
             return clsDatos.Consultar(strNombreStoredProcedure, xmlDocumento);
         }
 
+        public static void EjecutarServicio(List<Control> plstControles, string pstrNombreServicio)
+        {
+            DataSet ds = new DataSet();
+            string strNombreStoredProcedure = "";
+            string strNombreServicio = "";
+            string strTipoServicio = "";
+
+            XmlDocument xmlDocumento;
+
+            ds = clsDatos.Consultar("SELECT * FROM Servicio WHERE NombreServicio = '" + pstrNombreServicio + "'");
+            strNombreServicio = ds.Tables[0].Rows[0]["NombreServicio"].ToString();
+            strTipoServicio = ds.Tables[0].Rows[0]["TipoServicio"].ToString();
+
+            strNombreStoredProcedure = NombreStoredProcedure(pstrNombreServicio);
+
+            xmlDocumento = CrearXML(plstControles);
+
+            clsDatos.Ejecutar(strNombreStoredProcedure, xmlDocumento);
+        }
+
         private static string NombreStoredProcedure(string pstrNombreServicio)
         {
             DataSet ds = new DataSet();

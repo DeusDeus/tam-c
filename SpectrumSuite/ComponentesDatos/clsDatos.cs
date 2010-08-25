@@ -108,13 +108,20 @@ namespace ComponentesDatos
                             break;
                     }
 
-                    if (xmlNodoIO[i].InnerText.CompareTo("I") == 0)
+                    if (xmlNodoIO[i].InnerText.CompareTo("I ") == 0)
                     {
                         sqlParametro.Direction = System.Data.ParameterDirection.Input;
                     }
                     else
                     {
-                        sqlParametro.Direction = System.Data.ParameterDirection.Output;
+                        if (xmlNodoIO[i].InnerText.CompareTo("O ") == 0)
+                        {
+                            sqlParametro.Direction = System.Data.ParameterDirection.Output;
+                        }
+                        else
+                        {
+                            sqlParametro.Direction = System.Data.ParameterDirection.InputOutput;
+                        }
                     }
 
                     sqlComando.Parameters.Add(sqlParametro);

@@ -11,9 +11,9 @@ namespace ComponentesComun
     {
         public static void CargarControl(Control pctr, DataRow pdr)
         {
-            if (pdr["NombreObjeto"].ToString().CompareTo(pctr.Name) == 0)
+            if (pdr["Nombre"].ToString().CompareTo(pctr.Name) == 0)
             {
-                switch (pdr["TipoObjeto"].ToString())
+                switch (pdr["Tipo"].ToString())
                 {
                     case "cmd":
                         {
@@ -25,7 +25,7 @@ namespace ComponentesComun
                             {
                                 ((ucButton)pctr).Visible = false;
                             }
-                            if (pdr["Obligatorio"].ToString().CompareTo("X") == 0)
+                            if (pdr["IndObligatorio"].ToString().CompareTo("X") == 0)
                             {
                                 ((ucButton)pctr).Es_Obligatorio = true;
                             }
@@ -52,7 +52,7 @@ namespace ComponentesComun
                             {
                                 ((ucCheckBox)pctr).Visible = false;
                             }
-                            if (pdr["Obligatorio"].ToString().CompareTo("X") == 0)
+                            if (pdr["IndObligatorio"].ToString().CompareTo("X") == 0)
                             {
                                 ((ucCheckBox)pctr).Es_Obligatorio = true;
                             }
@@ -79,7 +79,7 @@ namespace ComponentesComun
                             {
                                 ((ucComboBox)pctr).Visible = false;
                             }
-                            if (pdr["Obligatorio"].ToString().CompareTo("X") == 0)
+                            if (pdr["IndObligatorio"].ToString().CompareTo("X") == 0)
                             {
                                 ((ucComboBox)pctr).Es_Obligatorio = true;
                             }
@@ -106,7 +106,7 @@ namespace ComponentesComun
                             {
                                 ((ucDataGridView)pctr).Visible = false;
                             }
-                            if (pdr["Obligatorio"].ToString().CompareTo("X") == 0)
+                            if (pdr["IndObligatorio"].ToString().CompareTo("X") == 0)
                             {
                                 ((ucDataGridView)pctr).Es_Obligatorio = true;
                             }
@@ -133,7 +133,7 @@ namespace ComponentesComun
                             {
                                 ((ucDateTimePicker)pctr).Visible = false;
                             }
-                            if (pdr["Obligatorio"].ToString().CompareTo("X") == 0)
+                            if (pdr["IndObligatorio"].ToString().CompareTo("X") == 0)
                             {
                                 ((ucDateTimePicker)pctr).Es_Obligatorio = true;
                             }
@@ -160,7 +160,7 @@ namespace ComponentesComun
                             {
                                 ((ucLabel)pctr).Visible = false;
                             }
-                            if (pdr["Obligatorio"].ToString().CompareTo("X") == 0)
+                            if (pdr["IndObligatorio"].ToString().CompareTo("X") == 0)
                             {
                                 ((ucLabel)pctr).Es_Obligatorio = true;
                             }
@@ -187,7 +187,7 @@ namespace ComponentesComun
                             {
                                 ((ucTextBox)pctr).Visible = false;
                             }
-                            if (pdr["Obligatorio"].ToString().CompareTo("X") == 0)
+                            if (pdr["IndObligatorio"].ToString().CompareTo("X") == 0)
                             {
                                 ((ucTextBox)pctr).Es_Obligatorio = true;
                             }

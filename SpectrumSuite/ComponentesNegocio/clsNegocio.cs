@@ -12,23 +12,57 @@ namespace ComponentesNegocio
     {
         public static DataSet CargarFormulario(string pstrNombreFormulario)
         {
-            return clsDatos.Consultar("SELECT * FROM Formulario_Control_Metadata WHERE Parent = '" + pstrNombreFormulario + "'");
+            return clsDatos.Consultar("SELECT * FROM Metadata WHERE Parent = '" + pstrNombreFormulario + "'");
         }
 
         public static DataSet ConsultarServicio(List<Control> plstControles, string pstrNombreServicio)
         {
+            DataSet ds = new DataSet();
             string strNombreStoredProcedure = "";
+            string strNombreServicio = "";
+            string strTipoServicio = "";
+
             XmlDocument xmlDocumento;
-            xmlDocumento = CrearXML(plstControles, pstrNombreServicio, ref strNombreStoredProcedure);
+
+            ds = clsDatos.Consultar("SELECT * FROM Servicio WHERE NombreServicio = '" + pstrNombreServicio + "'");
+            strNombreServicio = ds.Tables[0].Rows[0]["NombreServicio"].ToString();
+            strTipoServicio = ds.Tables[0].Rows[0]["TipoServicio"].ToString();
+
+            strNombreStoredProcedure = NombreStoredProcedure(pstrNombreServicio);
+
+            xmlDocumento = CrearXML(plstControles);
 
             return clsDatos.Consultar(strNombreStoredProcedure, xmlDocumento);
         }
 
-        private static XmlDocument CrearXML(List<Control> plstControles, string pstrNombreServicio, ref string pstrNombreStoredProcedure)
+        private static string NombreStoredProcedure(string pstrNombreServicio)
         {
-            DataRow dr;
-            dr = (clsDatos.Consultar("SELECT D.NombreStoredProcedure FROM Servicio S, Detalle_Servicio D WHERE S.NombreServicio = '" + pstrNombreServicio + "' AND S.IdServicio = D.IdServicio")).Tables[0].Rows[0];
-            pstrNombreStoredProcedure = dr["NombreStoredProcedure"].ToString();
+            DataSet ds = new DataSet();
+            string strNombreStoredProcedure = "";
+            string strNombreServicio = "";
+            string strTipoServicio = "";
+
+            ds = clsDatos.Consultar("SELECT NombreServicio, TipoServicio FROM Servicio WHERE IdServicio = (SELECT IdServicio2 FROM Servicio C, ServicioDetalle D WHERE C.IdServicio = D.IdServicio AND C.NombreServicio = '" + pstrNombreServicio + "')");
+            strNombreServicio = ds.Tables[0].Rows[0]["NombreServicio"].ToString();
+            strTipoServicio = ds.Tables[0].Rows[0]["TipoServicio"].ToString();
+
+            if (strTipoServicio.CompareTo("B") == 0)
+            {
+                strNombreStoredProcedure = strNombreServicio;
+            }
+            else
+            {
+                NombreStoredProcedure(strNombreServicio);
+            }
+
+            return strNombreStoredProcedure;
+        }
+
+        private static XmlDocument CrearXML(List<Control> plstControles)
+        {
+            //DataRow dr;
+            //dr = (clsDatos.Consultar("SELECT D.NombreStoredProcedure FROM Servicio S, Detalle_Servicio D WHERE S.NombreServicio = '" + pstrNombreServicio + "' AND S.IdServicio = D.IdServicio")).Tables[0].Rows[0];
+            //pstrNombreStoredProcedure = dr["NombreStoredProcedure"].ToString();
 
             XmlDocument xmlDocumento = new XmlDocument();
 

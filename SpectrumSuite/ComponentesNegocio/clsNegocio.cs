@@ -35,7 +35,7 @@ namespace ComponentesNegocio
             return clsDatos.Consultar(strNombreStoredProcedure, xmlDocumento);
         }
 
-        public static void EjecutarServicio(List<Control> plstControles, string pstrNombreServicio)
+        public static bool EjecutarServicio(List<Control> plstControles, string pstrNombreServicio)
         {
             DataSet ds = new DataSet();
             string strNombreStoredProcedure = "";
@@ -52,7 +52,14 @@ namespace ComponentesNegocio
 
             xmlDocumento = CrearXML(plstControles);
 
-            clsDatos.Ejecutar(strNombreStoredProcedure, xmlDocumento);
+            if (clsDatos.Ejecutar(strNombreStoredProcedure, xmlDocumento))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private static string NombreStoredProcedure(string pstrNombreServicio)

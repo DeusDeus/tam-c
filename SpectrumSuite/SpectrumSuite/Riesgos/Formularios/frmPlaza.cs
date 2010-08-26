@@ -127,8 +127,20 @@ namespace SpectrumSuite
 
                 clsComun.CrearListaControles(this, lstControles);
 
-                clsNegocio.EjecutarServicio(lstControles, "TRX003");
+                clsComun.DesactivarControl(lblTipoOperacion);
+                clsComun.DesactivarControl(lblCodigoUsuario);
+                clsComun.DesactivarControl(lblArchivoXML);
 
+                if (clsNegocio.EjecutarServicio(lstControles, "TRX003"))
+                {
+                    MessageBox.Show("Se guardó la Plaza satisfactoriamente","Registro Exitoso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error mientras se intentaba grabar la Plaza","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+
+                lstControles.Clear();
             }
         }
 
@@ -264,33 +276,6 @@ namespace SpectrumSuite
             }
         }
 
-        //private void cmdEliminar_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvPlaza.Focus() == true)
-        //    {
-        //        if (dgvPlaza.Rows[dgvPlaza.CurrentRow.Index].Cells[0].Value != null)
-        //        {
-        //            DialogResult res = MessageBox.Show("¿Está seguro que desea borrar esta fila?", "Sistema",
-        //                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        //            if (res == DialogResult.Yes)
-        //            {
-        //                numIndicador = 2;
-        //                Plaza plaza = new Plaza();
-        //                plaza.CodPlaza = dgvPlaza.Rows[dgvPlaza.CurrentRow.Index].Cells[0].Value.ToString();
-        //                plaza.DescripPlaza = dgvPlaza.Rows[dgvPlaza.CurrentRow.Index].Cells[1].Value.ToString();
-
-        //                string stringxml = null;
-        //                stringxml = plaza.serializar_plaza(plaza);
-
-        //                stringxml = stringxml.Trim();
-
-        //                dao.ejecutaProcedimiento("up_CRManPlaza", "@valTipoOperacion|@vchXML", numIndicador.ToString(), stringxml);
-        //                dgvPlaza.Rows.RemoveAt(dgvPlaza.CurrentRow.Index);
-        //            }
-        //        }
-        //    }
-        //}
-
         private void cmdBuscar_Click(object sender, EventArgs e)
         {
             string strValorDescripcionPlazaAuxiliar;
@@ -379,17 +364,58 @@ namespace SpectrumSuite
 
         private void cmdEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvMoneda.Focus() == true)
+            if (dgvPlaza.Rows.Count > 0)
             {
-                if (dgvMoneda.Rows.Count > 0)
+                numIndicador = 2;
+
+                clsComun.ActivarControlXML(txtCodigo);
+                clsComun.ActivarControlXML(txtDescripcion2);
+                clsComun.ActivarControlXML(txtAbreviatura);
+                clsComun.ActivarControlXML(dgvMoneda);
+
+                clsComun.CrearListaControlesXML(this, lstControles);
+
+                txtCodigo.Valor = dgvPlaza.Rows[dgvPlaza.CurrentRow.Index].Cells[0].Value.ToString();
+                txtDescripcion2.Valor = txtDescripcion2.Text;
+                txtAbreviatura.Valor = txtAbreviatura.Text;
+                lblTipoOperacion.Valor = numIndicador.ToString();
+                lblArchivoXML.Valor = clsComun.RutaXML(lstControles, lblCabecera.NombreTagXML);
+                lblArchivoXML.Tipo_Dato = "xml";
+
+                clsComun.DesactivarControlXML(txtCodigo);
+                clsComun.DesactivarControlXML(txtDescripcion2);
+                clsComun.DesactivarControlXML(txtAbreviatura);
+                clsComun.DesactivarControlXML(dgvMoneda);
+
+                lstControles.Clear();
+
+                clsComun.ActivarControl(lblTipoOperacion);
+                clsComun.ActivarControl(lblCodigoUsuario);
+                clsComun.ActivarControl(lblArchivoXML);
+
+                clsComun.CrearListaControles(this, lstControles);
+
+                clsComun.DesactivarControl(lblTipoOperacion);
+                clsComun.DesactivarControl(lblCodigoUsuario);
+                clsComun.DesactivarControl(lblArchivoXML);
+
+                if (clsNegocio.EjecutarServicio(lstControles, "TRX003"))
                 {
-                    if (dgvMoneda.Rows[dgvMoneda.CurrentRow.Index].Cells[0].Value != null)
-                    {
-                        dgvMoneda.Rows.RemoveAt(dgvMoneda.CurrentRow.Index);
-                        cboMoneda.SelectedIndex = -1;
-                    }
+                    MessageBox.Show("Se eliminó la Plaza satisfactoriamente", "Eliminación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error mientras se intentaba eliminar la Plaza", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                lstControles.Clear();
             }
+            else
+            {
+                MessageBox.Show("No existen plazas a eliminar", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+
+            CargarPlazas();
         }
 
         private bool ValidarVentana()

@@ -216,12 +216,14 @@ namespace ComponentesDatos
                             string strRutaXML = xmlNodoValor[i].InnerText;
                             XmlDocument xmlDocumento = new XmlDocument();
                             xmlDocumento.Load(strRutaXML);
+                            CambiarXmlEncoding(xmlDocumento, "UTF-16");
                             StringWriter sr = new StringWriter();
-                            XmlTextWriter xmlsr = new XmlTextWriter(sr);
-                            xmlDocumento.WriteTo(xmlsr);
-                            
+                            XmlTextWriter xmltr = new XmlTextWriter(sr);
+                            xmlDocumento.WriteTo(xmltr);
                             sqlParametro.ParameterName = xmlNodoNombre[i].InnerText;
                             sqlParametro.Value = sr.ToString();
+                            sr.Close();
+                            xmltr.Close();
                             break;
                         default:
                             sqlParametro = new SqlParameter();
@@ -261,6 +263,16 @@ namespace ComponentesDatos
                 MessageBox.Show("Ocurrió un error \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+
+        private static XmlDocument CambiarXmlEncoding(XmlDocument pxmlDocumento, string pstrEncoding)
+        {
+            if (pxmlDocumento.FirstChild.NodeType == XmlNodeType.XmlDeclaration)
+            {
+                XmlDeclaration xmlDeclaration = (XmlDeclaration)pxmlDocumento.FirstChild;
+                xmlDeclaration.Encoding = pstrEncoding;
+            }
+            return pxmlDocumento;
         }
     }
 }

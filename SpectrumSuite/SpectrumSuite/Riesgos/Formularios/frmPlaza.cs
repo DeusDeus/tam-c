@@ -17,11 +17,6 @@ namespace SpectrumSuite
             InitializeComponent();
         }
 
-        private void cmdSalir_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
         private void frmPlaza_Load(object sender, EventArgs e)
         {
             DataSet ds = clsNegocio.CargarFormulario(this.Name);
@@ -96,53 +91,6 @@ namespace SpectrumSuite
 
             CargarMonedasPlaza(pstrCodigoPlaza);
         }
-        private void cmdGuardar_Click(object sender, EventArgs e)
-        {
-            if (ValidarVentana())
-            {
-                clsComun.ActivarControlXML(txtCodigo);
-                clsComun.ActivarControlXML(txtDescripcion2);
-                clsComun.ActivarControlXML(txtAbreviatura);
-                clsComun.ActivarControlXML(dgvMoneda);
-
-                clsComun.CrearListaControlesXML(this, lstControles);
-
-                txtCodigo.Valor = txtCodigo.Text;
-                txtDescripcion2.Valor = txtDescripcion2.Text;
-                txtAbreviatura.Valor = txtAbreviatura.Text;
-                lblTipoOperacion.Valor = numIndicador.ToString();
-                lblArchivoXML.Valor = clsComun.RutaXML(lstControles, lblCabecera.NombreTagXML);
-                lblArchivoXML.Tipo_Dato = "xml";
-
-                clsComun.DesactivarControlXML(txtCodigo);
-                clsComun.DesactivarControlXML(txtDescripcion2);
-                clsComun.DesactivarControlXML(txtAbreviatura);
-                clsComun.DesactivarControlXML(dgvMoneda);
-
-                lstControles.Clear();
-
-                clsComun.ActivarControl(lblTipoOperacion);
-                clsComun.ActivarControl(lblCodigoUsuario);
-                clsComun.ActivarControl(lblArchivoXML);
-
-                clsComun.CrearListaControles(this, lstControles);
-
-                clsComun.DesactivarControl(lblTipoOperacion);
-                clsComun.DesactivarControl(lblCodigoUsuario);
-                clsComun.DesactivarControl(lblArchivoXML);
-
-                if (clsNegocio.EjecutarServicio(lstControles, "TRX003"))
-                {
-                    MessageBox.Show("Se guardó la Plaza satisfactoriamente","Registro Exitoso",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Ocurrió un error mientras se intentaba grabar la Plaza","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                }
-
-                lstControles.Clear();
-            }
-        }
 
         private void CargarMonedasPlaza(string pstrCodigoPlaza)
         {
@@ -209,41 +157,6 @@ namespace SpectrumSuite
             lstControles.Clear();
         }
 
-        private void tbcPlaza_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (tbcPlaza.SelectedIndex == 1)
-            {
-                tabPage1.Enabled = false;
-                this.cmdBuscar.Visible = false;
-                this.cmdEliminar.Visible = false;
-                this.cmdNuevo.Visible = false;
-                this.cmdModificar.Visible = false;
-                //llenar_datos();
-            }
-            else
-            {
-                this.cmdBuscar.Visible = true;
-                this.cmdEliminar.Visible = true;
-                this.cmdNuevo.Visible = true;
-                this.cmdModificar.Visible = true;
-            }
-        }
-
-        private void tbcPlaza_Selecting(object sender, TabControlCancelEventArgs e)
-        {
-            if (!e.TabPage.Enabled)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void cmdNuevo_Click(object sender, EventArgs e)
-        {
-            numIndicador = 0;
-            this.tbcPlaza.SelectTab(1);
-            LimpiarFormulario();
-        }
-
         private void LimpiarFormulario()
         {
             txtCodigo.Clear();
@@ -254,17 +167,12 @@ namespace SpectrumSuite
             dgvMoneda.Rows.Clear();
         }
 
-        private void cmdModificar_Click(object sender, EventArgs e)
-        {
-            LlenarDatos();
-        }
-
         private void LlenarDatos()
         {
             if (dgvPlaza.CurrentRow != null)
             {
                 string strCodigoPlaza;
-                
+
                 numIndicador = 1;
                 strCodigoPlaza = dgvPlaza.Rows[dgvPlaza.CurrentRow.Index].Cells[0].Value.ToString();
                 this.tbcPlaza.SelectTab(1);
@@ -272,49 +180,8 @@ namespace SpectrumSuite
             }
             else
             {
-                MessageBox.Show("Debe seleccionar una plaza","Mensaje de Alerta",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show("Debe seleccionar una plaza", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }
-
-        private void cmdBuscar_Click(object sender, EventArgs e)
-        {
-            string strValorDescripcionPlazaAuxiliar;
-                
-            strValorDescripcionPlazaAuxiliar = lblDescripcionPlaza.Valor;
-                
-            lblDescripcionPlaza.Valor = txtDescripcion.Text;
-                
-            CargarPlazas();
-
-            lblDescripcionPlaza.Valor = strValorDescripcionPlazaAuxiliar;
-        }
-
-        private void cmdCancelar_Click(object sender, EventArgs e)
-        {
-            tabPage1.Enabled = true;
-            LimpiarFormulario();
-            CargarPlazas();
-            this.tbcPlaza.SelectTab(0);
-        }
-
-        private void cmdAgregar_Click(object sender, EventArgs e)
-        {
-            if (cboMoneda.SelectedItem != null)
-            {
-                string strDescripcionMoneda = cboMoneda.SelectedItem.ToString();
-                bool blnRepetido = BuscarRepeticion(strDescripcionMoneda);
-                if (!(blnRepetido))
-                {
-                    String strCodigoMoneda = BuscarCodigoMoneda(cboMoneda.SelectedItem.ToString());
-                    string[] row = { strCodigoMoneda, cboMoneda.SelectedItem.ToString() };
-                    dgvMoneda.Rows.Add(row);
-                }
-                else
-                {
-                    MessageBox.Show("Usted ya tiene agregado este tipo de moneda", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-            }
-            cboMoneda.SelectedIndex = 0;
         }
 
         private bool BuscarRepeticion(string pstrDescripcionMoneda)
@@ -350,7 +217,7 @@ namespace SpectrumSuite
             dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRX002");
 
             strCodigoMoneda = dsMonedas.Tables[0].Rows[0]["CodMoneda"].ToString();
-            
+
             clsComun.DesactivarControl(lblTipoListaMoneda);
             clsComun.DesactivarControl(lblCodigoMoneda);
             clsComun.DesactivarControl(lblDescripcionMoneda);
@@ -360,6 +227,46 @@ namespace SpectrumSuite
             lstControles.Clear();
 
             return strCodigoMoneda;
+        }
+
+        private void tbcPlaza_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tbcPlaza.SelectedIndex == 1)
+            {
+                tabPage1.Enabled = false;
+                this.cmdBuscar.Visible = false;
+                this.cmdEliminar.Visible = false;
+                this.cmdNuevo.Visible = false;
+                this.cmdModificar.Visible = false;
+                //llenar_datos();
+            }
+            else
+            {
+                this.cmdBuscar.Visible = true;
+                this.cmdEliminar.Visible = true;
+                this.cmdNuevo.Visible = true;
+                this.cmdModificar.Visible = true;
+            }
+        }
+
+        private void tbcPlaza_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (!e.TabPage.Enabled)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void cmdNuevo_Click(object sender, EventArgs e)
+        {
+            numIndicador = 0;
+            this.tbcPlaza.SelectTab(1);
+            LimpiarFormulario();
+        }
+
+        private void cmdModificar_Click(object sender, EventArgs e)
+        {
+            LlenarDatos();
         }
 
         private void cmdEliminar_Click(object sender, EventArgs e)
@@ -418,9 +325,42 @@ namespace SpectrumSuite
             CargarPlazas();
         }
 
-        private bool ValidarVentana()
+        private void cmdBuscar_Click(object sender, EventArgs e)
         {
-            return true;
+            string strValorDescripcionPlazaAuxiliar;
+
+            strValorDescripcionPlazaAuxiliar = lblDescripcionPlaza.Valor;
+
+            lblDescripcionPlaza.Valor = txtDescripcion.Text;
+
+            CargarPlazas();
+
+            lblDescripcionPlaza.Valor = strValorDescripcionPlazaAuxiliar;
+        }
+
+        private void cmdSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void cmdAgregar_Click(object sender, EventArgs e)
+        {
+            if (cboMoneda.SelectedItem != null)
+            {
+                string strDescripcionMoneda = cboMoneda.SelectedItem.ToString();
+                bool blnRepetido = BuscarRepeticion(strDescripcionMoneda);
+                if (!(blnRepetido))
+                {
+                    String strCodigoMoneda = BuscarCodigoMoneda(cboMoneda.SelectedItem.ToString());
+                    string[] row = { strCodigoMoneda, cboMoneda.SelectedItem.ToString() };
+                    dgvMoneda.Rows.Add(row);
+                }
+                else
+                {
+                    MessageBox.Show("Usted ya tiene agregado este tipo de moneda", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            cboMoneda.SelectedIndex = 0;
         }
 
         private void cmdEliminar2_Click(object sender, EventArgs e)
@@ -434,5 +374,66 @@ namespace SpectrumSuite
                 MessageBox.Show("No hay monedas para eliminar", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void cmdCancelar_Click(object sender, EventArgs e)
+        {
+            tabPage1.Enabled = true;
+            LimpiarFormulario();
+            CargarPlazas();
+            this.tbcPlaza.SelectTab(0);
+        }
+
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+            if (ValidarVentana())
+            {
+                clsComun.ActivarControlXML(txtCodigo);
+                clsComun.ActivarControlXML(txtDescripcion2);
+                clsComun.ActivarControlXML(txtAbreviatura);
+                clsComun.ActivarControlXML(dgvMoneda);
+
+                clsComun.CrearListaControlesXML(this, lstControles);
+
+                txtCodigo.Valor = txtCodigo.Text;
+                txtDescripcion2.Valor = txtDescripcion2.Text;
+                txtAbreviatura.Valor = txtAbreviatura.Text;
+                lblTipoOperacion.Valor = numIndicador.ToString();
+                lblArchivoXML.Valor = clsComun.RutaXML(lstControles, lblCabecera.NombreTagXML);
+                lblArchivoXML.Tipo_Dato = "xml";
+
+                clsComun.DesactivarControlXML(txtCodigo);
+                clsComun.DesactivarControlXML(txtDescripcion2);
+                clsComun.DesactivarControlXML(txtAbreviatura);
+                clsComun.DesactivarControlXML(dgvMoneda);
+
+                lstControles.Clear();
+
+                clsComun.ActivarControl(lblTipoOperacion);
+                clsComun.ActivarControl(lblCodigoUsuario);
+                clsComun.ActivarControl(lblArchivoXML);
+
+                clsComun.CrearListaControles(this, lstControles);
+
+                clsComun.DesactivarControl(lblTipoOperacion);
+                clsComun.DesactivarControl(lblCodigoUsuario);
+                clsComun.DesactivarControl(lblArchivoXML);
+
+                if (clsNegocio.EjecutarServicio(lstControles, "TRX003"))
+                {
+                    MessageBox.Show("Se guardó la Plaza satisfactoriamente", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error mientras se intentaba grabar la Plaza", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                lstControles.Clear();
+            }
+        }
+
+        private bool ValidarVentana()
+        {
+            return true;
+        } 
     }
 }

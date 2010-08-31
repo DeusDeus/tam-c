@@ -12,77 +12,97 @@ namespace ComponentesNegocio
     {
         public static DataSet CargarFormulario(string pstrNombreFormulario)
         {
-            return clsDatos.Consultar("SELECT * FROM Metadata WHERE Parent = '" + pstrNombreFormulario + "'");
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            dt = clsDatos.Consultar("SELECT * FROM Metadata WHERE Parent = '" + pstrNombreFormulario + "'");
+
+            ds.Tables.Add(dt);
+
+            return ds;
         }
 
         public static DataSet ConsultarServicio(List<Control> plstControles, string pstrNombreServicio)
         {
             DataSet ds = new DataSet();
-            string strNombreStoredProcedure = "";
+            DataTable dt = new DataTable();
+            List<string> lstNombreStoredProcedure = new List<string>();
             string strNombreServicio = "";
             string strTipoServicio = "";
 
             XmlDocument xmlDocumento;
 
-            ds = clsDatos.Consultar("SELECT * FROM Servicio WHERE NombreServicio = '" + pstrNombreServicio + "'");
-            strNombreServicio = ds.Tables[0].Rows[0]["NombreServicio"].ToString();
-            strTipoServicio = ds.Tables[0].Rows[0]["TipoServicio"].ToString();
+            dt = clsDatos.Consultar("SELECT * FROM Servicio WHERE NombreServicio = '" + pstrNombreServicio + "'");
+            strNombreServicio = dt.Rows[0]["NombreServicio"].ToString();
+            strTipoServicio = dt.Rows[0]["TipoServicio"].ToString();
 
-            strNombreStoredProcedure = NombreStoredProcedure(pstrNombreServicio);
+            lstNombreStoredProcedure = NombreStoredProcedure(pstrNombreServicio);
 
             xmlDocumento = CrearXML(plstControles);
 
-            return clsDatos.Consultar(strNombreStoredProcedure, xmlDocumento);
+            for (int i=0; i<lstNombreStoredProcedure.Count;i++)
+            {
+                dt = clsDatos.Consultar(lstNombreStoredProcedure[i], xmlDocumento);
+                ds.Tables.Add(dt);
+            }
+
+            return ds;
         }
 
         public static bool EjecutarServicio(List<Control> plstControles, string pstrNombreServicio)
         {
             DataSet ds = new DataSet();
-            string strNombreStoredProcedure = "";
+            DataTable dt = new DataTable();
+            List<string> lstNombreStoredProcedure = new List<string>();
             string strNombreServicio = "";
             string strTipoServicio = "";
+            bool exito = true;
 
             XmlDocument xmlDocumento;
 
-            ds = clsDatos.Consultar("SELECT * FROM Servicio WHERE NombreServicio = '" + pstrNombreServicio + "'");
-            strNombreServicio = ds.Tables[0].Rows[0]["NombreServicio"].ToString();
-            strTipoServicio = ds.Tables[0].Rows[0]["TipoServicio"].ToString();
+            dt = clsDatos.Consultar("SELECT * FROM Servicio WHERE NombreServicio = '" + pstrNombreServicio + "'");
+            strNombreServicio = dt.Rows[0]["NombreServicio"].ToString();
+            strTipoServicio = dt.Rows[0]["TipoServicio"].ToString();
 
-            strNombreStoredProcedure = NombreStoredProcedure(pstrNombreServicio);
+            lstNombreStoredProcedure = NombreStoredProcedure(pstrNombreServicio);
 
             xmlDocumento = CrearXML(plstControles);
 
-            if (clsDatos.Ejecutar(strNombreStoredProcedure, xmlDocumento))
+            for (int i = 0; i < lstNombreStoredProcedure.Count; i++)
             {
-                return true;
+                if (!clsDatos.Ejecutar(lstNombreStoredProcedure[i], xmlDocumento))
+                {
+                    exito = false;
+                    break;
+                }              
             }
-            else
-            {
-                return false;
-            }
+
+            return exito;
         }
 
-        private static string NombreStoredProcedure(string pstrNombreServicio)
+        private static List<string> NombreStoredProcedure(string pstrNombreServicio)
         {
             DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            List<string> lstNombreStoredProcedure = new List<string>();
             string strNombreStoredProcedure = "";
             string strNombreServicio = "";
             string strTipoServicio = "";
 
-            ds = clsDatos.Consultar("SELECT NombreServicio, TipoServicio FROM Servicio WHERE IdServicio = (SELECT IdServicio2 FROM Servicio C, ServicioDetalle D WHERE C.IdServicio = D.IdServicio AND C.NombreServicio = '" + pstrNombreServicio + "')");
-            strNombreServicio = ds.Tables[0].Rows[0]["NombreServicio"].ToString();
-            strTipoServicio = ds.Tables[0].Rows[0]["TipoServicio"].ToString();
+            dt = clsDatos.Consultar("SELECT NombreServicio, TipoServicio FROM Servicio WHERE IdServicio = (SELECT IdServicio2 FROM Servicio C, ServicioDetalle D WHERE C.IdServicio = D.IdServicio AND C.NombreServicio = '" + pstrNombreServicio + "')");
+            strNombreServicio = dt.Rows[0]["NombreServicio"].ToString();
+            strTipoServicio = dt.Rows[0]["TipoServicio"].ToString();
 
             if (strTipoServicio.CompareTo("B") == 0)
             {
                 strNombreStoredProcedure = strNombreServicio;
+                lstNombreStoredProcedure.Add(strNombreStoredProcedure);
             }
             else
             {
                 NombreStoredProcedure(strNombreServicio);
             }
 
-            return strNombreStoredProcedure;
+            return lstNombreStoredProcedure;
         }
 
         private static XmlDocument CrearXML(List<Control> plstControles)

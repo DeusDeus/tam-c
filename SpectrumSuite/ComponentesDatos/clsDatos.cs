@@ -29,7 +29,7 @@ namespace ComponentesDatos
             return cnn;
         }
 
-        public static DataSet Consultar(string pstrComandoSql)
+        public static DataTable Consultar(string pstrComandoSql)
         {
             try
             {
@@ -37,12 +37,12 @@ namespace ComponentesDatos
                 SqlCommand sqlComando = new SqlCommand(pstrComandoSql, cnn);
                 cnn.Open();
                 SqlDataAdapter da = new SqlDataAdapter(sqlComando);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
                 
                 cnn.Close();
 
-                return ds;
+                return dt;
             }
             catch(Exception e)
             {
@@ -71,7 +71,7 @@ namespace ComponentesDatos
             }
         }
 
-        public static DataSet Consultar(String pstrNombreStoredProcedure, XmlDocument pxmlArchivo)
+        public static DataTable Consultar(String pstrNombreStoredProcedure, XmlDocument pxmlArchivo)
         {
             try
             {
@@ -152,12 +152,12 @@ namespace ComponentesDatos
                 }
 
                 SqlDataAdapter da = new SqlDataAdapter(sqlComando);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
                 
                 cnn.Close();
                 
-                return ds;
+                return dt;
             }
             catch (Exception ex)
             {
@@ -175,7 +175,11 @@ namespace ComponentesDatos
 
                 SqlCommand sqlComando = new SqlCommand(pstrNombreStoredProcedure, cnn);
                 sqlComando.CommandType = CommandType.StoredProcedure;
+                SqlCommand sqlComandoAux = new SqlCommand(pstrNombreStoredProcedure, cnn);
+                sqlComandoAux.CommandType = CommandType.StoredProcedure;
                 SqlParameter sqlParametro = new SqlParameter();
+
+                SqlCommandBuilder.DeriveParameters(sqlComandoAux);
 
                 XmlNodeList lstParametros = pxmlArchivo.GetElementsByTagName("Parametros");
                 XmlNodeList lstParametro = ((XmlElement)lstParametros[0]).GetElementsByTagName("Parametro");
@@ -248,7 +252,15 @@ namespace ComponentesDatos
                         }
                     }
 
-                    sqlComando.Parameters.Add(sqlParametro);
+                    for (int k = 1; k <= sqlComandoAux.Parameters.Count; k++)
+                    {
+                        if (sqlParametro.ParameterName.ToString().CompareTo(sqlComandoAux.Parameters[k].ParameterName) == 0)
+                        {
+                            sqlComando.Parameters.Add(sqlParametro);
+                            break;
+                        }
+                    }
+                    
                     i++;
                 }
 

@@ -605,8 +605,7 @@ namespace ComponentesComun
 
                                 Elemento = xmlDocumento.CreateElement(((ucDataGridView)plstControles[i]).NombreTagXML);
                                 Cabecera.AppendChild(Elemento);
-                                DataSet ds = clsDatos.Consultar("SELECT D.Cabecera, D.Tag FROM Metadata M, MetadataDetalle D WHERE M.IdObjeto = D.IdObjeto AND M.Nombre = '" + ((ucDataGridView)plstControles[i]).Name + "'");
-                                DataTable dt = ds.Tables[0];
+                                DataTable dt = clsDatos.Consultar("SELECT D.Cabecera, D.Tag FROM Metadata M, MetadataDetalle D WHERE M.IdObjeto = D.IdObjeto AND M.Nombre = '" + ((ucDataGridView)plstControles[i]).Name + "'");
 
                                 for (int k = 0; k < ((ucDataGridView)plstControles[i]).Rows.Count; k++)
                                 {

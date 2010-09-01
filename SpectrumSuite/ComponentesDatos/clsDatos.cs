@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Windows.Forms;
 using System.Xml;
-using System.IO;
-using System.Text;
 
 namespace ComponentesDatos
 {
@@ -73,6 +72,9 @@ namespace ComponentesDatos
 
         public static DataTable Consultar(String pstrNombreStoredProcedure, XmlDocument pxmlArchivo)
         {
+            string strRutaXML = "";
+            bool blnIndicador = false;
+
             try
             {
                 SqlConnection cnn = Conectar("sa", "sa");
@@ -118,11 +120,18 @@ namespace ComponentesDatos
                             break;
                         case "xml":
                             sqlParametro = new SqlParameter();
-                            sqlParametro.ParameterName = xmlNodoNombre[i].InnerText;
-                            string strRutaXML = xmlNodoValor[i].InnerText;
+                            strRutaXML = xmlNodoValor[i].InnerText;
                             XmlDocument xmlDocumento = new XmlDocument();
                             xmlDocumento.Load(strRutaXML);
-                            sqlParametro.Value = xmlDocumento;
+                            CambiarXmlEncoding(xmlDocumento, "UTF-16");
+                            StringWriter sr = new StringWriter();
+                            XmlTextWriter xmltr = new XmlTextWriter(sr);
+                            xmlDocumento.WriteTo(xmltr);
+                            sqlParametro.ParameterName = xmlNodoNombre[i].InnerText;
+                            sqlParametro.Value = sr.ToString();
+                            sr.Close();
+                            xmltr.Close();
+                            blnIndicador = true;
                             break;
                         default:
                             sqlParametro = new SqlParameter();
@@ -156,6 +165,11 @@ namespace ComponentesDatos
                 da.Fill(dt);
                 
                 cnn.Close();
+
+                if (blnIndicador)
+                {
+                    File.Delete(strRutaXML);
+                }
                 
                 return dt;
             }
@@ -168,6 +182,9 @@ namespace ComponentesDatos
 
         public static bool Ejecutar(String pstrNombreStoredProcedure, XmlDocument pxmlArchivo)
         {
+            string strRutaXML = "";
+            bool blnIndicador = false;
+
             try
             {
                 SqlConnection cnn = Conectar("sa", "sa");
@@ -217,7 +234,7 @@ namespace ComponentesDatos
                             break;
                         case "xml":
                             sqlParametro = new SqlParameter();
-                            string strRutaXML = xmlNodoValor[i].InnerText;
+                            strRutaXML = xmlNodoValor[i].InnerText;
                             XmlDocument xmlDocumento = new XmlDocument();
                             xmlDocumento.Load(strRutaXML);
                             CambiarXmlEncoding(xmlDocumento, "UTF-16");
@@ -228,6 +245,7 @@ namespace ComponentesDatos
                             sqlParametro.Value = sr.ToString();
                             sr.Close();
                             xmltr.Close();
+                            blnIndicador = true;
                             break;
                         default:
                             sqlParametro = new SqlParameter();
@@ -267,6 +285,11 @@ namespace ComponentesDatos
                 sqlComando.ExecuteNonQuery();
 
                 cnn.Close();
+
+                if (blnIndicador)
+                {
+                    File.Delete(strRutaXML);
+                }
 
                 return true;
             }

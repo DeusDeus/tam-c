@@ -30,9 +30,13 @@
         {
             this.tbcPlaza = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblCabecera = new ComponentesGUI.ucLabel();
+            this.lblArchivoXML = new ComponentesGUI.ucLabel();
             this.lblTipoListaMoneda = new ComponentesGUI.ucLabel();
             this.dgvPlaza = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCodigoUsuario = new ComponentesGUI.ucLabel();
+            this.lblTipoOperacion = new ComponentesGUI.ucLabel();
             this.lblDescripcionMoneda = new ComponentesGUI.ucLabel();
             this.lblCodigoMoneda = new ComponentesGUI.ucLabel();
             this.lblDescripcionPlazaCorta = new ComponentesGUI.ucLabel();
@@ -73,10 +77,6 @@
             this.cmdNuevo = new ComponentesGUI.ucButton();
             this.ucTextBox1 = new ComponentesGUI.ucTextBox();
             this.ucLabel1 = new ComponentesGUI.ucLabel();
-            this.lblTipoOperacion = new ComponentesGUI.ucLabel();
-            this.lblCodigoUsuario = new ComponentesGUI.ucLabel();
-            this.lblArchivoXML = new ComponentesGUI.ucLabel();
-            this.lblCabecera = new ComponentesGUI.ucLabel();
             this.tbcPlaza.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlaza)).BeginInit();
@@ -114,6 +114,56 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lista";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lblCabecera
+            // 
+            this.lblCabecera.AutoSize = true;
+            this.lblCabecera.Calculo = null;
+            this.lblCabecera.Es_Calculado = false;
+            this.lblCabecera.Es_Obligatorio = false;
+            this.lblCabecera.Flag_BD = false;
+            this.lblCabecera.Formula = null;
+            this.lblCabecera.Indicador = false;
+            this.lblCabecera.IndicadorXML = false;
+            this.lblCabecera.IO = null;
+            this.lblCabecera.Location = new System.Drawing.Point(273, 102);
+            this.lblCabecera.Longitud = null;
+            this.lblCabecera.Name = "lblCabecera";
+            this.lblCabecera.Nombre_Campo = null;
+            this.lblCabecera.Nombre_Control = null;
+            this.lblCabecera.NombreTagXML = null;
+            this.lblCabecera.Precision = null;
+            this.lblCabecera.Size = new System.Drawing.Size(53, 13);
+            this.lblCabecera.Solo_Lectura = false;
+            this.lblCabecera.TabIndex = 4;
+            this.lblCabecera.Text = "Cabecera";
+            this.lblCabecera.Tipo_Dato = null;
+            this.lblCabecera.Valor = null;
+            // 
+            // lblArchivoXML
+            // 
+            this.lblArchivoXML.AutoSize = true;
+            this.lblArchivoXML.Calculo = null;
+            this.lblArchivoXML.Es_Calculado = false;
+            this.lblArchivoXML.Es_Obligatorio = false;
+            this.lblArchivoXML.Flag_BD = false;
+            this.lblArchivoXML.Formula = null;
+            this.lblArchivoXML.Indicador = false;
+            this.lblArchivoXML.IndicadorXML = false;
+            this.lblArchivoXML.IO = null;
+            this.lblArchivoXML.Location = new System.Drawing.Point(357, 103);
+            this.lblArchivoXML.Longitud = null;
+            this.lblArchivoXML.Name = "lblArchivoXML";
+            this.lblArchivoXML.Nombre_Campo = null;
+            this.lblArchivoXML.Nombre_Control = null;
+            this.lblArchivoXML.NombreTagXML = null;
+            this.lblArchivoXML.Precision = null;
+            this.lblArchivoXML.Size = new System.Drawing.Size(65, 13);
+            this.lblArchivoXML.Solo_Lectura = false;
+            this.lblArchivoXML.TabIndex = 3;
+            this.lblArchivoXML.Text = "ArchivoXML";
+            this.lblArchivoXML.Tipo_Dato = null;
+            this.lblArchivoXML.Valor = null;
             // 
             // lblTipoListaMoneda
             // 
@@ -175,6 +225,56 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de Búsqueda";
+            // 
+            // lblCodigoUsuario
+            // 
+            this.lblCodigoUsuario.AutoSize = true;
+            this.lblCodigoUsuario.Calculo = null;
+            this.lblCodigoUsuario.Es_Calculado = false;
+            this.lblCodigoUsuario.Es_Obligatorio = false;
+            this.lblCodigoUsuario.Flag_BD = false;
+            this.lblCodigoUsuario.Formula = null;
+            this.lblCodigoUsuario.Indicador = false;
+            this.lblCodigoUsuario.IndicadorXML = false;
+            this.lblCodigoUsuario.IO = null;
+            this.lblCodigoUsuario.Location = new System.Drawing.Point(348, 73);
+            this.lblCodigoUsuario.Longitud = null;
+            this.lblCodigoUsuario.Name = "lblCodigoUsuario";
+            this.lblCodigoUsuario.Nombre_Campo = null;
+            this.lblCodigoUsuario.Nombre_Control = null;
+            this.lblCodigoUsuario.NombreTagXML = null;
+            this.lblCodigoUsuario.Precision = null;
+            this.lblCodigoUsuario.Size = new System.Drawing.Size(76, 13);
+            this.lblCodigoUsuario.Solo_Lectura = false;
+            this.lblCodigoUsuario.TabIndex = 3;
+            this.lblCodigoUsuario.Text = "CodigoUsuario";
+            this.lblCodigoUsuario.Tipo_Dato = null;
+            this.lblCodigoUsuario.Valor = null;
+            // 
+            // lblTipoOperacion
+            // 
+            this.lblTipoOperacion.AutoSize = true;
+            this.lblTipoOperacion.Calculo = null;
+            this.lblTipoOperacion.Es_Calculado = false;
+            this.lblTipoOperacion.Es_Obligatorio = false;
+            this.lblTipoOperacion.Flag_BD = false;
+            this.lblTipoOperacion.Formula = null;
+            this.lblTipoOperacion.Indicador = false;
+            this.lblTipoOperacion.IndicadorXML = false;
+            this.lblTipoOperacion.IO = null;
+            this.lblTipoOperacion.Location = new System.Drawing.Point(265, 73);
+            this.lblTipoOperacion.Longitud = null;
+            this.lblTipoOperacion.Name = "lblTipoOperacion";
+            this.lblTipoOperacion.Nombre_Campo = null;
+            this.lblTipoOperacion.Nombre_Control = null;
+            this.lblTipoOperacion.NombreTagXML = null;
+            this.lblTipoOperacion.Precision = null;
+            this.lblTipoOperacion.Size = new System.Drawing.Size(77, 13);
+            this.lblTipoOperacion.Solo_Lectura = false;
+            this.lblTipoOperacion.TabIndex = 7;
+            this.lblTipoOperacion.Text = "TipoOperacion";
+            this.lblTipoOperacion.Tipo_Dato = null;
+            this.lblTipoOperacion.Valor = null;
             // 
             // lblDescripcionMoneda
             // 
@@ -687,7 +787,7 @@
             this.txtCodigo.NombreTagXML = null;
             this.txtCodigo.Precision = null;
             this.txtCodigo.Size = new System.Drawing.Size(109, 20);
-            this.txtCodigo.Solo_Lectura = false;
+            this.txtCodigo.Solo_Lectura = true;
             this.txtCodigo.TabIndex = 10;
             this.txtCodigo.Tipo_Dato = null;
             this.txtCodigo.Valor = null;
@@ -1007,106 +1107,6 @@
             this.ucLabel1.Text = "Descripción";
             this.ucLabel1.Tipo_Dato = null;
             this.ucLabel1.Valor = null;
-            // 
-            // lblTipoOperacion
-            // 
-            this.lblTipoOperacion.AutoSize = true;
-            this.lblTipoOperacion.Calculo = null;
-            this.lblTipoOperacion.Es_Calculado = false;
-            this.lblTipoOperacion.Es_Obligatorio = false;
-            this.lblTipoOperacion.Flag_BD = false;
-            this.lblTipoOperacion.Formula = null;
-            this.lblTipoOperacion.Indicador = false;
-            this.lblTipoOperacion.IndicadorXML = false;
-            this.lblTipoOperacion.IO = null;
-            this.lblTipoOperacion.Location = new System.Drawing.Point(265, 73);
-            this.lblTipoOperacion.Longitud = null;
-            this.lblTipoOperacion.Name = "lblTipoOperacion";
-            this.lblTipoOperacion.Nombre_Campo = null;
-            this.lblTipoOperacion.Nombre_Control = null;
-            this.lblTipoOperacion.NombreTagXML = null;
-            this.lblTipoOperacion.Precision = null;
-            this.lblTipoOperacion.Size = new System.Drawing.Size(77, 13);
-            this.lblTipoOperacion.Solo_Lectura = false;
-            this.lblTipoOperacion.TabIndex = 7;
-            this.lblTipoOperacion.Text = "TipoOperacion";
-            this.lblTipoOperacion.Tipo_Dato = null;
-            this.lblTipoOperacion.Valor = null;
-            // 
-            // lblCodigoUsuario
-            // 
-            this.lblCodigoUsuario.AutoSize = true;
-            this.lblCodigoUsuario.Calculo = null;
-            this.lblCodigoUsuario.Es_Calculado = false;
-            this.lblCodigoUsuario.Es_Obligatorio = false;
-            this.lblCodigoUsuario.Flag_BD = false;
-            this.lblCodigoUsuario.Formula = null;
-            this.lblCodigoUsuario.Indicador = false;
-            this.lblCodigoUsuario.IndicadorXML = false;
-            this.lblCodigoUsuario.IO = null;
-            this.lblCodigoUsuario.Location = new System.Drawing.Point(348, 73);
-            this.lblCodigoUsuario.Longitud = null;
-            this.lblCodigoUsuario.Name = "lblCodigoUsuario";
-            this.lblCodigoUsuario.Nombre_Campo = null;
-            this.lblCodigoUsuario.Nombre_Control = null;
-            this.lblCodigoUsuario.NombreTagXML = null;
-            this.lblCodigoUsuario.Precision = null;
-            this.lblCodigoUsuario.Size = new System.Drawing.Size(76, 13);
-            this.lblCodigoUsuario.Solo_Lectura = false;
-            this.lblCodigoUsuario.TabIndex = 3;
-            this.lblCodigoUsuario.Text = "CodigoUsuario";
-            this.lblCodigoUsuario.Tipo_Dato = null;
-            this.lblCodigoUsuario.Valor = null;
-            // 
-            // lblArchivoXML
-            // 
-            this.lblArchivoXML.AutoSize = true;
-            this.lblArchivoXML.Calculo = null;
-            this.lblArchivoXML.Es_Calculado = false;
-            this.lblArchivoXML.Es_Obligatorio = false;
-            this.lblArchivoXML.Flag_BD = false;
-            this.lblArchivoXML.Formula = null;
-            this.lblArchivoXML.Indicador = false;
-            this.lblArchivoXML.IndicadorXML = false;
-            this.lblArchivoXML.IO = null;
-            this.lblArchivoXML.Location = new System.Drawing.Point(357, 103);
-            this.lblArchivoXML.Longitud = null;
-            this.lblArchivoXML.Name = "lblArchivoXML";
-            this.lblArchivoXML.Nombre_Campo = null;
-            this.lblArchivoXML.Nombre_Control = null;
-            this.lblArchivoXML.NombreTagXML = null;
-            this.lblArchivoXML.Precision = null;
-            this.lblArchivoXML.Size = new System.Drawing.Size(65, 13);
-            this.lblArchivoXML.Solo_Lectura = false;
-            this.lblArchivoXML.TabIndex = 3;
-            this.lblArchivoXML.Text = "ArchivoXML";
-            this.lblArchivoXML.Tipo_Dato = null;
-            this.lblArchivoXML.Valor = null;
-            // 
-            // lblCabecera
-            // 
-            this.lblCabecera.AutoSize = true;
-            this.lblCabecera.Calculo = null;
-            this.lblCabecera.Es_Calculado = false;
-            this.lblCabecera.Es_Obligatorio = false;
-            this.lblCabecera.Flag_BD = false;
-            this.lblCabecera.Formula = null;
-            this.lblCabecera.Indicador = false;
-            this.lblCabecera.IndicadorXML = false;
-            this.lblCabecera.IO = null;
-            this.lblCabecera.Location = new System.Drawing.Point(273, 102);
-            this.lblCabecera.Longitud = null;
-            this.lblCabecera.Name = "lblCabecera";
-            this.lblCabecera.Nombre_Campo = null;
-            this.lblCabecera.Nombre_Control = null;
-            this.lblCabecera.NombreTagXML = null;
-            this.lblCabecera.Precision = null;
-            this.lblCabecera.Size = new System.Drawing.Size(53, 13);
-            this.lblCabecera.Solo_Lectura = false;
-            this.lblCabecera.TabIndex = 4;
-            this.lblCabecera.Text = "Cabecera";
-            this.lblCabecera.Tipo_Dato = null;
-            this.lblCabecera.Valor = null;
             // 
             // frmPlaza
             // 

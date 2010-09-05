@@ -18,6 +18,7 @@ namespace Wizard.Formularios
             InitializeComponent();
             objWizardPag3 = new frmWizardPag3(this);
             objWizardPag3.Visible = false;
+            objWizardPag3.Location = this.Location;
             objWizardPag1 = (frmWizardPag1)frmWizardPag1;
         }
 

@@ -17,6 +17,7 @@ namespace Wizard.Formularios
             InitializeComponent();
             objWizardPag2 = new frmWizardPag2(this);
             objWizardPag2.Visible = false;
+            objWizardPag2.Location = this.Location;
         }
 
         private void cmdSiguiente_Click(object sender, EventArgs e)

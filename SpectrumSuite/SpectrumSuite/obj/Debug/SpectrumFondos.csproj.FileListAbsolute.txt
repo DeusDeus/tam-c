@@ -37,3 +37,19 @@ C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Debug\ResolveAssemblyReference.cache
 C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.frmPlaza.resources
 C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.Properties.Resources.resources
 C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumFondos.csproj.GenerateResource.Cache
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.exe
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\SpectrumSuite.exe
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\SpectrumSuite.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesComun.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesGUI.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesNegocio.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesDatos.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesComun.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesDatos.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesNegocio.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\bin\Debug\ComponentesGUI.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\ResolveAssemblyReference.cache
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.frmPlaza.resources
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.Properties.Resources.resources
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumFondos.csproj.GenerateResource.Cache

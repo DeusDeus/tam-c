@@ -15,3 +15,8 @@ C:\TEMP\C#\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.dll
 C:\TEMP\C#\SpectrumSuite\ComponentesGUI\bin\Debug\ComponentesGUI.dll
 C:\TEMP\C#\SpectrumSuite\ComponentesGUI\bin\Debug\ComponentesGUI.pdb
 C:\TEMP\C#\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesGUI\bin\Debug\ComponentesGUI.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesGUI\bin\Debug\ComponentesGUI.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ResolveAssemblyReference.cache
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesGUI\obj\Debug\ComponentesGUI.pdb

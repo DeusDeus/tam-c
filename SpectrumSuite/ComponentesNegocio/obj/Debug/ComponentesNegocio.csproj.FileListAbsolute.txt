@@ -21,3 +21,12 @@ C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesGUI.pdb
 C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\obj\Debug\ResolveAssemblyReference.cache
 C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\obj\Debug\ComponentesNegocio.dll
 C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\obj\Debug\ComponentesNegocio.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesNegocio.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesNegocio.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesDatos.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesGUI.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesDatos.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesNegocio\bin\Debug\ComponentesGUI.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesNegocio\obj\Debug\ResolveAssemblyReference.cache
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesNegocio\obj\Debug\ComponentesNegocio.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesNegocio\obj\Debug\ComponentesNegocio.pdb

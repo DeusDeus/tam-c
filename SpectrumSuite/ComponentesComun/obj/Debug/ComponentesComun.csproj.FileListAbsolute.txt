@@ -14,3 +14,12 @@ C:\TEMP\C#\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.dll
 C:\TEMP\C#\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.pdb
 C:\TEMP\C#\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesDatos.dll
 C:\TEMP\C#\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesDatos.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesComun.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesComun.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesDatos.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesGUI.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesDatos.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesComun\bin\Debug\ComponentesGUI.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesComun\obj\Debug\ResolveAssemblyReference.cache
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\ComponentesComun\obj\Debug\ComponentesComun.pdb

@@ -34,6 +34,7 @@
     <Reference Include="Extensibility, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -41,12 +42,56 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CommandBar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandBar.resx</DependentUpon>
+    </Compile>
     <Compile Include="Connect.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Formularios\frmWizardPag1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmWizardPag1.Designer.cs">
+      <DependentUpon>frmWizardPag1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmWizardPag2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmWizardPag2.Designer.cs">
+      <DependentUpon>frmWizardPag2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmWizardPag3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmWizardPag3.Designer.cs">
+      <DependentUpon>frmWizardPag3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmWizardPag4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmWizardPag4.Designer.cs">
+      <DependentUpon>frmWizardPag4.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CommandBar.resx" />
+    <EmbeddedResource Include="CommandBar.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandBar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmWizardPag1.resx">
+      <DependentUpon>frmWizardPag1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmWizardPag2.resx">
+      <DependentUpon>frmWizardPag2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmWizardPag3.resx">
+      <DependentUpon>frmWizardPag3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmWizardPag4.resx">
+      <DependentUpon>frmWizardPag4.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="EnvDTE">

@@ -1,0 +1,8 @@
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\Wizard\bin\Project1.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\Wizard\bin\Project1.pdb
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\Wizard\obj\Debug\ResolveAssemblyReference.cache
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\Wizard\obj\Debug\Wizard.csproj.ResolveComReference.cache
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\Wizard\obj\Debug\Wizard.CommandBar.resources
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\Wizard\obj\Debug\Wizard.csproj.GenerateResource.Cache
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\Wizard\obj\Debug\Project1.dll
+C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\Wizard\obj\Debug\Project1.pdb

@@ -12,11 +12,13 @@ namespace Wizard.Formularios
     {
         private frmWizardPag1 objWizardPag1;
         private frmWizardPag3 objWizardPag3;
+        private Connect objConnect;
 
-        public frmWizardPag2(Form frmWizardPag1)
+        public frmWizardPag2(Form frmWizardPag1, Connect pobjConnect)
         {
             InitializeComponent();
-            objWizardPag3 = new frmWizardPag3(this);
+            objConnect = pobjConnect;
+            objWizardPag3 = new frmWizardPag3(this, pobjConnect);
             objWizardPag3.Visible = false;
             objWizardPag3.Location = this.Location;
             objWizardPag1 = (frmWizardPag1)frmWizardPag1;
@@ -42,6 +44,7 @@ namespace Wizard.Formularios
 
             if (dr == DialogResult.Yes)
             {
+                objConnect.Reset();
                 this.Dispose();
             }
         }

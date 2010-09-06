@@ -6,11 +6,13 @@ namespace Wizard.Formularios
     public partial class frmWizardPag1 : Form
     {
         private frmWizardPag2 objWizardPag2;
+        private Connect objConnect;
 
-        public frmWizardPag1()
+        public frmWizardPag1(Connect pobjConnect)
         {
             InitializeComponent();
-            objWizardPag2 = new frmWizardPag2(this);
+            objConnect = pobjConnect;
+            objWizardPag2 = new frmWizardPag2(this, objConnect);
             objWizardPag2.Visible = false;
             objWizardPag2.Location = this.Location;
         }
@@ -24,10 +26,11 @@ namespace Wizard.Formularios
 
         private void cmdCancelar_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Está seguro que desea cancelar", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult dr = MessageBox.Show("Está seguro que desea cancelar", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
             if (dr == DialogResult.Yes)
             {
+                objConnect.Reset();
                 this.Dispose();
             }
         }

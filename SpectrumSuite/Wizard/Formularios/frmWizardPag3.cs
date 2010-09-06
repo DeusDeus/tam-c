@@ -11,12 +11,14 @@ namespace Wizard.Formularios
     public partial class frmWizardPag3 : Form
     {
         private frmWizardPag2 objWizardPag2;
-        private frmWizardPag4 objWizardPag4; 
+        private frmWizardPag4 objWizardPag4;
+        Connect objConnect;
 
-        public frmWizardPag3(Form frmWizardPag2)
+        public frmWizardPag3(Form frmWizardPag2, Connect pobjConnect)
         {
             InitializeComponent();
-            objWizardPag4 = new frmWizardPag4(this);
+            objConnect = pobjConnect;
+            objWizardPag4 = new frmWizardPag4(this,pobjConnect);
             objWizardPag4.Visible = false;
             objWizardPag4.Location = this.Location;
             objWizardPag2 = (frmWizardPag2)frmWizardPag2;
@@ -35,6 +37,7 @@ namespace Wizard.Formularios
 
             if (dr == DialogResult.Yes)
             {
+                objConnect.Reset();
                 this.Dispose();
             }
         }

@@ -48,30 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\frmWizardPag1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmWizardPag1.Designer.cs">
-      <DependentUpon>frmWizardPag1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmWizardPag2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmWizardPag2.Designer.cs">
-      <DependentUpon>frmWizardPag2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmWizardPag3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmWizardPag3.Designer.cs">
-      <DependentUpon>frmWizardPag3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\frmWizardPag4.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmWizardPag4.Designer.cs">
-      <DependentUpon>frmWizardPag4.cs</DependentUpon>
-    </Compile>
     <Compile Include="Riesgos\Formularios\frmPlaza.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,18 +56,6 @@
     </Compile>
     <Compile Include="SpectrumFondos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\frmWizardPag1.resx">
-      <DependentUpon>frmWizardPag1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmWizardPag2.resx">
-      <DependentUpon>frmWizardPag2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmWizardPag3.resx">
-      <DependentUpon>frmWizardPag3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\frmWizardPag4.resx">
-      <DependentUpon>frmWizardPag4.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Riesgos\Formularios\frmPlaza.resx">
       <DependentUpon>frmPlaza.cs</DependentUpon>
       <SubType>Designer</SubType>

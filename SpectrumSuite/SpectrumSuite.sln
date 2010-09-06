@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentesNegocio", "Compo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentesComun", "ComponentesComun\ComponentesComun.csproj", "{8AA553D1-356D-415F-9C0B-5967E3673CA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wizard", "Wizard\Wizard.csproj", "{FB586ECE-0A4A-4BA0-A1C3-DEB0D1A14904}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +37,6 @@ Global
 		{8AA553D1-356D-415F-9C0B-5967E3673CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AA553D1-356D-415F-9C0B-5967E3673CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AA553D1-356D-415F-9C0B-5967E3673CA6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB586ECE-0A4A-4BA0-A1C3-DEB0D1A14904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB586ECE-0A4A-4BA0-A1C3-DEB0D1A14904}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB586ECE-0A4A-4BA0-A1C3-DEB0D1A14904}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB586ECE-0A4A-4BA0-A1C3-DEB0D1A14904}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

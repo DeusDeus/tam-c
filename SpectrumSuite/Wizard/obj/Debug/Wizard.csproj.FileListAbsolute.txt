@@ -1,0 +1,12 @@
+C:\TEMP\C#\SpectrumSuite\Wizard\bin\Wizard.dll
+C:\TEMP\C#\SpectrumSuite\Wizard\bin\Wizard.pdb
+C:\TEMP\C#\SpectrumSuite\Wizard\obj\Debug\ResolveAssemblyReference.cache
+C:\TEMP\C#\SpectrumSuite\Wizard\obj\Debug\Wizard.csproj.ResolveComReference.cache
+C:\TEMP\C#\SpectrumSuite\Wizard\obj\Debug\Wizard.CommandBar.resources
+C:\TEMP\C#\SpectrumSuite\Wizard\obj\Debug\Wizard.Formularios.frmWizardPag1.resources
+C:\TEMP\C#\SpectrumSuite\Wizard\obj\Debug\Wizard.Formularios.frmWizardPag2.resources
+C:\TEMP\C#\SpectrumSuite\Wizard\obj\Debug\Wizard.Formularios.frmWizardPag3.resources
+C:\TEMP\C#\SpectrumSuite\Wizard\obj\Debug\Wizard.Formularios.frmWizardPag4.resources
+C:\TEMP\C#\SpectrumSuite\Wizard\obj\Debug\Wizard.csproj.GenerateResource.Cache
+C:\TEMP\C#\SpectrumSuite\Wizard\obj\Debug\Wizard.dll
+C:\TEMP\C#\SpectrumSuite\Wizard\obj\Debug\Wizard.pdb

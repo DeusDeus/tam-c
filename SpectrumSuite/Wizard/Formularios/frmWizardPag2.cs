@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using EnvDTE;
 
 namespace Wizard.Formularios
 {
@@ -22,6 +23,11 @@ namespace Wizard.Formularios
             objWizardPag3.Visible = false;
             objWizardPag3.Location = this.Location;
             objWizardPag1 = (frmWizardPag1)frmWizardPag1;
+        }
+
+        private void LLenarGrilla(ProjectItem pitem)
+        {
+            
         }
 
         private void cmdSiguiente_Click(object sender, EventArgs e)

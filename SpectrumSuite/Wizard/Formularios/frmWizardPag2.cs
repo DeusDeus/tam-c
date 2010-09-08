@@ -12,16 +12,14 @@ namespace Wizard.Formularios
     public partial class frmWizardPag2 : Form
     {
         private frmWizardPag1 objWizardPag1;
-        private frmWizardPag3 objWizardPag3;
+        private frmWizardPag3 objWizardPag3 = null;
         private Connect objConnect;
+        private string strNombreModulo;
 
         public frmWizardPag2(Form frmWizardPag1, Connect pobjConnect)
         {
             InitializeComponent();
             objConnect = pobjConnect;
-            objWizardPag3 = new frmWizardPag3(this, pobjConnect);
-            objWizardPag3.Visible = false;
-            objWizardPag3.Location = this.Location;
             objWizardPag1 = (frmWizardPag1)frmWizardPag1;
         }
 
@@ -30,8 +28,20 @@ namespace Wizard.Formularios
             
         }
 
+        public string ObtenerNombreModulo()
+        {
+            return strNombreModulo;
+        }
+
         private void cmdSiguiente_Click(object sender, EventArgs e)
         {
+            strNombreModulo = objWizardPag1.ObtenerNombreModulo();
+
+            if (objWizardPag3 == null)
+            {
+                objWizardPag3 = new frmWizardPag3(this, objConnect);
+            }
+
             objWizardPag3.Location = this.Location;
             objWizardPag3.Visible = true;
             this.Visible = false;

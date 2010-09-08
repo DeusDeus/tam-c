@@ -62,7 +62,6 @@
             // 
             // cmdSiguiente
             // 
-            this.cmdSiguiente.Enabled = false;
             this.cmdSiguiente.Location = new System.Drawing.Point(383, 337);
             this.cmdSiguiente.Name = "cmdSiguiente";
             this.cmdSiguiente.Size = new System.Drawing.Size(75, 23);

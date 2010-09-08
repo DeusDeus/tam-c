@@ -12,6 +12,7 @@ namespace Wizard.Formularios
         private frmWizardPag2 objWizardPag2 = null;
         private Connect objConnect;
         private ProjectItem item;
+        private string strNombreModulo;
 
         public frmWizardPag1(Connect pobjConnect)
         {
@@ -34,16 +35,21 @@ namespace Wizard.Formularios
             return item;
         }
 
+        public string ObtenerNombreModulo()
+        {
+            return strNombreModulo;
+        }
+
         private void cmdSiguiente_Click(object sender, EventArgs e)
         {
+            item = lstFormularios[cboFormularios.SelectedIndex];
+            strNombreModulo = cboModulos.SelectedItem.ToString();
+            
             if (objWizardPag2 == null)
             {
                 objWizardPag2 = new frmWizardPag2(this, objConnect);
-                objWizardPag2.Visible = false;
-                objWizardPag2.Location = this.Location;
             }
 
-            item = lstFormularios[cboFormularios.SelectedIndex];
             objWizardPag2.Location = this.Location;
             objWizardPag2.Visible = true;
             this.Visible = false;

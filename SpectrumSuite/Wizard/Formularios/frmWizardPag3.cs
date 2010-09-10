@@ -23,6 +23,8 @@ namespace Wizard.Formularios
         private const string strUsuario = "sa";
         private const string strContrasena = "sa";
         private int numIndicador = 0; //0:Insert, 1: Update
+        private int numIndiceAnterior = 0;
+        private bool blnPrimeraVez = true;
 
         public frmWizardPag3(Form frmWizardPag2, Connect pobjConnect)
         {
@@ -276,7 +278,25 @@ namespace Wizard.Formularios
 
         private void lstServicios_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvDetalleServicio.Rows.Clear();
+            if (blnPrimeraVez)
+            {
+                numIndiceAnterior = lstServicios.SelectedIndex;
+                blnPrimeraVez = false;
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Los cambios realizados no se han guardado y se perderán\n ¿Desea continuar?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (dr == DialogResult.Yes)
+                {
+                    dgvDetalleServicio.Rows.Clear();
+                }
+                else
+                {
+                    blnPrimeraVez = true;
+                    lstServicios.SelectedIndex = numIndiceAnterior;
+                }
+            }
 
             if (lstServicios.Items.Count > 0 && lstServicios.SelectedIndex >= 0)
             {

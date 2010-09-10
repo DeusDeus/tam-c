@@ -43,7 +43,7 @@ namespace SpectrumSuite
 
             clsComun.CrearListaControles(this, lstControles);
 
-            dsPlaza = clsNegocio.ConsultarServicio(lstControles, "TRX00001");
+            dsPlaza = clsNegocio.ConsultarServicio(lstControles, "TRXCR1");
 
             dgvPlaza.DataSource = dsPlaza.Tables[0];
 
@@ -74,7 +74,7 @@ namespace SpectrumSuite
 
             clsComun.CrearListaControles(this, lstControles);
 
-            dsPlaza = clsNegocio.ConsultarServicio(lstControles, "TRX00001");
+            dsPlaza = clsNegocio.ConsultarServicio(lstControles, "TRXCR1");
 
             txtCodigo.Text = dsPlaza.Tables[0].Rows[0]["CodPlaza"].ToString();
             txtDescripcion2.Text = dsPlaza.Tables[0].Rows[0]["DescripPlaza"].ToString();
@@ -110,7 +110,7 @@ namespace SpectrumSuite
 
             clsComun.CrearListaControles(this, lstControles);
 
-            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRX00001");
+            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRXCR1");
 
             for (int i = 0; i < dsMonedas.Tables[0].Rows.Count; i++)
             {
@@ -142,7 +142,7 @@ namespace SpectrumSuite
 
             clsComun.CrearListaControles(this, lstControles);
 
-            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRX00002");
+            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRXCR2");
 
             foreach (DataRow dr in dsMonedas.Tables[0].Rows)
             {
@@ -214,7 +214,7 @@ namespace SpectrumSuite
 
             clsComun.CrearListaControles(this, lstControles);
 
-            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRX00002");
+            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRXCR2");
 
             strCodigoMoneda = dsMonedas.Tables[0].Rows[0]["CodMoneda"].ToString();
 
@@ -306,7 +306,7 @@ namespace SpectrumSuite
                 clsComun.DesactivarControl(lblCodigoUsuario);
                 clsComun.DesactivarControl(lblArchivoXML);
 
-                if (clsNegocio.EjecutarServicio(lstControles, "TRX00003"))
+                if (clsNegocio.EjecutarServicio(lstControles, "TRXCR3"))
                 {
                     MessageBox.Show("Se eliminó la Plaza satisfactoriamente", "Eliminación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -418,7 +418,7 @@ namespace SpectrumSuite
                 clsComun.DesactivarControl(lblCodigoUsuario);
                 clsComun.DesactivarControl(lblArchivoXML);
 
-                if (clsNegocio.EjecutarServicio(lstControles, "TRX00003"))
+                if (clsNegocio.EjecutarServicio(lstControles, "TRXCR3"))
                 {
                     MessageBox.Show("Se guardó la Plaza satisfactoriamente", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

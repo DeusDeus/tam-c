@@ -43,6 +43,7 @@
             this.dgvDetalleServicio = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lstServicios = new System.Windows.Forms.ListBox();
             this.gbxServicios = new System.Windows.Forms.GroupBox();
             this.cmdAgregar2 = new System.Windows.Forms.Button();
@@ -160,6 +161,7 @@
             this.cmdGuardar.TabIndex = 14;
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.UseVisualStyleBackColor = true;
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // cmdQuitar
             // 
@@ -181,13 +183,15 @@
             this.dgvDetalleServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleServicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2});
+            this.Column2,
+            this.Column3});
             this.dgvDetalleServicio.Location = new System.Drawing.Point(271, 132);
             this.dgvDetalleServicio.MultiSelect = false;
             this.dgvDetalleServicio.Name = "dgvDetalleServicio";
             this.dgvDetalleServicio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleServicio.Size = new System.Drawing.Size(227, 108);
             this.dgvDetalleServicio.TabIndex = 12;
+            this.dgvDetalleServicio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvDetalleServicio_KeyPress);
             // 
             // Column1
             // 
@@ -201,6 +205,13 @@
             this.Column2.HeaderText = "Nombre";
             this.Column2.Name = "Column2";
             this.Column2.Width = 149;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "IdParametro";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
             // 
             // lstServicios
             // 
@@ -334,11 +345,12 @@
         private System.Windows.Forms.Button cmdAgregar;
         private System.Windows.Forms.DataGridView dgvDetalleServicio;
         private System.Windows.Forms.ListBox lstServicios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button cmdQuitar;
         private System.Windows.Forms.Button cmdGuardar;
         private System.Windows.Forms.Button cmdAgregar2;
         private System.Windows.Forms.Button cmdAgregar3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

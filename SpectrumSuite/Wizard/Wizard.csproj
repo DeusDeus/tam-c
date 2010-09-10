@@ -42,6 +42,7 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="clsParametro.cs" />
     <Compile Include="Connect.cs" />
     <Compile Include="Formularios\frmWizardPag1.cs">
       <SubType>Form</SubType>

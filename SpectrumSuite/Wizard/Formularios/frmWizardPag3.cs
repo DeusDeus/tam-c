@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Xml.Serialization;
+using System.Xml;
 
 namespace Wizard.Formularios
 {
@@ -19,6 +22,7 @@ namespace Wizard.Formularios
         private const string strCatalogo = "riesgos";
         private const string strUsuario = "sa";
         private const string strContrasena = "sa";
+        private int numIndicador = 0; //0:Insert, 1: Update
 
         public frmWizardPag3(Form frmWizardPag2, Connect pobjConnect)
         {
@@ -42,7 +46,7 @@ namespace Wizard.Formularios
         {
             DataTable dt = new DataTable();
 
-            dt = EjecutaStoredProcedure(pstrNombreModulo, pstrNombreStoredProcedure);
+            dt = ConsultaStoredProcedure(pstrNombreModulo, pstrNombreStoredProcedure);
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -53,8 +57,8 @@ namespace Wizard.Formularios
         private void LlenarComboProcedures(string pstrNombreModulo, string pstrNombreStoredProcedure)
         {
             DataTable dt = new DataTable();
-            
-            dt = EjecutaStoredProcedure(pstrNombreModulo, pstrNombreStoredProcedure);
+
+            dt = ConsultaStoredProcedure(pstrNombreModulo, pstrNombreStoredProcedure);
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -78,7 +82,7 @@ namespace Wizard.Formularios
             cmdGuardar.Enabled = false;
         }
 
-        private DataTable EjecutaStoredProcedure(string pstrNombreModulo, string pstrNombreStoredProcedure)
+        private DataTable ConsultaStoredProcedure(string pstrNombreModulo, string pstrNombreStoredProcedure)
         {
             DataTable dt = new DataTable();
 
@@ -109,6 +113,39 @@ namespace Wizard.Formularios
             {
                 MessageBox.Show("Ocurrió un error \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return dt;
+            }
+        }
+
+        private bool EjecutaStoredProcedure(string pstrNombreStoredProcedure, string ptxtArchivoXML)
+        {
+            try
+            {
+                SqlConnection cnn = Conectar("sa", "sa");
+                cnn.Open();
+
+                SqlCommand sqlComando = new SqlCommand(pstrNombreStoredProcedure, cnn);
+                sqlComando.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter sqlParametro;
+
+                sqlParametro = new SqlParameter();
+                sqlParametro.ParameterName = "@vchXML";
+                sqlParametro.Value = ptxtArchivoXML;
+                sqlParametro.Direction = ParameterDirection.Input;
+
+                sqlComando.Parameters.Add(sqlParametro);
+
+                sqlComando.ExecuteNonQuery();
+
+                cnn.Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
             }
         }
 
@@ -150,10 +187,11 @@ namespace Wizard.Formularios
             {
                 dgvDetalleServicio.Rows.Add();
                 dgvDetalleServicio.Rows[0].Cells[0].Value = 1;
+                dgvDetalleServicio.Rows[0].Cells[1].Value = "";
             }
             else
             {
-                if (dgvDetalleServicio.Rows[numNumeroFilas - 1].Cells[1].Value == null)
+                if (dgvDetalleServicio.Rows[numNumeroFilas - 1].Cells[1].Value.ToString().CompareTo("") == 0)
                 {
                     MessageBox.Show("Debe ingresar el nombre del último parámetro ingresado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -161,6 +199,7 @@ namespace Wizard.Formularios
                 {
                     dgvDetalleServicio.Rows.Add();
                     dgvDetalleServicio.Rows[numNumeroFilas].Cells[0].Value = numNumeroFilas + 1;
+                    dgvDetalleServicio.Rows[numNumeroFilas].Cells[1].Value = "";
                 }
             }
         }
@@ -237,10 +276,31 @@ namespace Wizard.Formularios
 
         private void lstServicios_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dgvDetalleServicio.Rows.Clear();
+
             if (lstServicios.Items.Count > 0 && lstServicios.SelectedIndex >= 0)
             {
                 if (lstServicios.SelectedItem.ToString().Substring(0, 2).CompareTo("up") == 0)
                 {
+                    DataTable dt = new DataTable();
+                    dt = ConsultaStoredProcedure(lstServicios.SelectedItem.ToString(), "up_WISelParametro");
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        numIndicador = 1;
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            dgvDetalleServicio.Rows.Add();
+                            dgvDetalleServicio.Rows[i].Cells[0].Value = i + 1;
+                            dgvDetalleServicio.Rows[i].Cells[1].Value = dt.Rows[i]["NombreParametro"];
+                            dgvDetalleServicio.Rows[i].Cells[2].Value = dt.Rows[i]["IdParametro"];
+                        }
+                    }
+                    else
+                    {
+                        numIndicador = 0;
+                    }
+
                     ActivarParametros();
                 }
                 else
@@ -251,6 +311,103 @@ namespace Wizard.Formularios
             else
             {
                 DesactivarParametros();
+            }
+        }
+
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+            if (!Vacio())
+            {
+                List<clsParametro> lstParametros = new List<clsParametro>();
+                for (int i = 0; i < dgvDetalleServicio.Rows.Count; i++)
+                {
+                    clsParametro parametro = new clsParametro();
+                    parametro.StrNombreStoredProcedure = lstServicios.SelectedItem.ToString();
+                    parametro.StrNombreParametro = dgvDetalleServicio.Rows[i].Cells[1].Value.ToString();
+                    parametro.NumIdParametro = Int32.Parse(dgvDetalleServicio.Rows[i].Cells[2].Value.ToString());
+                    
+                    if (numIndicador == 0)
+                    {
+                        parametro.NumTipoOperacion = 0;
+                    }
+                    else
+                    {
+                        parametro.NumTipoOperacion = 1;
+                    }
+                    lstParametros.Add(parametro);
+                }
+
+                string strXML = Serializar(lstParametros);
+
+                //AQUÍ EMPIEZA EL MANTENIMIENTO
+                if (numIndicador == 0)
+                {
+                    //"INSERT"
+                    EjecutaStoredProcedure("up_WIManParametro", strXML);
+                }
+                else
+                {
+                    //"UPDATE"
+                    EjecutaStoredProcedure("up_WIManParametro", strXML);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Falta ingresar el nombre de un parámetro o no ha ingresado uno", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private bool Vacio()
+        {
+            if (dgvDetalleServicio.Rows.Count > 0)
+            {
+                for (int i = 0; i < dgvDetalleServicio.Rows.Count; i++)
+                {
+                    if (dgvDetalleServicio.Rows[i].Cells[1].Value.ToString().CompareTo("") == 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            else
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private string Serializar(List<clsParametro> parametros)
+        {
+            string strXML = null;
+            MemoryStream ms = new MemoryStream();
+            XmlSerializer xs = new XmlSerializer(typeof(List<clsParametro>));
+            XmlTextWriter xtw = new XmlTextWriter(ms, Encoding.Default);
+
+            XmlSerializerNamespaces xsn = new XmlSerializerNamespaces();
+            xsn.Add(String.Empty, String.Empty);
+
+            xs.Serialize(xtw, parametros, xsn);
+            ms = (MemoryStream)xtw.BaseStream;
+
+            UTF8Encoding encoding = new UTF8Encoding();
+            strXML = encoding.GetString(ms.ToArray());
+
+            return strXML;
+        }
+
+        private void dgvDetalleServicio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (dgvDetalleServicio.Rows.Count > 0)
+            {
+                if (e.KeyChar == ((Char)Keys.Delete))
+                {
+                    dgvDetalleServicio.Rows.RemoveAt(dgvDetalleServicio.CurrentRow.Index);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay servicios que eliminar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

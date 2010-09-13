@@ -42,7 +42,12 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="clsParametro.cs" />
+    <Compile Include="clsGestorBD.cs" />
+    <Compile Include="CommandBar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandBar.resx</DependentUpon>
+    </Compile>
     <Compile Include="Connect.cs" />
     <Compile Include="Formularios\frmWizardPag1.cs">
       <SubType>Form</SubType>
@@ -72,6 +77,8 @@
   <ItemGroup>
     <EmbeddedResource Include="CommandBar.resx">
       <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandBar.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmWizardPag1.resx">
       <DependentUpon>frmWizardPag1.cs</DependentUpon>

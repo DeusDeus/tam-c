@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWizardPag3));
             this.cmdAtras = new System.Windows.Forms.Button();
             this.cmdSiguiente = new System.Windows.Forms.Button();
@@ -37,25 +38,23 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cmdAgregar3 = new System.Windows.Forms.Button();
-            this.cmdGuardar = new System.Windows.Forms.Button();
+            this.lblServicio = new System.Windows.Forms.Label();
             this.cmdQuitar = new System.Windows.Forms.Button();
-            this.dgvDetalleServicio = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmdGuardar = new System.Windows.Forms.Button();
             this.lstServicios = new System.Windows.Forms.ListBox();
             this.gbxServicios = new System.Windows.Forms.GroupBox();
-            this.cmdAgregar2 = new System.Windows.Forms.Button();
+            this.cmdVer = new System.Windows.Forms.Button();
             this.cmdAgregar = new System.Windows.Forms.Button();
+            this.cmdAgregar2 = new System.Windows.Forms.Button();
             this.lblServicios = new System.Windows.Forms.Label();
             this.cboServicios = new System.Windows.Forms.ComboBox();
             this.lblProcedures = new System.Windows.Forms.Label();
             this.cboProcedures = new System.Windows.Forms.ComboBox();
+            this.tipVer = new System.Windows.Forms.ToolTip(this.components);
+            this.cmdNuevo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleServicio)).BeginInit();
             this.gbxServicios.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,10 +131,9 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.cmdAgregar3);
-            this.panel2.Controls.Add(this.cmdGuardar);
+            this.panel2.Controls.Add(this.lblServicio);
             this.panel2.Controls.Add(this.cmdQuitar);
-            this.panel2.Controls.Add(this.dgvDetalleServicio);
+            this.panel2.Controls.Add(this.cmdGuardar);
             this.panel2.Controls.Add(this.lstServicios);
             this.panel2.Controls.Add(this.gbxServicios);
             this.panel2.Location = new System.Drawing.Point(-1, 79);
@@ -143,19 +141,29 @@
             this.panel2.Size = new System.Drawing.Size(592, 250);
             this.panel2.TabIndex = 8;
             // 
-            // cmdAgregar3
+            // lblServicio
             // 
-            this.cmdAgregar3.Location = new System.Drawing.Point(502, 132);
-            this.cmdAgregar3.Name = "cmdAgregar3";
-            this.cmdAgregar3.Size = new System.Drawing.Size(75, 23);
-            this.cmdAgregar3.TabIndex = 15;
-            this.cmdAgregar3.Text = "Agregar";
-            this.cmdAgregar3.UseVisualStyleBackColor = true;
-            this.cmdAgregar3.Click += new System.EventHandler(this.cmdAgregar3_Click);
+            this.lblServicio.AutoSize = true;
+            this.lblServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServicio.ForeColor = System.Drawing.Color.Red;
+            this.lblServicio.Location = new System.Drawing.Point(40, 160);
+            this.lblServicio.Name = "lblServicio";
+            this.lblServicio.Size = new System.Drawing.Size(0, 25);
+            this.lblServicio.TabIndex = 16;
+            // 
+            // cmdQuitar
+            // 
+            this.cmdQuitar.Location = new System.Drawing.Point(496, 123);
+            this.cmdQuitar.Name = "cmdQuitar";
+            this.cmdQuitar.Size = new System.Drawing.Size(75, 23);
+            this.cmdQuitar.TabIndex = 15;
+            this.cmdQuitar.Text = "Quitar";
+            this.cmdQuitar.UseVisualStyleBackColor = true;
+            this.cmdQuitar.Click += new System.EventHandler(this.cmdQuitar_Click);
             // 
             // cmdGuardar
             // 
-            this.cmdGuardar.Location = new System.Drawing.Point(504, 217);
+            this.cmdGuardar.Location = new System.Drawing.Point(496, 208);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(75, 23);
             this.cmdGuardar.TabIndex = 14;
@@ -163,70 +171,21 @@
             this.cmdGuardar.UseVisualStyleBackColor = true;
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
-            // cmdQuitar
-            // 
-            this.cmdQuitar.Location = new System.Drawing.Point(502, 161);
-            this.cmdQuitar.Name = "cmdQuitar";
-            this.cmdQuitar.Size = new System.Drawing.Size(75, 23);
-            this.cmdQuitar.TabIndex = 13;
-            this.cmdQuitar.Text = "Quitar";
-            this.cmdQuitar.UseVisualStyleBackColor = true;
-            this.cmdQuitar.Click += new System.EventHandler(this.cmdQuitar_Click);
-            // 
-            // dgvDetalleServicio
-            // 
-            this.dgvDetalleServicio.AllowUserToAddRows = false;
-            this.dgvDetalleServicio.AllowUserToDeleteRows = false;
-            this.dgvDetalleServicio.AllowUserToOrderColumns = true;
-            this.dgvDetalleServicio.AllowUserToResizeColumns = false;
-            this.dgvDetalleServicio.AllowUserToResizeRows = false;
-            this.dgvDetalleServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalleServicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dgvDetalleServicio.Location = new System.Drawing.Point(271, 132);
-            this.dgvDetalleServicio.MultiSelect = false;
-            this.dgvDetalleServicio.Name = "dgvDetalleServicio";
-            this.dgvDetalleServicio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleServicio.Size = new System.Drawing.Size(227, 108);
-            this.dgvDetalleServicio.TabIndex = 12;
-            this.dgvDetalleServicio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvDetalleServicio_KeyPress);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nº";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 35;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 149;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "IdParametro";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Visible = false;
-            // 
             // lstServicios
             // 
             this.lstServicios.FormattingEnabled = true;
-            this.lstServicios.Location = new System.Drawing.Point(15, 132);
+            this.lstServicios.Location = new System.Drawing.Point(221, 123);
             this.lstServicios.Name = "lstServicios";
             this.lstServicios.Size = new System.Drawing.Size(250, 108);
             this.lstServicios.TabIndex = 11;
             this.lstServicios.SelectedIndexChanged += new System.EventHandler(this.lstServicios_SelectedIndexChanged);
-            this.lstServicios.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lstServicios_KeyPress);
             // 
             // gbxServicios
             // 
-            this.gbxServicios.Controls.Add(this.cmdAgregar2);
+            this.gbxServicios.Controls.Add(this.cmdNuevo);
+            this.gbxServicios.Controls.Add(this.cmdVer);
             this.gbxServicios.Controls.Add(this.cmdAgregar);
+            this.gbxServicios.Controls.Add(this.cmdAgregar2);
             this.gbxServicios.Controls.Add(this.lblServicios);
             this.gbxServicios.Controls.Add(this.cboServicios);
             this.gbxServicios.Controls.Add(this.lblProcedures);
@@ -238,6 +197,27 @@
             this.gbxServicios.TabStop = false;
             this.gbxServicios.Text = "Servicios";
             // 
+            // cmdVer
+            // 
+            this.cmdVer.Image = ((System.Drawing.Image)(resources.GetObject("cmdVer.Image")));
+            this.cmdVer.Location = new System.Drawing.Point(372, 26);
+            this.cmdVer.Name = "cmdVer";
+            this.cmdVer.Size = new System.Drawing.Size(25, 23);
+            this.cmdVer.TabIndex = 13;
+            this.tipVer.SetToolTip(this.cmdVer, "Ver Servicio");
+            this.cmdVer.UseVisualStyleBackColor = true;
+            this.cmdVer.Click += new System.EventHandler(this.cmdVer_Click);
+            // 
+            // cmdAgregar
+            // 
+            this.cmdAgregar.Location = new System.Drawing.Point(485, 26);
+            this.cmdAgregar.Name = "cmdAgregar";
+            this.cmdAgregar.Size = new System.Drawing.Size(75, 23);
+            this.cmdAgregar.TabIndex = 12;
+            this.cmdAgregar.Text = "Agregar";
+            this.cmdAgregar.UseVisualStyleBackColor = true;
+            this.cmdAgregar.Click += new System.EventHandler(this.cmdAgregar_Click);
+            // 
             // cmdAgregar2
             // 
             this.cmdAgregar2.Location = new System.Drawing.Point(485, 62);
@@ -247,16 +227,6 @@
             this.cmdAgregar2.Text = "Agregar";
             this.cmdAgregar2.UseVisualStyleBackColor = true;
             this.cmdAgregar2.Click += new System.EventHandler(this.cmdAgregar2_Click);
-            // 
-            // cmdAgregar
-            // 
-            this.cmdAgregar.Location = new System.Drawing.Point(485, 26);
-            this.cmdAgregar.Name = "cmdAgregar";
-            this.cmdAgregar.Size = new System.Drawing.Size(75, 23);
-            this.cmdAgregar.TabIndex = 10;
-            this.cmdAgregar.Text = "Agregar";
-            this.cmdAgregar.UseVisualStyleBackColor = true;
-            this.cmdAgregar.Click += new System.EventHandler(this.cmdAgregar_Click);
             // 
             // lblServicios
             // 
@@ -300,6 +270,17 @@
             this.cboProcedures.Size = new System.Drawing.Size(250, 21);
             this.cboProcedures.TabIndex = 7;
             // 
+            // cmdNuevo
+            // 
+            this.cmdNuevo.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevo.Image")));
+            this.cmdNuevo.Location = new System.Drawing.Point(341, 26);
+            this.cmdNuevo.Name = "cmdNuevo";
+            this.cmdNuevo.Size = new System.Drawing.Size(25, 23);
+            this.cmdNuevo.TabIndex = 14;
+            this.tipVer.SetToolTip(this.cmdNuevo, "Crear Servicio");
+            this.cmdNuevo.UseVisualStyleBackColor = true;
+            this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
+            // 
             // frmWizardPag3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,7 +301,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleServicio)).EndInit();
+            this.panel2.PerformLayout();
             this.gbxServicios.ResumeLayout(false);
             this.gbxServicios.PerformLayout();
             this.ResumeLayout(false);
@@ -342,15 +323,14 @@
         private System.Windows.Forms.ComboBox cboServicios;
         private System.Windows.Forms.Label lblServicios;
         private System.Windows.Forms.GroupBox gbxServicios;
-        private System.Windows.Forms.Button cmdAgregar;
-        private System.Windows.Forms.DataGridView dgvDetalleServicio;
         private System.Windows.Forms.ListBox lstServicios;
         private System.Windows.Forms.Button cmdQuitar;
         private System.Windows.Forms.Button cmdGuardar;
+        private System.Windows.Forms.Button cmdAgregar;
         private System.Windows.Forms.Button cmdAgregar2;
-        private System.Windows.Forms.Button cmdAgregar3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button cmdVer;
+        private System.Windows.Forms.Label lblServicio;
+        private System.Windows.Forms.ToolTip tipVer;
+        private System.Windows.Forms.Button cmdNuevo;
     }
 }

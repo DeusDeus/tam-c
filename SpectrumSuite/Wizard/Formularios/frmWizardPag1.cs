@@ -16,10 +16,17 @@ namespace Wizard.Formularios
 
         public frmWizardPag1(Connect pobjConnect)
         {
-            InitializeComponent();
-            objConnect = pobjConnect;
-            lstModulos = objConnect.ObtenerModulos();
-            LLenarComboModulos(lstModulos);
+            try
+            {
+                InitializeComponent();
+                objConnect = pobjConnect;
+                lstModulos = objConnect.ObtenerModulos();
+                LLenarComboModulos(lstModulos);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un problema\nAsegúrese de que el proyecto que desee gestionar esté como 'Proyecto de Inicio'","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
 
         private void LLenarComboModulos(List<string> plstModulos)

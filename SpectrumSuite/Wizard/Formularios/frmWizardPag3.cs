@@ -13,7 +13,7 @@ namespace Wizard.Formularios
         private string strNombreServicio;
         private bool blnGuardado = true;
         private bool blnCambio = false;
-        private int numIndicador; //0: nuevo; 1: modificar
+        private int numIndicador; //0: nuevo; 1: modificar     
 
         public frmWizardPag3(Form frmWizardPag2, Connect pobjConnect)
         {

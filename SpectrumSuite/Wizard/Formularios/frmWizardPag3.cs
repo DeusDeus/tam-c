@@ -30,7 +30,7 @@ namespace Wizard.Formularios
         {
             DataTable dt = new DataTable();
 
-            dt = clsGestorBD.ConsultaStoredProcedure(pstrNombreModulo, pstrNombreStoredProcedure);
+            dt = clsGestorBD.ConsultaStoredProcedure(pstrNombreModulo, pstrNombreStoredProcedure, 1);
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -42,7 +42,7 @@ namespace Wizard.Formularios
         {
             DataTable dt = new DataTable();
 
-            dt = clsGestorBD.ConsultaStoredProcedure(pstrNombreModulo, pstrNombreStoredProcedure);
+            dt = clsGestorBD.ConsultaStoredProcedure(pstrNombreModulo, pstrNombreStoredProcedure, 1);
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -183,11 +183,39 @@ namespace Wizard.Formularios
             {
                 if (lblServicio.Text.CompareTo("") == 0)
                 {
+                    DataTable dt = new DataTable();
+
+                    dt = clsGestorBD.ConsultaStoredProcedure(cboServicios.SelectedItem.ToString(), "up_WISelServicio", 2);
+
+                    lstServicios.Items.Clear();
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        lstServicios.Items.Add(dt.Rows[i]["NombreServicio"]);
+                    }
+
                     lblServicio.Text = cboServicios.SelectedItem.ToString();
                     strNombreServicio = cboServicios.SelectedItem.ToString();
                 }
                 else
                 {
+                    if (blnGuardado)
+                    {
+                        DataTable dt = new DataTable();
+
+                        dt = clsGestorBD.ConsultaStoredProcedure(cboServicios.SelectedItem.ToString(), "up_WISelServicio", 2);
+
+                        lstServicios.Items.Clear();
+
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            lstServicios.Items.Add(dt.Rows[i]["NombreServicio"]);
+                        }
+
+                        lblServicio.Text = cboServicios.SelectedItem.ToString();
+                        strNombreServicio = cboServicios.SelectedItem.ToString();
+                    }
+
                     if (lblServicio.Text.CompareTo(cboServicios.SelectedItem.ToString()) == 0)
                     {
                         //No hace nada porque está en el servicio actual
@@ -200,6 +228,19 @@ namespace Wizard.Formularios
 
                             if (dr == DialogResult.Yes)
                             {
+                                blnGuardado = true;
+                                blnCambio = false;
+                                lstServicios.Items.Clear();
+                                DataTable dt = new DataTable();
+
+                                dt = clsGestorBD.ConsultaStoredProcedure(cboServicios.SelectedItem.ToString(), "up_WISelServicio", 2);
+
+                                lstServicios.Items.Clear();
+
+                                for (int i = 0; i < dt.Rows.Count; i++)
+                                {
+                                    lstServicios.Items.Add(dt.Rows[i]["NombreServicio"]);
+                                }
                                 lblServicio.Text = cboServicios.SelectedItem.ToString();
                                 strNombreServicio = cboServicios.SelectedItem.ToString();
                                 cmdGuardar.Enabled = false;
@@ -223,13 +264,31 @@ namespace Wizard.Formularios
 
         private void cmdNuevo_Click(object sender, EventArgs e)
         {
-            numIndicador = 0;
-            cboProcedures.SelectedIndex = -1;
-            cboServicios.SelectedIndex = -1;
-            lblServicio.Text = "";
-            strNombreServicio = "";
-            lstServicios.Items.Clear();
-            cmdGuardar.Enabled = false;
+            if (!blnGuardado)
+            {
+                DialogResult dr = MessageBox.Show("Hay cambios realizados que no han sido guardados y se perderán\n¿Desea continuar?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+                if (dr == DialogResult.Yes)
+                {
+                    numIndicador = 0;
+                    cboProcedures.SelectedIndex = -1;
+                    cboServicios.SelectedIndex = -1;
+                    lblServicio.Text = "";
+                    strNombreServicio = "";
+                    lstServicios.Items.Clear();
+                    cmdGuardar.Enabled = false;
+                }
+            }
+            else
+            {
+                numIndicador = 0;
+                cboProcedures.SelectedIndex = -1;
+                cboServicios.SelectedIndex = -1;
+                lblServicio.Text = "";
+                strNombreServicio = "";
+                lstServicios.Items.Clear();
+                cmdGuardar.Enabled = false;
+            }
         }
 
         private void lstServicios_SelectedIndexChanged(object sender, EventArgs e)

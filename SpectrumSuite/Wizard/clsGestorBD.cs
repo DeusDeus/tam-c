@@ -21,7 +21,7 @@ namespace Wizard
             return cnn;
         }
 
-        public static DataTable ConsultaStoredProcedure(string pstrNombreModulo, string pstrNombreStoredProcedure)
+        public static DataTable ConsultaStoredProcedure(string pstrNombreModulo, string pstrNombreStoredProcedure, int pnumTipoOperacion)
         {
             DataTable dt = new DataTable();
 
@@ -33,9 +33,17 @@ namespace Wizard
                 SqlCommand sqlComando = new SqlCommand(pstrNombreStoredProcedure, cnn);
                 sqlComando.CommandType = CommandType.StoredProcedure;
 
-                SqlParameter sqlParametro = new SqlParameter();
-                sqlParametro.ParameterName = "@NombreModulo";
+                SqlParameter sqlParametro;
+                sqlParametro = new SqlParameter();
+                sqlParametro.ParameterName = "@NombreModulo"; //TipoOperacion1: NombreModulo; TipoOperacion2: NombreServicio
                 sqlParametro.Value = pstrNombreModulo;
+                sqlParametro.Direction = ParameterDirection.Input;
+
+                sqlComando.Parameters.Add(sqlParametro);
+
+                sqlParametro = new SqlParameter();
+                sqlParametro.ParameterName = "@TipoOperacion";
+                sqlParametro.Value = pnumTipoOperacion;
                 sqlParametro.Direction = ParameterDirection.Input;
 
                 sqlComando.Parameters.Add(sqlParametro);

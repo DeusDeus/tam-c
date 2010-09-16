@@ -15,7 +15,7 @@ namespace Wizard.Formularios
         private frmWizardPag3 objWizardPag3 = null;
         private Connect objConnect;
         private string strNombreModulo;
-
+        
         public frmWizardPag2(Form frmWizardPag1, Connect pobjConnect)
         {
             InitializeComponent();

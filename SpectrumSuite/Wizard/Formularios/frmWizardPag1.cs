@@ -54,7 +54,7 @@ namespace Wizard.Formularios
             
             if (objWizardPag2 == null)
             {
-                objWizardPag2 = new frmWizardPag2(this, objConnect);
+                objWizardPag2 = new frmWizardPag2(this, objConnect,item);
             }
 
             objWizardPag2.Location = this.Location;

@@ -170,6 +170,10 @@ namespace Wizard.Formularios
                 objWizardPag4 = new frmWizardPag4(this, objConnect);
             }
 
+            DataTable dt = objWizardPag2.retornar_metadatos();
+
+            MessageBox.Show(dt.Rows.Count.ToString());
+
             objWizardPag4.Location = this.Location;
             objWizardPag4.Visible = true;
             this.Visible = false;

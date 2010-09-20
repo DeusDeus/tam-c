@@ -45,7 +45,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -152,6 +152,7 @@
             // 
             // dgvMetadata
             // 
+            this.dgvMetadata.AllowUserToAddRows = false;
             this.dgvMetadata.AllowUserToDeleteRows = false;
             this.dgvMetadata.AllowUserToOrderColumns = true;
             this.dgvMetadata.AllowUserToResizeColumns = false;
@@ -237,9 +238,6 @@
             this.Column7.HeaderText = "Fórmula";
             this.Column7.Name = "Column7";
             this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column7.Text = "Ingresar";
-            this.Column7.UseColumnTextForButtonValue = true;
             this.Column7.Width = 60;
             // 
             // Column8
@@ -287,7 +285,7 @@
             // 
             this.Column14.HeaderText = "Cálculo";
             this.Column14.Items.AddRange(new object[] {
-            "",
+            " ",
             "Sistema",
             "BD"});
             this.Column14.Name = "Column14";
@@ -341,7 +339,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewButtonColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column10;

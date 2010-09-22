@@ -154,7 +154,6 @@
             // 
             this.dgvMetadata.AllowUserToAddRows = false;
             this.dgvMetadata.AllowUserToDeleteRows = false;
-            this.dgvMetadata.AllowUserToOrderColumns = true;
             this.dgvMetadata.AllowUserToResizeColumns = false;
             this.dgvMetadata.AllowUserToResizeRows = false;
             this.dgvMetadata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -182,13 +181,16 @@
             // 
             // Column1
             // 
+            this.Column1.Frozen = true;
             this.Column1.HeaderText = "Nombre";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column2
             // 
+            this.Column2.Frozen = true;
             this.Column2.HeaderText = "Tipo";
             this.Column2.Items.AddRange(new object[] {
             "btn",
@@ -200,59 +202,67 @@
             "txt"});
             this.Column2.Name = "Column2";
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column2.Width = 60;
             // 
             // Column3
             // 
+            this.Column3.Frozen = true;
             this.Column3.HeaderText = "Parent";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column4
             // 
+            this.Column4.Frozen = true;
             this.Column4.HeaderText = "Visible";
             this.Column4.Name = "Column4";
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column4.Width = 50;
             // 
             // Column5
             // 
+            this.Column5.Frozen = true;
             this.Column5.HeaderText = "Obligatorio";
             this.Column5.Name = "Column5";
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column5.Width = 70;
             // 
             // Column6
             // 
+            this.Column6.Frozen = true;
             this.Column6.HeaderText = "Calculado";
             this.Column6.Name = "Column6";
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column6.Width = 70;
             // 
             // Column7
             // 
+            this.Column7.Frozen = true;
             this.Column7.HeaderText = "Fórmula";
             this.Column7.Name = "Column7";
             this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Column7.Width = 60;
             // 
             // Column8
             // 
+            this.Column8.Frozen = true;
             this.Column8.HeaderText = "CampoBD";
             this.Column8.Name = "Column8";
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column9
             // 
+            this.Column9.Frozen = true;
             this.Column9.HeaderText = "Valor";
             this.Column9.Name = "Column9";
+            this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Column9.Width = 50;
             // 
             // Column10
             // 
+            this.Column10.Frozen = true;
             this.Column10.HeaderText = "Dato";
             this.Column10.Items.AddRange(new object[] {
             "int",
@@ -265,24 +275,31 @@
             // 
             // Column11
             // 
+            this.Column11.Frozen = true;
             this.Column11.HeaderText = "Longitud";
             this.Column11.Name = "Column11";
+            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Column11.Width = 70;
             // 
             // Column12
             // 
+            this.Column12.Frozen = true;
             this.Column12.HeaderText = "Precisión";
             this.Column12.Name = "Column12";
+            this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Column12.Width = 70;
             // 
             // Column13
             // 
+            this.Column13.Frozen = true;
             this.Column13.HeaderText = "IO";
             this.Column13.Name = "Column13";
+            this.Column13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Column13.Width = 50;
             // 
             // Column14
             // 
+            this.Column14.Frozen = true;
             this.Column14.HeaderText = "Cálculo";
             this.Column14.Items.AddRange(new object[] {
             " ",
@@ -293,8 +310,10 @@
             // 
             // Column15
             // 
+            this.Column15.Frozen = true;
             this.Column15.HeaderText = "TagXML";
             this.Column15.Name = "Column15";
+            this.Column15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // frmWizardPag2
             // 

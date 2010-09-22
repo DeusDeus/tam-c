@@ -43,6 +43,7 @@
             this.cmdGuardar = new System.Windows.Forms.Button();
             this.lstServicios = new System.Windows.Forms.ListBox();
             this.gbxServicios = new System.Windows.Forms.GroupBox();
+            this.cmdNuevo = new System.Windows.Forms.Button();
             this.cmdVer = new System.Windows.Forms.Button();
             this.cmdAgregar = new System.Windows.Forms.Button();
             this.cmdAgregar2 = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.lblProcedures = new System.Windows.Forms.Label();
             this.cboProcedures = new System.Windows.Forms.ComboBox();
             this.tipVer = new System.Windows.Forms.ToolTip(this.components);
-            this.cmdNuevo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -197,6 +197,17 @@
             this.gbxServicios.TabStop = false;
             this.gbxServicios.Text = "Servicios";
             // 
+            // cmdNuevo
+            // 
+            this.cmdNuevo.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevo.Image")));
+            this.cmdNuevo.Location = new System.Drawing.Point(341, 26);
+            this.cmdNuevo.Name = "cmdNuevo";
+            this.cmdNuevo.Size = new System.Drawing.Size(25, 23);
+            this.cmdNuevo.TabIndex = 14;
+            this.tipVer.SetToolTip(this.cmdNuevo, "Crear Servicio");
+            this.cmdNuevo.UseVisualStyleBackColor = true;
+            this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
+            // 
             // cmdVer
             // 
             this.cmdVer.Image = ((System.Drawing.Image)(resources.GetObject("cmdVer.Image")));
@@ -270,17 +281,6 @@
             this.cboProcedures.Size = new System.Drawing.Size(250, 21);
             this.cboProcedures.TabIndex = 7;
             // 
-            // cmdNuevo
-            // 
-            this.cmdNuevo.Image = ((System.Drawing.Image)(resources.GetObject("cmdNuevo.Image")));
-            this.cmdNuevo.Location = new System.Drawing.Point(341, 26);
-            this.cmdNuevo.Name = "cmdNuevo";
-            this.cmdNuevo.Size = new System.Drawing.Size(25, 23);
-            this.cmdNuevo.TabIndex = 14;
-            this.tipVer.SetToolTip(this.cmdNuevo, "Crear Servicio");
-            this.cmdNuevo.UseVisualStyleBackColor = true;
-            this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
-            // 
             // frmWizardPag3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,8 +329,8 @@
         private System.Windows.Forms.Button cmdAgregar;
         private System.Windows.Forms.Button cmdAgregar2;
         private System.Windows.Forms.Button cmdVer;
-        private System.Windows.Forms.Label lblServicio;
         private System.Windows.Forms.ToolTip tipVer;
         private System.Windows.Forms.Button cmdNuevo;
+        private System.Windows.Forms.Label lblServicio;
     }
 }

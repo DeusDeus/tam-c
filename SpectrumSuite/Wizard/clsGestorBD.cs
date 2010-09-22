@@ -21,6 +21,28 @@ namespace Wizard
             return cnn;
         }
 
+        public static DataTable Consultar(string pstrComandoSql)
+        {
+            try
+            {
+                SqlConnection cnn = Conectar("sa","sa");
+                SqlCommand sqlComando = new SqlCommand(pstrComandoSql, cnn);
+                cnn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(sqlComando);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                cnn.Close();
+
+                return dt;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Ocurrió un Error \n" + e, "Error", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
         public static DataTable ConsultaStoredProcedure(string pstrNombreModulo, string pstrNombreStoredProcedure, int pnumTipoOperacion)
         {
             DataTable dt = new DataTable();

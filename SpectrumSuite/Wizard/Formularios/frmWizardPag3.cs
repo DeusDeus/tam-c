@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
+using System.Text;
+using System.Xml;
 
 namespace Wizard.Formularios
 {
@@ -13,7 +18,8 @@ namespace Wizard.Formularios
         private string strNombreServicio;
         private bool blnGuardado = true;
         private bool blnCambio = false;
-        private int numIndicador; //0: nuevo; 1: modificar     
+        private int numIndicador = 0; //0: nuevo; 1: modificar
+        private List<string> lstServicio = new List<string>();
 
         public frmWizardPag3(Form frmWizardPag2, Connect pobjConnect)
         {
@@ -126,24 +132,24 @@ namespace Wizard.Formularios
             }
         }
 
-        //private string Serializar(List<clsParametro> parametros)
-        //{
-        //    string strXML = null;
-        //    MemoryStream ms = new MemoryStream();
-        //    XmlSerializer xs = new XmlSerializer(typeof(List<clsParametro>));
-        //    XmlTextWriter xtw = new XmlTextWriter(ms, Encoding.Default);
+        private string Serializar(List<string> plstServicios)
+        {
+            string strXML = null;
+            MemoryStream ms = new MemoryStream();
+            XmlSerializer xs = new XmlSerializer(typeof(List<string>));
+            XmlTextWriter xtw = new XmlTextWriter(ms, Encoding.Default);
 
-        //    XmlSerializerNamespaces xsn = new XmlSerializerNamespaces();
-        //    xsn.Add(String.Empty, String.Empty);
+            XmlSerializerNamespaces xsn = new XmlSerializerNamespaces();
+            xsn.Add(String.Empty, String.Empty);
 
-        //    xs.Serialize(xtw, parametros, xsn);
-        //    ms = (MemoryStream)xtw.BaseStream;
+            xs.Serialize(xtw, plstServicios, xsn);
+            ms = (MemoryStream)xtw.BaseStream;
 
-        //    UTF8Encoding encoding = new UTF8Encoding();
-        //    strXML = encoding.GetString(ms.ToArray());
+            UTF8Encoding encoding = new UTF8Encoding();
+            strXML = encoding.GetString(ms.ToArray());
 
-        //    return strXML;
-        //}        
+            return strXML;
+        }        
 
         private void cmdAtras_Click(object sender, EventArgs e)
         {
@@ -165,14 +171,27 @@ namespace Wizard.Formularios
 
         private void cmdSiguiente_Click(object sender, EventArgs e)
         {
+            lstServicio.Clear();
+
+            if (numIndicador == 0)
+            {
+                if (lstServicios.Items.Count > 0)
+                {
+                    for (int i = 0; i < lstServicios.Items.Count; i++)
+                    {
+                        lstServicio.Add(lstServicios.Items[i].ToString());
+                    }
+                }
+                else
+                {
+                    lstServicio = null;
+                }
+            }
+
             if (objWizardPag4 == null)
             {
                 objWizardPag4 = new frmWizardPag4(this, objConnect);
             }
-
-            DataTable dt = objWizardPag2.retornar_metadatos();
-
-            MessageBox.Show(dt.Rows.Count.ToString());
 
             objWizardPag4.Location = this.Location;
             objWizardPag4.Visible = true;
@@ -301,6 +320,16 @@ namespace Wizard.Formularios
             {
                 cmdGuardar.Enabled = false;
             }
+        }
+
+        public void Reset()
+        {
+            lstServicio.Clear();
+            cboProcedures.SelectedIndex = -1;
+            cboServicios.SelectedIndex = -1;
+            lblServicio.Text = "";
+            lstServicios.Items.Clear();
+            numIndicador = 0;
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Collections.Generic;
 using EnvDTE;
+using System.Data;
 
 namespace Wizard.Formularios
 {
@@ -10,6 +11,7 @@ namespace Wizard.Formularios
         private List<string> lstModulos = new List<string>();
         private List<ProjectItem> lstFormularios = new List<ProjectItem>();
         private frmWizardPag2 objWizardPag2 = null;
+        private DataTable dt = new DataTable();
         private Connect objConnect;
         private ProjectItem item;
         private string strNombreModulo;
@@ -37,9 +39,30 @@ namespace Wizard.Formularios
             }
         }
 
-        public ProjectItem ObtenerFormulario()
+        public DataTable ObtenerTablaMetadata()
         {
-            return item;
+            return dt;
+        }
+
+        public string ObtenerNombreFormulario()
+        {
+            string strNombreFormulario = "";
+            string strAuxiliar = "";
+            strNombreFormulario = item.Name;
+
+            for (int i = 0; i < strNombreFormulario.Length; i++)
+            {
+                if (strNombreFormulario[i] == '.')
+                {
+                    break;
+                }
+                else
+                {
+                    strAuxiliar += strNombreFormulario[i];
+                }
+            }
+
+            return strAuxiliar;
         }
 
         public string ObtenerNombreModulo()
@@ -51,7 +74,9 @@ namespace Wizard.Formularios
         {
             item = lstFormularios[cboFormularios.SelectedIndex];
             strNombreModulo = cboModulos.SelectedItem.ToString();
-            
+
+            dt = clsGestorBD.Consultar("SELECT * FROM Metadata WHERE Parent = '" + ObtenerNombreFormulario() + "'");
+
             if (objWizardPag2 == null)
             {
                 objWizardPag2 = new frmWizardPag2(this, objConnect,item);

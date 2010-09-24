@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Data;
-using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
-using System.Xml.Serialization;
 using System.Text;
+using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace Wizard.Formularios
 {
@@ -19,7 +19,7 @@ namespace Wizard.Formularios
         private bool blnGuardado = true;
         private bool blnCambio = false;
         private int numIndicador = 0; //0: nuevo; 1: modificar
-        private List<string> lstServicio = new List<string>();
+        private List<clsParametro> lstParametros = new List<clsParametro>();
 
         public frmWizardPag3(Form frmWizardPag2, Connect pobjConnect)
         {
@@ -132,23 +132,31 @@ namespace Wizard.Formularios
             }
         }
 
-        private string Serializar(List<string> plstServicios)
+        private string Serializar(List<clsParametro> plstParametros)
         {
-            string strXML = null;
-            MemoryStream ms = new MemoryStream();
-            XmlSerializer xs = new XmlSerializer(typeof(List<string>));
-            XmlTextWriter xtw = new XmlTextWriter(ms, Encoding.Default);
+            try
+            {
+                string strXML = null;
+                MemoryStream ms = new MemoryStream();
+                XmlSerializer xs = new XmlSerializer(typeof(List<clsParametro>));
+                XmlTextWriter xtw = new XmlTextWriter(ms, Encoding.Default);
 
-            XmlSerializerNamespaces xsn = new XmlSerializerNamespaces();
-            xsn.Add(String.Empty, String.Empty);
+                XmlSerializerNamespaces xsn = new XmlSerializerNamespaces();
+                xsn.Add(String.Empty, String.Empty);
 
-            xs.Serialize(xtw, plstServicios, xsn);
-            ms = (MemoryStream)xtw.BaseStream;
+                xs.Serialize(xtw, plstParametros, xsn);
+                ms = (MemoryStream)xtw.BaseStream;
 
-            UTF8Encoding encoding = new UTF8Encoding();
-            strXML = encoding.GetString(ms.ToArray());
+                UTF8Encoding encoding = new UTF8Encoding();
+                strXML = encoding.GetString(ms.ToArray());
 
-            return strXML;
+                return strXML;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex + "");
+                return null;
+            }
         }        
 
         private void cmdAtras_Click(object sender, EventArgs e)
@@ -171,7 +179,8 @@ namespace Wizard.Formularios
 
         private void cmdSiguiente_Click(object sender, EventArgs e)
         {
-            lstServicio.Clear();
+            lstParametros.Clear();
+            clsParametro objParametro;
 
             if (numIndicador == 0)
             {
@@ -179,23 +188,51 @@ namespace Wizard.Formularios
                 {
                     for (int i = 0; i < lstServicios.Items.Count; i++)
                     {
-                        lstServicio.Add(lstServicios.Items[i].ToString());
+                        objParametro = new clsParametro();
+
+                        objParametro.StrNombreServicio = "";
+                        objParametro.StrNombreParametro = lstServicios.Items[i].ToString();
+
+                        if (lstServicios.Items[i].ToString().Substring(0, 1).CompareTo("T") == 0)
+                        {
+                            objParametro.ChrTipoServicio = "N";
+                        }
+                        else
+                        {
+                            objParametro.ChrTipoServicio = "B";
+                        }
+
+                        objParametro.NumTipoOperacion = numIndicador;
+
+                        objParametro.NumOrden = i + 1;
+
+                        lstParametros.Add(objParametro);
+                    }
+                    
+                    string strXML = this.Serializar(lstParametros);
+
+                    if (clsGestorBD.EjecutaStoredProcedure("up_WIManServicio", strXML))
+                    {
+                        if (objWizardPag4 == null)
+                        {
+                            objWizardPag4 = new frmWizardPag4(this, objConnect);
+                        }
+
+                        objWizardPag4.Location = this.Location;
+                        objWizardPag4.Visible = true;
+                        this.Visible = false;
+                    }
+                    else
+                    {
+                        //Error
                     }
                 }
                 else
                 {
-                    lstServicio = null;
+                    lstParametros = null;
+                    MessageBox.Show("No hay cambio");
                 }
             }
-
-            if (objWizardPag4 == null)
-            {
-                objWizardPag4 = new frmWizardPag4(this, objConnect);
-            }
-
-            objWizardPag4.Location = this.Location;
-            objWizardPag4.Visible = true;
-            this.Visible = false;
         }
 
         private void cmdVer_Click(object sender, EventArgs e)
@@ -324,7 +361,7 @@ namespace Wizard.Formularios
 
         public void Reset()
         {
-            lstServicio.Clear();
+            lstParametros.Clear();
             cboProcedures.SelectedIndex = -1;
             cboServicios.SelectedIndex = -1;
             lblServicio.Text = "";

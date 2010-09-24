@@ -54,6 +54,12 @@
     <Compile Include="Riesgos\Formularios\frmPlaza.Designer.cs">
       <DependentUpon>frmPlaza.cs</DependentUpon>
     </Compile>
+    <Compile Include="Riesgos\Formularios\frmPrueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Riesgos\Formularios\frmPrueba.Designer.cs">
+      <DependentUpon>frmPrueba.cs</DependentUpon>
+    </Compile>
     <Compile Include="SpectrumFondos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Riesgos\Formularios\frmPlaza.resx">
@@ -63,6 +69,10 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Riesgos\Formularios\frmPrueba.resx">
+      <DependentUpon>frmPrueba.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">

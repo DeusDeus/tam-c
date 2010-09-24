@@ -85,7 +85,7 @@ namespace Wizard
             }
         }
 
-        public static bool EjecutaStoredProcedure(string pstrNombreStoredProcedure, string ptxtArchivoXML)
+    public static bool EjecutaStoredProcedure(string pstrNombreStoredProcedure, string ptxtArchivoXML)
         {
             try
             {

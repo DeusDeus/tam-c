@@ -48,6 +48,7 @@ namespace Wizard.Formularios
         {
             string strNombreFormulario = "";
             string strAuxiliar = "";
+            
             strNombreFormulario = item.Name;
 
             for (int i = 0; i < strNombreFormulario.Length; i++)
@@ -72,14 +73,17 @@ namespace Wizard.Formularios
 
         private void cmdSiguiente_Click(object sender, EventArgs e)
         {
-            item = lstFormularios[cboFormularios.SelectedIndex];
             strNombreModulo = cboModulos.SelectedItem.ToString();
-
+            
             dt = clsGestorBD.Consultar("SELECT * FROM Metadata WHERE Parent = '" + ObtenerNombreFormulario() + "'");
 
             if (objWizardPag2 == null)
             {
-                objWizardPag2 = new frmWizardPag2(this, objConnect,item);
+                objWizardPag2 = new frmWizardPag2(this, objConnect, item);
+            }
+            else
+            {
+                objWizardPag2.LLenarGrilla(item);
             }
 
             objWizardPag2.Location = this.Location;
@@ -119,6 +123,7 @@ namespace Wizard.Formularios
         {
             if (cboModulos.SelectedIndex >= 0)
             {
+                item = lstFormularios[cboFormularios.SelectedIndex];
                 cmdSiguiente.Enabled = true;
             }
             else

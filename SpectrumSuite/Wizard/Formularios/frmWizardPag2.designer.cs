@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmWizardPag2));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmdSiguiente = new System.Windows.Forms.Button();
             this.cmdAtras = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,6 +63,7 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -190,6 +200,8 @@
             // 
             // Column2
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column2.Frozen = true;
             this.Column2.HeaderText = "Tipo";
             this.Column2.Items.AddRange(new object[] {
@@ -202,6 +214,7 @@
             "txt"});
             this.Column2.Name = "Column2";
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column2.ToolTipText = "Campo Obligatorio";
             this.Column2.Width = 60;
             // 
             // Column3
@@ -214,6 +227,10 @@
             // 
             // Column4
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.NullValue = false;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.Frozen = true;
             this.Column4.HeaderText = "Visible";
             this.Column4.Name = "Column4";
@@ -222,6 +239,10 @@
             // 
             // Column5
             // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.NullValue = false;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column5.Frozen = true;
             this.Column5.HeaderText = "Obligatorio";
             this.Column5.Name = "Column5";
@@ -230,6 +251,10 @@
             // 
             // Column6
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.NullValue = false;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column6.Frozen = true;
             this.Column6.HeaderText = "Calculado";
             this.Column6.Name = "Column6";
@@ -262,6 +287,8 @@
             // 
             // Column10
             // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Red;
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column10.Frozen = true;
             this.Column10.HeaderText = "Dato";
             this.Column10.Items.AddRange(new object[] {
@@ -271,30 +298,40 @@
             "bool",
             "date"});
             this.Column10.Name = "Column10";
+            this.Column10.ToolTipText = "Campo Obligatorio";
             this.Column10.Width = 60;
             // 
             // Column11
             // 
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Red;
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column11.Frozen = true;
             this.Column11.HeaderText = "Longitud";
             this.Column11.Name = "Column11";
             this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column11.ToolTipText = "Campo Obligatorio";
             this.Column11.Width = 70;
             // 
             // Column12
             // 
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Red;
+            this.Column12.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column12.Frozen = true;
             this.Column12.HeaderText = "Precisión";
             this.Column12.Name = "Column12";
             this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column12.ToolTipText = "Campo Obligatorio";
             this.Column12.Width = 70;
             // 
             // Column13
             // 
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Red;
+            this.Column13.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column13.Frozen = true;
             this.Column13.HeaderText = "IO";
             this.Column13.Name = "Column13";
             this.Column13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column13.ToolTipText = "Campo Obligatorio";
             this.Column13.Width = 50;
             // 
             // Column14
@@ -367,5 +404,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

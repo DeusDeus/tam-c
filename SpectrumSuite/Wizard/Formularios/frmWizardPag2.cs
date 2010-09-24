@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml;
-using EnvDTE;
-using System.IO;
 using System.Xml.Serialization;
-using System.Text;
+using ComponentesGUI;
+using EnvDTE;
+using SpectrumSuite.Riesgos.Formularios;
 
 namespace Wizard.Formularios
 {
@@ -19,6 +21,7 @@ namespace Wizard.Formularios
         private ProjectItem item;
         private DataTable dt = new DataTable();
         private List<clsMetadata> lstMetadata = new List<clsMetadata>();
+        private List<Control> lstControles = new List<Control>();
 
         public frmWizardPag2(Form frmWizardPag1, Connect pobjConnect, ProjectItem pitem)
         {
@@ -31,56 +34,40 @@ namespace Wizard.Formularios
 
         private void ObtenerGrilla()
         {
+            clsMetadata objMetadata;
+
             lstMetadata.Clear();
 
-            for (int i = 0; i < dgvMetadata.Rows.Count; i++)
+            for (int i = 0; i < dgvMetadata.Rows.Count - 1; i++)
             {
-                clsMetadata objMetadata = new clsMetadata();
+                objMetadata = new clsMetadata();
 
-                for (int j = 0; j < dgvMetadata.Columns.Count; j++)
+                for (int j = 0; j < dgvMetadata.Columns.Count - 1; j++)
                 {
                     string strNombre, strTipo, strIndVisible, strIndObligatorio, strIndCalculado, strParent, strFormula, 
                            strNombreCampoBD, strValor, strTipoDato,
                            strLongitud, strPrecision, strIO, strCalculo, strTagXML;
-
                     switch (j)
                     {
                         case 0:
                             strNombre = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.Nombre = strNombre;
+                            //MessageBox.Show(strNombre);
                             break;
                         case 1:
                             strTipo = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.Tipo = strTipo;
+                            //MessageBox.Show(strTipo);
                             break;
                         case 2:
                             strParent = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.Parent = strParent;
+                            //MessageBox.Show(strParent);
                             break;
                         case 3:
-                            if (((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[3]).Value.ToString().CompareTo("true") == 0)
-                            {
-                                strIndObligatorio = "X";
-                            }
-                            else
-                            {
-                                strIndObligatorio = " ";
-                            }
-                            objMetadata.IndObligatorio = strIndObligatorio;
-                            break;
-                        case 4:
-                            if (((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[3]).Value.ToString().CompareTo("true") == 0)
-                            {
-                                strIndCalculado = "X";
-                            }
-                            else
-                            {
-                                strIndCalculado = " ";
-                            }
-                            objMetadata.IndCalculado = strIndCalculado;
-                            break;
-                        case 5:
-                            if (((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[3]).Value.ToString().CompareTo("true") == 0)
+                            //MessageBox.Show(((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[3]).Value + "");
+
+                            if ((bool)((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[3]).Value)
                             {
                                 strIndVisible = "X";
                             }
@@ -89,42 +76,78 @@ namespace Wizard.Formularios
                                 strIndVisible = " ";
                             }
                             objMetadata.IndVisible = strIndVisible;
+                            //MessageBox.Show(strIndVisible);
+                            break;
+                        case 4:
+                            //MessageBox.Show(((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[4]).Value + "");
+
+                            if ((bool)((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[4]).Value)
+                            {
+                                strIndObligatorio = "X";
+                            }
+                            else
+                            {
+                                strIndObligatorio = " ";
+                            }
+                            objMetadata.IndObligatorio = strIndObligatorio;
+                            //MessageBox.Show(strIndObligatorio);
+                            break;
+                        case 5:
+                            if ((bool)((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[5]).Value)
+                            {
+                                strIndCalculado = "X";
+                            }
+                            else
+                            {
+                                strIndCalculado = " ";
+                            }
+                            objMetadata.IndCalculado = strIndCalculado;
+                            //MessageBox.Show(strIndCalculado);
                             break;
                         case 6:
                             strFormula = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.Formula = strFormula;
+                            //MessageBox.Show(strFormula);
                             break;
                         case 7:
                             strNombreCampoBD = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.NombreCampoBD = strNombreCampoBD;
+                            //MessageBox.Show(strNombreCampoBD);
                             break;
                         case 8:
                             strValor = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.Valor = strValor;
+                            //MessageBox.Show(strValor);
                             break;
                         case 9:
                             strTipoDato = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.TipoDato = strTipoDato;
+                            //MessageBox.Show(strTipoDato);
                             break;
                         case 10:
                             strLongitud = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.Longitud = strLongitud;
+                            //MessageBox.Show(strLongitud);
                             break;
                         case 11:
                             strPrecision = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.Precision = strPrecision;
+                           //MessageBox.Show(strPrecision);
                             break;
                         case 12:
                             strIO = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.Io = strIO;
+                            //MessageBox.Show(strIO);
                             break;
                         case 13:
                             strCalculo = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.Calculo = strCalculo;
+                            //MessageBox.Show(strCalculo);
                             break;
                         case 14:
                             strTagXML = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.TagXML = strTagXML;
+                            //MessageBox.Show(strTagXML);
                             break;
                     }
                 }
@@ -133,76 +156,143 @@ namespace Wizard.Formularios
             }
         }
 
-        private void LLenarGrilla(ProjectItem pitem)
+        public void LLenarGrilla(ProjectItem pitem)
         {
-            List<String> lista = new List<string>();
+           dgvMetadata.Rows.Clear();
 
-            if (String.Compare(pitem.Name, "frmPlaza.cs") == 0)
+           dt = objWizardPag1.ObtenerTablaMetadata();
+
+           if (dt.Rows.Count > 0)
+           {
+               for (int i = 0; i < dt.Rows.Count; i++)
+               {
+                   String pcad = dt.Rows[i]["Nombre"].ToString();
+                   String tipo = dt.Rows[i]["Tipo"].ToString();
+                   String parent = dt.Rows[i]["Parent"].ToString();
+                   String IndVisible = dt.Rows[i]["IndVisible"].ToString();
+                   String IndObligatorio = dt.Rows[i]["IndObligatorio"].ToString();
+                   String IndCalculado = dt.Rows[i]["IndCalculado"].ToString();
+                   String Formula = dt.Rows[i]["Formula"].ToString();
+                   String NombreCampoBD = dt.Rows[i]["NombreCampoBD"].ToString();
+                   String Valor = dt.Rows[i]["Valor"].ToString();
+                   String TipoDato = dt.Rows[i]["TipoDato"].ToString();
+                   String Longitud = dt.Rows[i]["Longitud"].ToString();
+                   String Precision = dt.Rows[i]["Precision"].ToString();
+                   String IO = dt.Rows[i]["IO"].ToString();
+                   String Calculo = dt.Rows[i]["Calculo"].ToString();
+                   String TagXML = dt.Rows[i]["TagXML"].ToString();
+
+                   string[] row = { pcad, tipo, parent, null, null, null, Formula, NombreCampoBD, Valor, TipoDato, Longitud, Precision, IO, Calculo, TagXML };
+
+                   dgvMetadata.Rows.Add(row);
+
+                   if (IndVisible.CompareTo("X") == 0)
+                   {
+                       ((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[3]).Value = true;
+                   }
+                   else
+                   {
+                       ((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[3]).Value = false;
+                   }
+
+                   if (IndObligatorio.CompareTo("X") == 0)
+                   {
+                       ((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[4]).Value = true;
+                   }
+                   else
+                   {
+                       ((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[4]).Value = false;
+                   }
+
+                   if (IndCalculado.CompareTo("X") == 0)
+                   {
+                       ((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[5]).Value = true;
+                   }
+                   else
+                   {
+                       ((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[5]).Value = false;
+                   }
+               }
+           }
+           else
+           {
+              CrearListaControles(new frmPrueba(),lstControles);
+              LLenar_filas(lstControles);
+           }
+        }
+
+        private void LLenar_filas(List<Control> lista)
+        {
+            dgvMetadata.Rows.Clear();
+
+            for (int i = 0; i < lstControles.Count; i++)
             {
-                dt = objWizardPag1.ObtenerTablaMetadata();
+                String strNombreControl = lista[i].Name;
+                dgvMetadata.Rows.Add();
+                dgvMetadata.Rows[i].Cells[0].Value = strNombreControl;
+                dgvMetadata.Rows[i].Cells[2].Value = objWizardPag1.ObtenerNombreFormulario();
+                dgvMetadata.Rows[i].Cells[14].Value = "";
+            }
+        }
 
-                if (dt.Rows.Count > 0)
+        public static void CrearListaControles(Control pctr, List<Control> pstrControles)
+        {
+            if (pctr is ucButton)
+            {
+                pstrControles.Add(pctr);
+            }
+            else
+            {
+                if (pctr is ucCheckBox)
                 {
-                    for (int i = 0; i < dt.Rows.Count; i++)
+                    pstrControles.Add(pctr);
+                }
+                else
+                {
+                    if (pctr is ucComboBox)
                     {
-                        String pcad = dt.Rows[i]["Nombre"].ToString();
-                        String tipo = dt.Rows[i]["Tipo"].ToString();
-                        String parent = dt.Rows[i]["Parent"].ToString();
-                        String IndVisible = dt.Rows[i]["IndVisible"].ToString();
-                        String IndObligatorio = dt.Rows[i]["IndObligatorio"].ToString();
-                        String IndCalculado = dt.Rows[i]["IndCalculado"].ToString();
-                        String Formula = dt.Rows[i]["Formula"].ToString();
-                        String NombreCampoBD = dt.Rows[i]["NombreCampoBD"].ToString();
-                        String Valor = dt.Rows[i]["Valor"].ToString();
-                        String TipoDato = dt.Rows[i]["TipoDato"].ToString();
-                        String Longitud = dt.Rows[i]["Longitud"].ToString();
-                        String Precision = dt.Rows[i]["Precision"].ToString();
-                        String IO = dt.Rows[i]["IO"].ToString();
-                        String Calculo = dt.Rows[i]["Calculo"].ToString();
-                        String TagXML = dt.Rows[i]["TagXML"].ToString();
-
-                        string[] row = { pcad, tipo, parent, null, null, null, Formula, NombreCampoBD, Valor, TipoDato, Longitud, Precision, IO, Calculo, TagXML };
-
-                        dgvMetadata.Rows.Add(row);
-
-                        if (IndVisible.CompareTo("X") == 0)
-                            ((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[3]).Value = true;
-
-                        if (IndObligatorio.CompareTo("X") == 0)
-                            ((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[4]).Value = true;
-
-                        if (IndCalculado.CompareTo("X") == 0)
-                            ((DataGridViewCheckBoxCell)dgvMetadata.Rows[i].Cells[5]).Value = true;
+                        pstrControles.Add(pctr);
+                    }
+                    else
+                    {
+                        if (pctr is ucDataGridView)
+                        {
+                            pstrControles.Add(pctr);
+                        }
+                        else
+                        {
+                            if (pctr is ucDateTimePicker)
+                            {
+                                pstrControles.Add(pctr);
+                            }
+                            else
+                            {
+                                if (pctr is ucLabel)
+                                {
+                                    pstrControles.Add(pctr);
+                                }
+                                else
+                                {
+                                    if (pctr is ucTextBox)
+                                    {
+                                        pstrControles.Add(pctr);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
-        }
 
-        private void llenar_filas(List<string> lista)
-        {
-            dgvMetadata.Rows.Clear();
-            int i = 0;
-            while (i < lista.Count)
+            if (pctr.HasChildren)
             {
-                String pcad = lista[i];
-                string[] row = { pcad};
-                dgvMetadata.Rows.Add(row);
-                i++;
-            }
-        } 
-
-        public void llenar_lista_controles(Control ctr, List<string> lista)
-        {
-            if ((ctr is Form) == false)
-            {
-                if (string.Compare(ctr.Name, "") != 0) lista.Add(ctr.Name);
-            }
-            if (ctr.HasChildren)
-            {
-                foreach (Control ctrl in ctr.Controls) llenar_lista_controles(ctrl, lista);
+                foreach (Control ctr in pctr.Controls)
+                {
+                    CrearListaControles(ctr, pstrControles);
+                }
             }
         }
-
+        
         public string ObtenerNombreModulo()
         {
             return strNombreModulo;
@@ -228,22 +318,44 @@ namespace Wizard.Formularios
             return strXML;
         }
 
+        private bool ValidarGrilla()
+        {
+            for (int i = 0; i < dgvMetadata.Rows.Count; i++)
+            {
+                if (dgvMetadata.Rows[i].Cells[2].Value == null)
+                {
+                    return false;
+                }
+                if (dgvMetadata.Rows[i].Cells[9].Value == null)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private void cmdSiguiente_Click(object sender, EventArgs e)
         {
             strNombreModulo = objWizardPag1.ObtenerNombreModulo();
 
-            ObtenerGrilla();
-
-            if (objWizardPag3 == null)
+            if (ValidarGrilla())
             {
-                objWizardPag3 = new frmWizardPag3(this, objConnect);
+                this.ObtenerGrilla();
+
+                if (objWizardPag3 == null)
+                {
+                    objWizardPag3 = new frmWizardPag3(this, objConnect);
+                }
+
+                objWizardPag3.Location = this.Location;
+                objWizardPag3.Visible = true;
+                this.Visible = false;
             }
-
-            objWizardPag3.Location = this.Location;
-            objWizardPag3.Visible = true;
-            this.Visible = false;
-
-            //retornar_metadatos();
+            else
+            {
+                MessageBox.Show("Falta(n) ingresar algun(os) dato(s) obligatorio(s)","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
         }
 
         private void cmdAtras_Click(object sender, EventArgs e)
@@ -252,7 +364,8 @@ namespace Wizard.Formularios
 
             if (dr == DialogResult.Yes)
             {
-                objWizardPag3.Reset();
+                
+                //objWizardPag3.Reset();
                 this.Reset();
                 objWizardPag1.Location = this.Location;
                 objWizardPag1.Visible = true;

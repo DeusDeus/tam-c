@@ -44,6 +44,7 @@
     </Compile>
     <Compile Include="clsGestorBD.cs" />
     <Compile Include="clsMetadata.cs" />
+    <Compile Include="clsParametro.cs" />
     <Compile Include="CommandBar.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -150,6 +151,10 @@
     <ProjectReference Include="..\ComponentesDatos\ComponentesDatos.csproj">
       <Project>{1222E0B2-FC64-4AEC-94E2-77C2A2662EEF}</Project>
       <Name>ComponentesDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ComponentesGUI\ComponentesGUI.csproj">
+      <Project>{A529C2A7-A8B4-4E12-A992-8F057F38320D}</Project>
+      <Name>ComponentesGUI</Name>
     </ProjectReference>
     <ProjectReference Include="..\SpectrumSuite\SpectrumFondos.csproj">
       <Project>{C94A993F-DE53-40C0-B60E-812497AB1BAE}</Project>

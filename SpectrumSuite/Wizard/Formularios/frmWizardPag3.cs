@@ -181,6 +181,7 @@ namespace Wizard.Formularios
         {
             lstParametros.Clear();
             clsParametro objParametro;
+            bool blnExito = false;
 
             if (numIndicador == 0)
             {
@@ -213,25 +214,56 @@ namespace Wizard.Formularios
 
                     if (clsGestorBD.EjecutaStoredProcedure("up_WIManServicio", strXML))
                     {
-                        if (objWizardPag4 == null)
-                        {
-                            objWizardPag4 = new frmWizardPag4(this, objConnect);
-                        }
-
-                        objWizardPag4.Location = this.Location;
-                        objWizardPag4.Visible = true;
-                        this.Visible = false;
+                        blnExito = true;
                     }
                     else
                     {
-                        //Error
+                        blnExito = false;
                     }
                 }
                 else
                 {
-                    lstParametros = null;
+                    lstParametros.Clear();
                     MessageBox.Show("No hay cambio");
                 }
+            }
+
+            MessageBox.Show("PASO");
+
+            if (objWizardPag2.numIndicador == 0 || objWizardPag2.numIndicador == 1)
+            {
+                List<clsMetadata> lstMetadata = new List<clsMetadata>();
+                
+                lstMetadata = objWizardPag2.ObtenerListaMetadata();
+                MessageBox.Show(lstMetadata.Count+"");
+                string strXML = objWizardPag2.Serializar(lstMetadata);
+                
+                MessageBox.Show(strXML);
+                
+                if (clsGestorBD.EjecutaStoredProcedure("up_WIManMetadata", strXML))
+                {
+                    blnExito = true;
+                }
+                else
+                {
+                    blnExito = false;
+                }
+            }
+            else
+            {
+
+            }
+
+            if (blnExito)
+            {
+                if (objWizardPag4 == null)
+                {
+                    objWizardPag4 = new frmWizardPag4(this, objConnect);
+                }
+
+                objWizardPag4.Location = this.Location;
+                objWizardPag4.Visible = true;
+                this.Visible = false;
             }
         }
 

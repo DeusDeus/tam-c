@@ -48,6 +48,7 @@
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvMetadata = new System.Windows.Forms.DataGridView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +64,6 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -191,7 +191,6 @@
             // 
             // Column1
             // 
-            this.Column1.Frozen = true;
             this.Column1.HeaderText = "Nombre";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -200,9 +199,8 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column2.Frozen = true;
             this.Column2.HeaderText = "Tipo";
             this.Column2.Items.AddRange(new object[] {
             "btn",
@@ -219,7 +217,6 @@
             // 
             // Column3
             // 
-            this.Column3.Frozen = true;
             this.Column3.HeaderText = "Parent";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -231,7 +228,6 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.NullValue = false;
             this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.Frozen = true;
             this.Column4.HeaderText = "Visible";
             this.Column4.Name = "Column4";
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -243,7 +239,6 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.NullValue = false;
             this.Column5.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column5.Frozen = true;
             this.Column5.HeaderText = "Obligatorio";
             this.Column5.Name = "Column5";
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -255,7 +250,6 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.NullValue = false;
             this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column6.Frozen = true;
             this.Column6.HeaderText = "Calculado";
             this.Column6.Name = "Column6";
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -263,7 +257,6 @@
             // 
             // Column7
             // 
-            this.Column7.Frozen = true;
             this.Column7.HeaderText = "Fórmula";
             this.Column7.Name = "Column7";
             this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -272,14 +265,12 @@
             // 
             // Column8
             // 
-            this.Column8.Frozen = true;
             this.Column8.HeaderText = "CampoBD";
             this.Column8.Name = "Column8";
             this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Column9
             // 
-            this.Column9.Frozen = true;
             this.Column9.HeaderText = "Valor";
             this.Column9.Name = "Column9";
             this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -287,9 +278,8 @@
             // 
             // Column10
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Column10.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column10.Frozen = true;
             this.Column10.HeaderText = "Dato";
             this.Column10.Items.AddRange(new object[] {
             "int",
@@ -303,9 +293,8 @@
             // 
             // Column11
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Column11.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column11.Frozen = true;
             this.Column11.HeaderText = "Longitud";
             this.Column11.Name = "Column11";
             this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -314,9 +303,8 @@
             // 
             // Column12
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Column12.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column12.Frozen = true;
             this.Column12.HeaderText = "Precisión";
             this.Column12.Name = "Column12";
             this.Column12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -325,9 +313,8 @@
             // 
             // Column13
             // 
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Column13.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column13.Frozen = true;
             this.Column13.HeaderText = "IO";
             this.Column13.Name = "Column13";
             this.Column13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -336,7 +323,6 @@
             // 
             // Column14
             // 
-            this.Column14.Frozen = true;
             this.Column14.HeaderText = "Cálculo";
             this.Column14.Items.AddRange(new object[] {
             " ",
@@ -347,7 +333,6 @@
             // 
             // Column15
             // 
-            this.Column15.Frozen = true;
             this.Column15.HeaderText = "TagXML";
             this.Column15.Name = "Column15";
             this.Column15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -389,6 +374,7 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblDescripcion2;
         private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -404,6 +390,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewComboBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

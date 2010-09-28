@@ -48,7 +48,7 @@ namespace Wizard.Formularios
         {
             string strNombreFormulario = "";
             string strAuxiliar = "";
-            
+
             strNombreFormulario = item.Name;
 
             for (int i = 0; i < strNombreFormulario.Length; i++)

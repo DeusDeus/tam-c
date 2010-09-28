@@ -8,6 +8,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using ComponentesGUI;
 using EnvDTE;
+using SpectrumSuite;
 using SpectrumSuite.Riesgos.Formularios;
 
 namespace Wizard.Formularios
@@ -22,6 +23,7 @@ namespace Wizard.Formularios
         private DataTable dt = new DataTable();
         private List<clsMetadata> lstMetadata = new List<clsMetadata>();
         private List<Control> lstControles = new List<Control>();
+        public int numIndicador = 0;
 
         public frmWizardPag2(Form frmWizardPag1, Connect pobjConnect, ProjectItem pitem)
         {
@@ -38,7 +40,7 @@ namespace Wizard.Formularios
 
             lstMetadata.Clear();
 
-            for (int i = 0; i < dgvMetadata.Rows.Count - 1; i++)
+            for (int i = 0; i < dgvMetadata.Rows.Count; i++)
             {
                 objMetadata = new clsMetadata();
 
@@ -132,7 +134,7 @@ namespace Wizard.Formularios
                         case 11:
                             strPrecision = dgvMetadata.Rows[i].Cells[j].Value.ToString();
                             objMetadata.Precision = strPrecision;
-                           //MessageBox.Show(strPrecision);
+                            //MessageBox.Show(strPrecision);
                             break;
                         case 12:
                             strIO = dgvMetadata.Rows[i].Cells[j].Value.ToString();
@@ -153,17 +155,21 @@ namespace Wizard.Formularios
                 }
 
                 lstMetadata.Add(objMetadata);
+                MessageBox.Show("va " + (i + 1));
             }
         }
 
         public void LLenarGrilla(ProjectItem pitem)
         {
            dgvMetadata.Rows.Clear();
+           lstControles.Clear();
 
            dt = objWizardPag1.ObtenerTablaMetadata();
 
            if (dt.Rows.Count > 0)
            {
+               numIndicador = 1;
+
                for (int i = 0; i < dt.Rows.Count; i++)
                {
                    String pcad = dt.Rows[i]["Nombre"].ToString();
@@ -216,7 +222,24 @@ namespace Wizard.Formularios
            }
            else
            {
-              CrearListaControles(new frmPrueba(),lstControles);
+               numIndicador = 0;
+
+               /**********************************************************************
+                * IMPORTANTE: Esta información debe ser mantenida por el programador *
+                *             cada vez que cree nuevos formularios                   *
+                **********************************************************************/
+               if (objWizardPag1.ObtenerNombreFormulario().CompareTo("frmPlaza") == 0)
+               {
+                   CrearListaControles(new frmPlaza(), lstControles);
+               }
+               else
+               {
+                   if (objWizardPag1.ObtenerNombreFormulario().CompareTo("frmPrueba") == 0)
+                   {
+                       CrearListaControles(new frmPrueba(), lstControles);
+                   }
+               }
+              
               LLenar_filas(lstControles);
            }
         }
@@ -230,8 +253,20 @@ namespace Wizard.Formularios
                 String strNombreControl = lista[i].Name;
                 dgvMetadata.Rows.Add();
                 dgvMetadata.Rows[i].Cells[0].Value = strNombreControl;
+                dgvMetadata.Rows[i].Cells[1].Value = "";
                 dgvMetadata.Rows[i].Cells[2].Value = objWizardPag1.ObtenerNombreFormulario();
-                dgvMetadata.Rows[i].Cells[14].Value = "";
+                dgvMetadata.Rows[i].Cells[3].Value = false;
+                dgvMetadata.Rows[i].Cells[4].Value = false;
+                dgvMetadata.Rows[i].Cells[5].Value = false;
+                dgvMetadata.Rows[i].Cells[6].Value = "";
+                dgvMetadata.Rows[i].Cells[7].Value = "";
+                dgvMetadata.Rows[i].Cells[8].Value = "";
+                dgvMetadata.Rows[i].Cells[9].Value = "";
+                dgvMetadata.Rows[i].Cells[10].Value = "0";
+                dgvMetadata.Rows[i].Cells[11].Value = "0";
+                dgvMetadata.Rows[i].Cells[12].Value = "0";
+                dgvMetadata.Rows[i].Cells[13].Value = "";
+                dgvMetadata.Rows[i].Cells[14].Value = "";                
             }
         }
 
@@ -298,23 +333,31 @@ namespace Wizard.Formularios
             return strNombreModulo;
         }
 
-        public string Serializar()
+        public string Serializar(List<clsMetadata> plstMetadata)
         {
             string strXML = null;
-            
+            MessageBox.Show("1");
             MemoryStream ms = new MemoryStream();
+            MessageBox.Show("2");
             XmlSerializer xs = new XmlSerializer(typeof(List<clsMetadata>));
+            MessageBox.Show("3");
             XmlTextWriter xtw = new XmlTextWriter(ms, Encoding.Default);
 
+            MessageBox.Show("4");
             XmlSerializerNamespaces xsn = new XmlSerializerNamespaces();
+            MessageBox.Show("5");
             xsn.Add(String.Empty, String.Empty);
 
-            xs.Serialize(xtw, lstMetadata, xsn);
+            MessageBox.Show("6");
+            xs.Serialize(xtw, plstMetadata, xsn);
+            MessageBox.Show("7");
             ms = (MemoryStream)xtw.BaseStream;
 
+            MessageBox.Show("8");
             UTF8Encoding encoding = new UTF8Encoding();
+            MessageBox.Show("9");
             strXML = encoding.GetString(ms.ToArray());
-
+            MessageBox.Show("10");
             return strXML;
         }
 
@@ -322,11 +365,11 @@ namespace Wizard.Formularios
         {
             for (int i = 0; i < dgvMetadata.Rows.Count; i++)
             {
-                if (dgvMetadata.Rows[i].Cells[2].Value == null)
+                if (dgvMetadata.Rows[i].Cells[2].Value == "")
                 {
                     return false;
                 }
-                if (dgvMetadata.Rows[i].Cells[9].Value == null)
+                if (dgvMetadata.Rows[i].Cells[9].Value == "")
                 {
                     return false;
                 }
@@ -342,6 +385,8 @@ namespace Wizard.Formularios
             if (ValidarGrilla())
             {
                 this.ObtenerGrilla();
+
+                MessageBox.Show("Paso obtener grilla");
 
                 if (objWizardPag3 == null)
                 {
@@ -387,6 +432,11 @@ namespace Wizard.Formularios
         public void Reset()
         {
             lstMetadata.Clear();
+        }
+
+        public List<clsMetadata> ObtenerListaMetadata()
+        {
+            return lstMetadata;
         }
     }
 }

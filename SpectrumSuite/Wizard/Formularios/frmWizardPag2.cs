@@ -155,7 +155,7 @@ namespace Wizard.Formularios
                 }
 
                 lstMetadata.Add(objMetadata);
-                MessageBox.Show("va " + (i + 1));
+                //MessageBox.Show("va " + (i + 1));
             }
         }
 
@@ -336,28 +336,28 @@ namespace Wizard.Formularios
         public string Serializar(List<clsMetadata> plstMetadata)
         {
             string strXML = null;
-            MessageBox.Show("1");
+            //MessageBox.Show("1");
             MemoryStream ms = new MemoryStream();
-            MessageBox.Show("2");
+            //MessageBox.Show("2");
             XmlSerializer xs = new XmlSerializer(typeof(List<clsMetadata>));
-            MessageBox.Show("3");
+            //MessageBox.Show("3");
             XmlTextWriter xtw = new XmlTextWriter(ms, Encoding.Default);
 
-            MessageBox.Show("4");
+            //MessageBox.Show("4");
             XmlSerializerNamespaces xsn = new XmlSerializerNamespaces();
-            MessageBox.Show("5");
+            //MessageBox.Show("5");
             xsn.Add(String.Empty, String.Empty);
 
-            MessageBox.Show("6");
+            //MessageBox.Show("6");
             xs.Serialize(xtw, plstMetadata, xsn);
-            MessageBox.Show("7");
+            //MessageBox.Show("7");
             ms = (MemoryStream)xtw.BaseStream;
 
-            MessageBox.Show("8");
+            //MessageBox.Show("8");
             UTF8Encoding encoding = new UTF8Encoding();
-            MessageBox.Show("9");
+            //MessageBox.Show("9");
             strXML = encoding.GetString(ms.ToArray());
-            MessageBox.Show("10");
+            MessageBox.Show(strXML);
             return strXML;
         }
 
@@ -386,7 +386,7 @@ namespace Wizard.Formularios
             {
                 this.ObtenerGrilla();
 
-                MessageBox.Show("Paso obtener grilla");
+                //MessageBox.Show("Paso obtener grilla");
 
                 if (objWizardPag3 == null)
                 {

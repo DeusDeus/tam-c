@@ -35,6 +35,7 @@ namespace Wizard.Formularios
         {
             foreach (string nombre in plstModulos)
             {
+                //MessageBox.Show(nombre);
                 cboModulos.Items.Add(nombre);
             }
         }

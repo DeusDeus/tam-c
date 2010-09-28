@@ -53,3 +53,4 @@ C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\Resolve
 C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.frmPlaza.resources
 C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.Properties.Resources.resources
 C:\Temp\TAM Consulting\Repositorio\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumFondos.csproj.GenerateResource.Cache
+C:\Temp\C#\SpectrumSuite\SpectrumSuite\obj\Debug\SpectrumSuite.Riesgos.Formularios.frmPrueba.resources

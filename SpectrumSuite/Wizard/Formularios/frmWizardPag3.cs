@@ -224,21 +224,21 @@ namespace Wizard.Formularios
                 else
                 {
                     lstParametros.Clear();
-                    MessageBox.Show("No hay cambio");
+                    //MessageBox.Show("No hay cambio");
                 }
             }
 
-            MessageBox.Show("PASO");
+            //MessageBox.Show("PASO");
 
             if (objWizardPag2.numIndicador == 0 || objWizardPag2.numIndicador == 1)
             {
                 List<clsMetadata> lstMetadata = new List<clsMetadata>();
                 
                 lstMetadata = objWizardPag2.ObtenerListaMetadata();
-                MessageBox.Show(lstMetadata.Count+"");
+                //MessageBox.Show(lstMetadata.Count+"");
                 string strXML = objWizardPag2.Serializar(lstMetadata);
                 
-                MessageBox.Show(strXML);
+                //MessageBox.Show(strXML);
                 
                 if (clsGestorBD.EjecutaStoredProcedure("up_WIManMetadata", strXML))
                 {
@@ -350,8 +350,56 @@ namespace Wizard.Formularios
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
-            blnGuardado = true;
-            cmdGuardar.Enabled = false;
+            lstParametros.Clear();
+            clsParametro objParametro;
+            bool blnExito = false;
+
+            for (int i = 0; i < lstServicios.Items.Count; i++)
+            {
+                objParametro = new clsParametro();
+
+                objParametro.StrNombreServicio = lblServicio.Text.ToString();
+                objParametro.StrNombreParametro = lstServicios.Items[i].ToString();
+
+                if (lstServicios.Items[i].ToString().Substring(0, 1).CompareTo("T") == 0)
+                {
+                    objParametro.ChrTipoServicio = "N";
+                }
+                else
+                {
+                    objParametro.ChrTipoServicio = "B";
+                }
+
+                objParametro.NumTipoOperacion = numIndicador;
+
+                objParametro.NumOrden = i + 1;
+
+                lstParametros.Add(objParametro);
+            }
+
+            string strXML = this.Serializar(lstParametros);
+
+            MessageBox.Show(strXML);
+
+            if (clsGestorBD.EjecutaStoredProcedure("up_WIManServicio", strXML))
+            {
+                blnExito = true;
+            }
+            else
+            {
+                blnExito = false;
+            }
+
+            if (blnExito)
+            {
+                MessageBox.Show("Los cambios se guardaron exitosamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                blnGuardado = true;
+                cmdGuardar.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error al tratar de guardar los cambios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void cmdNuevo_Click(object sender, EventArgs e)

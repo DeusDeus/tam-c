@@ -1,0 +1,17 @@
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\bin\Release\SpectrumSuite.exe
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\bin\Release\SpectrumSuite.pdb
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesComun.dll
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesGUI.dll
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesNegocio.dll
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesDatos.dll
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesComun.pdb
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesDatos.pdb
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesNegocio.pdb
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesGUI.pdb
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Release\ResolveAssemblyReference.cache
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.frmPlaza.resources
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.Properties.Resources.resources
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumFondos.csproj.GenerateResource.Cache
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.exe
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.pdb
+C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.Riesgos.Formularios.frmPrueba.resources

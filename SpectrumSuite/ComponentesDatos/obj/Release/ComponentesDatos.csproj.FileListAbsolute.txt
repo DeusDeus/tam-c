@@ -1,0 +1,5 @@
+C:\TEMP\C#\SpectrumSuite\ComponentesDatos\bin\Release\ComponentesDatos.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesDatos\bin\Release\ComponentesDatos.pdb
+C:\TEMP\C#\SpectrumSuite\ComponentesDatos\obj\Release\ResolveAssemblyReference.cache
+C:\TEMP\C#\SpectrumSuite\ComponentesDatos\obj\Release\ComponentesDatos.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesDatos\obj\Release\ComponentesDatos.pdb

@@ -1,0 +1,9 @@
+C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\bin\Release\ComponentesNegocio.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\bin\Release\ComponentesNegocio.pdb
+C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\bin\Release\ComponentesDatos.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\bin\Release\ComponentesGUI.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\bin\Release\ComponentesDatos.pdb
+C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\bin\Release\ComponentesGUI.pdb
+C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\obj\Release\ResolveAssemblyReference.cache
+C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\obj\Release\ComponentesNegocio.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesNegocio\obj\Release\ComponentesNegocio.pdb

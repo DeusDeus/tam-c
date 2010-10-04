@@ -1,0 +1,5 @@
+C:\TEMP\C#\SpectrumSuite\ComponentesGUI\bin\Release\ComponentesGUI.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesGUI\bin\Release\ComponentesGUI.pdb
+C:\TEMP\C#\SpectrumSuite\ComponentesGUI\obj\Release\ResolveAssemblyReference.cache
+C:\TEMP\C#\SpectrumSuite\ComponentesGUI\obj\Release\ComponentesGUI.dll
+C:\TEMP\C#\SpectrumSuite\ComponentesGUI\obj\Release\ComponentesGUI.pdb

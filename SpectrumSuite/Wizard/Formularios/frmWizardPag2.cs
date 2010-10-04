@@ -438,5 +438,21 @@ namespace Wizard.Formularios
         {
             return lstMetadata;
         }
+
+        private void dgvMetadata_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMetadata.Rows[dgvMetadata.CurrentRow.Index].Cells[1].Value.ToString().CompareTo("dgv") == 0)
+            {
+                string strNombreControl;
+
+                strNombreControl = dgvMetadata.Rows[dgvMetadata.CurrentRow.Index].Cells[0].Value.ToString();
+
+                if (numIndicador == 1)
+                {
+                    frmWizard2Detalle objWizard2Detalle = new frmWizard2Detalle(strNombreControl);
+                    objWizard2Detalle.ShowDialog();
+                }
+            }
+        }
     }
 }

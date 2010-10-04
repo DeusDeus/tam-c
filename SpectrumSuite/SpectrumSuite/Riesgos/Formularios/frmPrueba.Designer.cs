@@ -117,6 +117,7 @@
             this.Controls.Add(this.cmdPrueba);
             this.Name = "frmPrueba";
             this.Text = "frmPrueba";
+            this.Load += new System.EventHandler(this.frmPrueba_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

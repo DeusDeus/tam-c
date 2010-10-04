@@ -15,5 +15,16 @@ namespace SpectrumSuite.Riesgos.Formularios
         {
             InitializeComponent();
         }
+
+        private void frmPrueba_Load(object sender, EventArgs e)
+        {
+            cboPrueba.Items.Add("WILDER");
+            cboPrueba.Items.Add("JOSUE");
+            cboPrueba.Items.Add("CHICANA");
+            cboPrueba.Items.Add("VIVAR");
+            cboPrueba.Items.Add("PUCP");
+
+            cboPrueba.ForeColor = Color.Blue;
+        }
     }
 }

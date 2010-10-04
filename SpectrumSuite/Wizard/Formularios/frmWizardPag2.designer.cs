@@ -48,7 +48,6 @@
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvMetadata = new System.Windows.Forms.DataGridView();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +63,7 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -186,8 +186,10 @@
             this.dgvMetadata.Location = new System.Drawing.Point(13, 15);
             this.dgvMetadata.MultiSelect = false;
             this.dgvMetadata.Name = "dgvMetadata";
+            this.dgvMetadata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMetadata.Size = new System.Drawing.Size(563, 211);
             this.dgvMetadata.TabIndex = 0;
+            this.dgvMetadata.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMetadata_CellDoubleClick);
             // 
             // Column1
             // 

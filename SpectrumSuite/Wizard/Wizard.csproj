@@ -44,6 +44,7 @@
     </Compile>
     <Compile Include="clsGestorBD.cs" />
     <Compile Include="clsMetadata.cs" />
+    <Compile Include="clsMetadataDetalle.cs" />
     <Compile Include="clsParametro.cs" />
     <Compile Include="CommandBar.Designer.cs">
       <AutoGen>True</AutoGen>

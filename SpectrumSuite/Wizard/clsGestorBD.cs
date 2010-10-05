@@ -85,7 +85,7 @@ namespace Wizard
             }
         }
 
-    public static bool EjecutaStoredProcedure(string pstrNombreStoredProcedure, string ptxtArchivoXML)
+        public static bool EjecutaStoredProcedure(string pstrNombreStoredProcedure, string ptxtArchivoXML)
         {
             try
             {
@@ -116,6 +116,44 @@ namespace Wizard
 
                 return false;
             }
+        }
+
+        public static bool CrearTabla(string pstrNombreTabla, DataGridView pdgvAtributos)
+        {
+            string strScript;
+
+            strScript  = "CREATE TABLE " + pstrNombreTabla + "\n";
+            strScript += "{";
+
+            for (int i = 0; i < pdgvAtributos.Rows.Count; i++)
+            {
+                string strNombreAtributo;
+                string strTipoDato;
+                string strNulidad;
+            }
+
+            strScript += "}\n";
+            strScript += "GO";
+
+            strScript += "ALTER TABLE " + pstrNombreTabla + "\n";
+            strScript += "ADD CONSTRAINT XPK"+pstrNombreTabla+" PRIMARY KEY (";
+            
+            for (int i = 0; i < pdgvAtributos.Rows.Count; i++)
+            {
+                //Se agrega los que son llave primaria
+                
+            }
+            
+
+            strScript += " ASC)\n";
+            strScript += "GO";
+
+            return true;
+        }
+
+        public static bool CrearStoredProcedure()
+        {
+            return true;
         }
     }
 }

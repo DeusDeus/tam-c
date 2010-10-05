@@ -13,7 +13,7 @@ namespace Wizard.Formularios
 {
     public partial class frmWizard2Detalle : Form
     {
-        private List<string> lstMetadataDetalle = new List<string>();
+        private List<clsMetadataDetalle> lstMetadataDetalle = new List<clsMetadataDetalle>();
         private string strNombreControl;
 
         public frmWizard2Detalle(string pstrNombreControl)
@@ -67,25 +67,45 @@ namespace Wizard.Formularios
 
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
-            lstMetadataDetalle.Clear();
+            clsMetadataDetalle objMetadataDetalle;
+            bool blnExito = false;
 
-            lstMetadataDetalle.Add(strNombreControl);
+            lstMetadataDetalle.Clear();
 
             if ((txtCabecera.Text.CompareTo("") != 0) && (dgvMetadataDetalle.Rows.Count > 0) && validarGrilla())
             {
                 for (int i = 0; i < dgvMetadataDetalle.Rows.Count; i++)
                 {
-                    string strMetadataDetalle;
+                    objMetadataDetalle = new clsMetadataDetalle();
 
-                    strMetadataDetalle = dgvMetadataDetalle.Rows[i].Cells[1].Value.ToString();
-                    lstMetadataDetalle.Add(strMetadataDetalle);
+                    objMetadataDetalle.StrNombreControl = strNombreControl;
+                    objMetadataDetalle.StrNombreCabecera = txtCabecera.Text;
+                    objMetadataDetalle.StrMetadaDetalle = dgvMetadataDetalle.Rows[i].Cells[1].Value.ToString();
+                    lstMetadataDetalle.Add(objMetadataDetalle);
                 }
 
                 string strXML;
 
                 strXML = Serializar(lstMetadataDetalle);
 
-                //Ejecutar Stored Procedure...
+                if (clsGestorBD.EjecutaStoredProcedure("up_WIManMetadataDetalle", strXML))
+                {
+                    blnExito = true;
+                }
+                else
+                {
+                    blnExito = false;
+                }
+
+                if (blnExito)
+                {
+                    MessageBox.Show("Los datos se registraron exitosamente", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrió un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -93,12 +113,12 @@ namespace Wizard.Formularios
             }
         }
 
-        public string Serializar(List<string> plstMetadataDetalle)
+        public string Serializar(List<clsMetadataDetalle> plstMetadataDetalle)
         {
             string strXML = null;
             
             MemoryStream ms = new MemoryStream();
-            XmlSerializer xs = new XmlSerializer(typeof(List<string>));
+            XmlSerializer xs = new XmlSerializer(typeof(List<clsMetadataDetalle>));
             XmlTextWriter xtw = new XmlTextWriter(ms, Encoding.Default);
 
             XmlSerializerNamespaces xsn = new XmlSerializerNamespaces();

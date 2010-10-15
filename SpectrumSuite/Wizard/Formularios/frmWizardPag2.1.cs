@@ -80,7 +80,7 @@ namespace Wizard.Formularios
 
                     objMetadataDetalle.StrNombreControl = strNombreControl;
                     objMetadataDetalle.StrNombreCabecera = txtCabecera.Text;
-                    objMetadataDetalle.StrMetadaDetalle = dgvMetadataDetalle.Rows[i].Cells[1].Value.ToString();
+                    objMetadataDetalle.StrMetadataDetalle = dgvMetadataDetalle.Rows[i].Cells[1].Value.ToString();
                     lstMetadataDetalle.Add(objMetadataDetalle);
                 }
 

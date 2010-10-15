@@ -20,12 +20,12 @@ namespace Wizard
             get { return strNombreCabecera; }
             set { strNombreCabecera = value; }
         }
-        private string strMetadaDetalle;
+        private string strMetadataDetalle;
 
-        public string StrMetadaDetalle
+        public string StrMetadataDetalle
         {
-            get { return strMetadaDetalle; }
-            set { strMetadaDetalle = value; }
+            get { return strMetadataDetalle; }
+            set { strMetadataDetalle = value; }
         }
     }
 }

@@ -124,30 +124,112 @@ namespace AdministradorTablas
 
         private bool ValidarGrilla()
         {
-            return true;
+            bool existePK = false;
+
+            for (int i = 0; i < dgvAtributos.Rows.Count; i++)
+            {
+                if (dgvAtributos.Rows[i].Cells[0].Value.ToString().CompareTo("") == 0)
+                {
+                    return false;
+                }
+                switch (dgvAtributos.Rows[i].Cells[1].Value.ToString())
+                {
+                    case "char":
+                        if (dgvAtributos.Rows[i].Cells[2].Value.ToString().CompareTo("") == 0)
+                        {
+                            return false;
+                        }
+                        break;
+                    case "float":
+                        if (dgvAtributos.Rows[i].Cells[2].Value.ToString().CompareTo("") == 0)
+                        {
+                            return false;
+                        }
+                        break;
+                    case "int":
+                        if (dgvAtributos.Rows[i].Cells[2].Value.ToString().CompareTo("") == 0)
+                        {
+                            return false;
+                        }
+                        break;
+                    case "varchar":
+                        if (dgvAtributos.Rows[i].Cells[2].Value.ToString().CompareTo("") == 0)
+                        {
+                            return false;
+                        }
+                        break;
+                }
+                if (((bool)dgvAtributos.Rows[i].Cells[3].Value) == true)
+                {
+                    existePK = true;
+                }
+            }
+
+            if (existePK)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (ValidarGrilla())
+            if (txtNombre.Text.CompareTo("") != 0)
             {
-                if (clsGestorBD.CrearTabla(txtNombre.Text, dgvAtributos))
+                if (dgvAtributos.Rows.Count == 0)
                 {
-                    DialogResult dr = MessageBox.Show("Se creó la tabla " + txtNombre.Text + " satisfactoriamente\n" + "¿Desea crear otra tabla?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                    if (dr == DialogResult.Yes)
-                    {
-                        dgvAtributos.DataMember = null;
-                    }
-                    else
-                    {
-                        this.Dispose();
-                    }
+                    MessageBox.Show("Debe ingresar los atributos de la tabla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrió un Error\nVerifique los tipos de dato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (ValidarGrilla())
+                    {
+                        if (clsGestorBD.CrearTabla(txtNombre.Text, dgvAtributos))
+                        {
+                            DialogResult dr = MessageBox.Show("Se creó la tabla " + txtNombre.Text + " satisfactoriamente\n" + "¿Desea crear otra tabla?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                            if (dr == DialogResult.Yes)
+                            {
+                                dgvAtributos.DataMember = null;
+                            }
+                            else
+                            {
+                                this.Dispose();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrió un Error\nVerifique los tipos de dato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Faltan datos\n- Verifique que haya ingresado todos los datos\n- Verifique que exista al menos 1 Primary Key (PK)", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese el nombre de la tabla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                if (txtNombre.Text.Length == 0)
+                {
+                    e.KeyChar = e.KeyChar.ToString().ToUpper().ToCharArray()[0];
+                }
+                e.Handled = false;
             }
         }
     }

@@ -1,5 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.IO;
+using System.Xml.Serialization;
+using System.Xml;
+using System.Text;
+using System.Collections.Generic;
 
 namespace AdministradorTablas
 {
@@ -187,23 +192,43 @@ namespace AdministradorTablas
                 {
                     if (ValidarGrilla())
                     {
-                        if (clsGestorBD.CrearTabla(txtNombre.Text, dgvAtributos))
+                        try
                         {
-                            DialogResult dr = MessageBox.Show("Se creó la tabla " + txtNombre.Text + " satisfactoriamente\n" + "¿Desea crear otra tabla?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                            List<clsAtributo> lstAtributos = new List<clsAtributo>();
 
-                            if (dr == DialogResult.Yes)
+                            for (int i = 0; i < dgvAtributos.Rows.Count; i++)
                             {
-                                dgvAtributos.DataMember = null;
+                                clsAtributo objAtributo = new clsAtributo();
+
+                                objAtributo.NombreAtributo = dgvAtributos.Rows[i].Cells[0].Value.ToString();
+                                objAtributo.TipoDato = dgvAtributos.Rows[i].Cells[1].Value.ToString();
+                                objAtributo.Tamano = dgvAtributos.Rows[i].Cells[2].Value.ToString();
+                                
+                                lstAtributos.Add(objAtributo);
+                            }
+
+                            if (clsGestorBD.CrearTabla(txtNombre.Text, dgvAtributos)) //Crea la Tabla
+                            {
+                                DialogResult dr = MessageBox.Show("Se creó la tabla " + txtNombre.Text + " satisfactoriamente\n" + "¿Desea crear otra tabla?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                                if (dr == DialogResult.Yes)
+                                {
+                                    dgvAtributos.DataMember = null;
+                                }
+                                else
+                                {
+                                    this.Dispose();
+                                }
                             }
                             else
                             {
-                                this.Dispose();
+                                MessageBox.Show("Ocurrió un Error\nVerifique los tipos de dato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Ocurrió un Error\nVerifique los tipos de dato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                            MessageBox.Show("Ocurrió un Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }   
                     }
                     else
                     {

@@ -107,10 +107,6 @@ namespace ComponentesNegocio
 
         private static XmlDocument CrearXML(List<Control> plstControles)
         {
-            //DataRow dr;
-            //dr = (clsDatos.Consultar("SELECT D.NombreStoredProcedure FROM Servicio S, Detalle_Servicio D WHERE S.NombreServicio = '" + pstrNombreServicio + "' AND S.IdServicio = D.IdServicio")).Tables[0].Rows[0];
-            //pstrNombreStoredProcedure = dr["NombreStoredProcedure"].ToString();
-
             XmlDocument xmlDocumento = new XmlDocument();
 
             XmlNode Parametros = xmlDocumento.CreateElement("Parametros");

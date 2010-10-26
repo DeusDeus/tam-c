@@ -114,9 +114,31 @@ namespace AdministradorTablas
             }
         }
 
-        public static bool CrearStoredProcedure(string pstrNombreTabla, DataGridView pdgvAtributos)
+        public static bool CrearStoredProcedure(string pstrNombreStoredProcedure, List<clsAtributo> lstAtributos)
         {
-            return true;
+            try
+            {
+                string strScript = "";
+
+                strScript += "IF EXISTS (SELECT name FROM sysobjects WHERE TYPE = 'P' AND NAME = '" + pstrNombreStoredProcedure + "')\n";
+                strScript += "DROP PROCEDURE " + pstrNombreStoredProcedure + "\n";
+                strScript += "ELSE\n";
+                strScript += "CREATE PROCEDURE [dbo].[up_WISelProcedimiento]\n";
+                strScript += "( @TipoOperacion INT,\n";
+                strScript += "@vchXML XML\n";
+                strScript += ")\n";
+                strScript += "AS\n";
+                strScript += "BEGIN\n";
+                    strScript += "IF (@TipoOperacion = 1)\n";
+                    strScript += "BEGIN\n";
+                    
+                    strScript += "END\n";
+                strScript += "END";
+                return true;
+            }
+            catch (Exception e){
+                return false;
+            }
         }
     }
 }

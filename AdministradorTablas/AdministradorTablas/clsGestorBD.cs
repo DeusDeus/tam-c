@@ -129,7 +129,15 @@ namespace AdministradorTablas
                 strScript += ")\n";
                 strScript += "AS\n";
                 strScript += "BEGIN\n";
-                    strScript += "IF (@TipoOperacion = 1)\n";
+                    strScript += "IF (@TipoOperacion = 0)\n"; //INSERT
+                    strScript += "BEGIN\n";
+                    
+                    strScript += "END\n";
+                    strScript += "IF (@TipoOperacion = 1)\n"; //UPDATE
+                    strScript += "BEGIN\n";
+
+                    strScript += "END\n";
+                    strScript += "IF (@TipoOperacion = 2)\n"; //DELETE
                     strScript += "BEGIN\n";
                     
                     strScript += "END\n";

@@ -152,7 +152,7 @@ namespace AdministradorTablas
                         }
                         break;
                     case "int":
-                        if (dgvAtributos.Rows[i].Cells[2].Value.ToString().CompareTo("") == 0)
+                        if (dgvAtributos.Rows[i].Cells[2].Value.ToString().CompareTo("") != 0)
                         {
                             return false;
                         }
@@ -209,6 +209,10 @@ namespace AdministradorTablas
 
                             if (clsGestorBD.CrearTabla(txtNombre.Text, dgvAtributos)) //Crea la Tabla
                             {
+                                string nombreSP = "up_Man" + txtNombre.Text;
+
+                                clsGestorBD.CrearStoredProcedure(nombreSP, lstAtributos);
+
                                 DialogResult dr = MessageBox.Show("Se creó la tabla " + txtNombre.Text + " satisfactoriamente\n" + "¿Desea crear otra tabla?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                                 if (dr == DialogResult.Yes)

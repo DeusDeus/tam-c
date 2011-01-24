@@ -135,7 +135,7 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.Navy;
             this.lblTitulo.Location = new System.Drawing.Point(143, 23);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(388, 24);
+            this.lblTitulo.Size = new System.Drawing.Size(387, 24);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Bienvenido al Asistente de Desarrollo";
             // 

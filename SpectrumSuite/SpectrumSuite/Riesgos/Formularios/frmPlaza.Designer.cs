@@ -124,6 +124,8 @@
             this.lblCabecera.Flag_BD = false;
             this.lblCabecera.Formula = null;
             this.lblCabecera.Indicador = false;
+            this.lblCabecera.IndicadorIdentity = null;
+            this.lblCabecera.IndicadorPK = null;
             this.lblCabecera.IndicadorXML = false;
             this.lblCabecera.IO = null;
             this.lblCabecera.Location = new System.Drawing.Point(273, 102);
@@ -149,6 +151,8 @@
             this.lblArchivoXML.Flag_BD = false;
             this.lblArchivoXML.Formula = null;
             this.lblArchivoXML.Indicador = false;
+            this.lblArchivoXML.IndicadorIdentity = null;
+            this.lblArchivoXML.IndicadorPK = null;
             this.lblArchivoXML.IndicadorXML = false;
             this.lblArchivoXML.IO = null;
             this.lblArchivoXML.Location = new System.Drawing.Point(357, 103);
@@ -174,6 +178,8 @@
             this.lblTipoListaMoneda.Flag_BD = false;
             this.lblTipoListaMoneda.Formula = null;
             this.lblTipoListaMoneda.Indicador = false;
+            this.lblTipoListaMoneda.IndicadorIdentity = null;
+            this.lblTipoListaMoneda.IndicadorPK = null;
             this.lblTipoListaMoneda.IndicadorXML = false;
             this.lblTipoListaMoneda.IO = null;
             this.lblTipoListaMoneda.Location = new System.Drawing.Point(14, 90);
@@ -235,6 +241,8 @@
             this.lblCodigoUsuario.Flag_BD = false;
             this.lblCodigoUsuario.Formula = null;
             this.lblCodigoUsuario.Indicador = false;
+            this.lblCodigoUsuario.IndicadorIdentity = null;
+            this.lblCodigoUsuario.IndicadorPK = null;
             this.lblCodigoUsuario.IndicadorXML = false;
             this.lblCodigoUsuario.IO = null;
             this.lblCodigoUsuario.Location = new System.Drawing.Point(348, 73);
@@ -260,6 +268,8 @@
             this.lblTipoOperacion.Flag_BD = false;
             this.lblTipoOperacion.Formula = null;
             this.lblTipoOperacion.Indicador = false;
+            this.lblTipoOperacion.IndicadorIdentity = null;
+            this.lblTipoOperacion.IndicadorPK = null;
             this.lblTipoOperacion.IndicadorXML = false;
             this.lblTipoOperacion.IO = null;
             this.lblTipoOperacion.Location = new System.Drawing.Point(265, 73);
@@ -285,6 +295,8 @@
             this.lblDescripcionMoneda.Flag_BD = false;
             this.lblDescripcionMoneda.Formula = null;
             this.lblDescripcionMoneda.Indicador = false;
+            this.lblDescripcionMoneda.IndicadorIdentity = null;
+            this.lblDescripcionMoneda.IndicadorPK = null;
             this.lblDescripcionMoneda.IndicadorXML = false;
             this.lblDescripcionMoneda.IO = null;
             this.lblDescripcionMoneda.Location = new System.Drawing.Point(157, 73);
@@ -310,6 +322,8 @@
             this.lblCodigoMoneda.Flag_BD = false;
             this.lblCodigoMoneda.Formula = null;
             this.lblCodigoMoneda.Indicador = false;
+            this.lblCodigoMoneda.IndicadorIdentity = null;
+            this.lblCodigoMoneda.IndicadorPK = null;
             this.lblCodigoMoneda.IndicadorXML = false;
             this.lblCodigoMoneda.IO = null;
             this.lblCodigoMoneda.Location = new System.Drawing.Point(72, 73);
@@ -335,6 +349,8 @@
             this.lblDescripcionPlazaCorta.Flag_BD = false;
             this.lblDescripcionPlazaCorta.Formula = null;
             this.lblDescripcionPlazaCorta.Indicador = false;
+            this.lblDescripcionPlazaCorta.IndicadorIdentity = null;
+            this.lblDescripcionPlazaCorta.IndicadorPK = null;
             this.lblDescripcionPlazaCorta.IndicadorXML = false;
             this.lblDescripcionPlazaCorta.IO = null;
             this.lblDescripcionPlazaCorta.Location = new System.Drawing.Point(265, 58);
@@ -360,6 +376,8 @@
             this.lblDescripcionPlaza.Flag_BD = false;
             this.lblDescripcionPlaza.Formula = null;
             this.lblDescripcionPlaza.Indicador = false;
+            this.lblDescripcionPlaza.IndicadorIdentity = null;
+            this.lblDescripcionPlaza.IndicadorPK = null;
             this.lblDescripcionPlaza.IndicadorXML = false;
             this.lblDescripcionPlaza.IO = null;
             this.lblDescripcionPlaza.Location = new System.Drawing.Point(157, 58);
@@ -385,6 +403,8 @@
             this.lblCodigoPlaza.Flag_BD = false;
             this.lblCodigoPlaza.Formula = null;
             this.lblCodigoPlaza.Indicador = false;
+            this.lblCodigoPlaza.IndicadorIdentity = null;
+            this.lblCodigoPlaza.IndicadorPK = null;
             this.lblCodigoPlaza.IndicadorXML = false;
             this.lblCodigoPlaza.IO = null;
             this.lblCodigoPlaza.Location = new System.Drawing.Point(72, 58);
@@ -410,6 +430,8 @@
             this.lblTipoLista.Flag_BD = false;
             this.lblTipoLista.Formula = null;
             this.lblTipoLista.Indicador = false;
+            this.lblTipoLista.IndicadorIdentity = null;
+            this.lblTipoLista.IndicadorPK = null;
             this.lblTipoLista.IndicadorXML = false;
             this.lblTipoLista.IO = null;
             this.lblTipoLista.Location = new System.Drawing.Point(6, 58);
@@ -424,7 +446,7 @@
             this.lblTipoLista.TabIndex = 2;
             this.lblTipoLista.Text = "TipoLista";
             this.lblTipoLista.Tipo_Dato = null;
-            this.lblTipoLista.Valor = null;
+            this.lblTipoLista.Valor = "3";
             // 
             // txtDescripcion
             // 
@@ -435,6 +457,8 @@
             this.txtDescripcion.Flag_BD = false;
             this.txtDescripcion.Formula = null;
             this.txtDescripcion.Indicador = false;
+            this.txtDescripcion.IndicadorIdentity = null;
+            this.txtDescripcion.IndicadorPK = null;
             this.txtDescripcion.IndicadorXML = false;
             this.txtDescripcion.IO = null;
             this.txtDescripcion.Location = new System.Drawing.Point(75, 28);
@@ -459,6 +483,8 @@
             this.lblDescripcion.Flag_BD = false;
             this.lblDescripcion.Formula = null;
             this.lblDescripcion.Indicador = false;
+            this.lblDescripcion.IndicadorIdentity = null;
+            this.lblDescripcion.IndicadorPK = null;
             this.lblDescripcion.IndicadorXML = false;
             this.lblDescripcion.IO = null;
             this.lblDescripcion.Location = new System.Drawing.Point(6, 31);
@@ -521,6 +547,8 @@
             this.dgvMoneda.Flag_BD = false;
             this.dgvMoneda.Formula = null;
             this.dgvMoneda.Indicador = false;
+            this.dgvMoneda.IndicadorIdentity = null;
+            this.dgvMoneda.IndicadorPK = null;
             this.dgvMoneda.IndicadorXML = false;
             this.dgvMoneda.IO = null;
             this.dgvMoneda.Location = new System.Drawing.Point(13, 57);
@@ -560,6 +588,8 @@
             this.cmdCancelar.Flag_BD = false;
             this.cmdCancelar.Formula = null;
             this.cmdCancelar.Indicador = false;
+            this.cmdCancelar.IndicadorIdentity = null;
+            this.cmdCancelar.IndicadorPK = null;
             this.cmdCancelar.IndicadorXML = false;
             this.cmdCancelar.IO = null;
             this.cmdCancelar.Location = new System.Drawing.Point(117, 207);
@@ -586,6 +616,8 @@
             this.cmdGuardar.Flag_BD = false;
             this.cmdGuardar.Formula = null;
             this.cmdGuardar.Indicador = false;
+            this.cmdGuardar.IndicadorIdentity = null;
+            this.cmdGuardar.IndicadorPK = null;
             this.cmdGuardar.IndicadorXML = false;
             this.cmdGuardar.IO = null;
             this.cmdGuardar.Location = new System.Drawing.Point(13, 207);
@@ -612,6 +644,8 @@
             this.cmdEliminar2.Flag_BD = false;
             this.cmdEliminar2.Formula = null;
             this.cmdEliminar2.Indicador = false;
+            this.cmdEliminar2.IndicadorIdentity = null;
+            this.cmdEliminar2.IndicadorPK = null;
             this.cmdEliminar2.IndicadorXML = false;
             this.cmdEliminar2.IO = null;
             this.cmdEliminar2.Location = new System.Drawing.Point(279, 100);
@@ -638,6 +672,8 @@
             this.cmdAgregar.Flag_BD = false;
             this.cmdAgregar.Formula = null;
             this.cmdAgregar.Indicador = false;
+            this.cmdAgregar.IndicadorIdentity = null;
+            this.cmdAgregar.IndicadorPK = null;
             this.cmdAgregar.IndicadorXML = false;
             this.cmdAgregar.IO = null;
             this.cmdAgregar.Location = new System.Drawing.Point(279, 58);
@@ -666,6 +702,8 @@
             this.cboMoneda.FormattingEnabled = true;
             this.cboMoneda.Formula = null;
             this.cboMoneda.Indicador = false;
+            this.cboMoneda.IndicadorIdentity = null;
+            this.cboMoneda.IndicadorPK = null;
             this.cboMoneda.IndicadorXML = false;
             this.cboMoneda.IO = null;
             this.cboMoneda.Location = new System.Drawing.Point(83, 19);
@@ -690,6 +728,8 @@
             this.lblMoneda.Flag_BD = false;
             this.lblMoneda.Formula = null;
             this.lblMoneda.Indicador = false;
+            this.lblMoneda.IndicadorIdentity = null;
+            this.lblMoneda.IndicadorPK = null;
             this.lblMoneda.IndicadorXML = false;
             this.lblMoneda.IO = null;
             this.lblMoneda.Location = new System.Drawing.Point(10, 25);
@@ -729,6 +769,8 @@
             this.txtDescripcion2.Flag_BD = false;
             this.txtDescripcion2.Formula = null;
             this.txtDescripcion2.Indicador = false;
+            this.txtDescripcion2.IndicadorIdentity = null;
+            this.txtDescripcion2.IndicadorPK = null;
             this.txtDescripcion2.IndicadorXML = false;
             this.txtDescripcion2.IO = null;
             this.txtDescripcion2.Location = new System.Drawing.Point(83, 46);
@@ -753,6 +795,8 @@
             this.txtAbreviatura.Flag_BD = false;
             this.txtAbreviatura.Formula = null;
             this.txtAbreviatura.Indicador = false;
+            this.txtAbreviatura.IndicadorIdentity = null;
+            this.txtAbreviatura.IndicadorPK = null;
             this.txtAbreviatura.IndicadorXML = false;
             this.txtAbreviatura.IO = null;
             this.txtAbreviatura.Location = new System.Drawing.Point(83, 80);
@@ -777,6 +821,8 @@
             this.txtCodigo.Flag_BD = false;
             this.txtCodigo.Formula = null;
             this.txtCodigo.Indicador = false;
+            this.txtCodigo.IndicadorIdentity = null;
+            this.txtCodigo.IndicadorPK = null;
             this.txtCodigo.IndicadorXML = false;
             this.txtCodigo.IO = null;
             this.txtCodigo.Location = new System.Drawing.Point(83, 13);
@@ -801,6 +847,8 @@
             this.lblAbreviatura.Flag_BD = false;
             this.lblAbreviatura.Formula = null;
             this.lblAbreviatura.Indicador = false;
+            this.lblAbreviatura.IndicadorIdentity = null;
+            this.lblAbreviatura.IndicadorPK = null;
             this.lblAbreviatura.IndicadorXML = false;
             this.lblAbreviatura.IO = null;
             this.lblAbreviatura.Location = new System.Drawing.Point(10, 83);
@@ -826,6 +874,8 @@
             this.lblDescripcion2.Flag_BD = false;
             this.lblDescripcion2.Formula = null;
             this.lblDescripcion2.Indicador = false;
+            this.lblDescripcion2.IndicadorIdentity = null;
+            this.lblDescripcion2.IndicadorPK = null;
             this.lblDescripcion2.IndicadorXML = false;
             this.lblDescripcion2.IO = null;
             this.lblDescripcion2.Location = new System.Drawing.Point(10, 49);
@@ -851,6 +901,8 @@
             this.lblCodigo.Flag_BD = false;
             this.lblCodigo.Formula = null;
             this.lblCodigo.Indicador = false;
+            this.lblCodigo.IndicadorIdentity = null;
+            this.lblCodigo.IndicadorPK = null;
             this.lblCodigo.IndicadorXML = false;
             this.lblCodigo.IO = null;
             this.lblCodigo.Location = new System.Drawing.Point(10, 16);
@@ -937,6 +989,8 @@
             this.cmdSalir.Flag_BD = false;
             this.cmdSalir.Formula = null;
             this.cmdSalir.Indicador = false;
+            this.cmdSalir.IndicadorIdentity = null;
+            this.cmdSalir.IndicadorPK = null;
             this.cmdSalir.IndicadorXML = false;
             this.cmdSalir.IO = null;
             this.cmdSalir.Location = new System.Drawing.Point(334, 427);
@@ -963,6 +1017,8 @@
             this.cmdBuscar.Flag_BD = false;
             this.cmdBuscar.Formula = null;
             this.cmdBuscar.Indicador = false;
+            this.cmdBuscar.IndicadorIdentity = null;
+            this.cmdBuscar.IndicadorPK = null;
             this.cmdBuscar.IndicadorXML = false;
             this.cmdBuscar.IO = null;
             this.cmdBuscar.Location = new System.Drawing.Point(253, 427);
@@ -989,6 +1045,8 @@
             this.cmdEliminar.Flag_BD = false;
             this.cmdEliminar.Formula = null;
             this.cmdEliminar.Indicador = false;
+            this.cmdEliminar.IndicadorIdentity = null;
+            this.cmdEliminar.IndicadorPK = null;
             this.cmdEliminar.IndicadorXML = false;
             this.cmdEliminar.IO = null;
             this.cmdEliminar.Location = new System.Drawing.Point(172, 427);
@@ -1015,6 +1073,8 @@
             this.cmdModificar.Flag_BD = false;
             this.cmdModificar.Formula = null;
             this.cmdModificar.Indicador = false;
+            this.cmdModificar.IndicadorIdentity = null;
+            this.cmdModificar.IndicadorPK = null;
             this.cmdModificar.IndicadorXML = false;
             this.cmdModificar.IO = null;
             this.cmdModificar.Location = new System.Drawing.Point(91, 427);
@@ -1041,6 +1101,8 @@
             this.cmdNuevo.Flag_BD = false;
             this.cmdNuevo.Formula = null;
             this.cmdNuevo.Indicador = false;
+            this.cmdNuevo.IndicadorIdentity = null;
+            this.cmdNuevo.IndicadorPK = null;
             this.cmdNuevo.IndicadorXML = false;
             this.cmdNuevo.IO = null;
             this.cmdNuevo.Location = new System.Drawing.Point(10, 427);
@@ -1068,6 +1130,8 @@
             this.ucTextBox1.Flag_BD = false;
             this.ucTextBox1.Formula = null;
             this.ucTextBox1.Indicador = false;
+            this.ucTextBox1.IndicadorIdentity = null;
+            this.ucTextBox1.IndicadorPK = null;
             this.ucTextBox1.IndicadorXML = false;
             this.ucTextBox1.IO = null;
             this.ucTextBox1.Location = new System.Drawing.Point(75, 28);
@@ -1092,6 +1156,8 @@
             this.ucLabel1.Flag_BD = false;
             this.ucLabel1.Formula = null;
             this.ucLabel1.Indicador = false;
+            this.ucLabel1.IndicadorIdentity = null;
+            this.ucLabel1.IndicadorPK = null;
             this.ucLabel1.IndicadorXML = false;
             this.ucLabel1.IO = null;
             this.ucLabel1.Location = new System.Drawing.Point(6, 31);
@@ -1153,7 +1219,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textAbreviatura;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textDescrip;
         private System.Windows.Forms.Label label4;
@@ -1171,7 +1236,6 @@
         private ComponentesGUI.ucComboBox cboMoneda;
         private ComponentesGUI.ucLabel lblMoneda;
         private ComponentesGUI.ucTextBox txtDescripcion2;
-        private ComponentesGUI.ucTextBox txtAbreviatura;
         private ComponentesGUI.ucTextBox txtCodigo;
         private ComponentesGUI.ucLabel lblAbreviatura;
         private ComponentesGUI.ucLabel lblDescripcion2;
@@ -1194,6 +1258,8 @@
         private ComponentesGUI.ucLabel lblCodigoUsuario;
         private ComponentesGUI.ucLabel lblArchivoXML;
         private ComponentesGUI.ucLabel lblCabecera;
+        private ComponentesGUI.ucTextBox txtAbreviatura;
+        private System.Windows.Forms.TextBox textAbreviatura;
 
 
     }

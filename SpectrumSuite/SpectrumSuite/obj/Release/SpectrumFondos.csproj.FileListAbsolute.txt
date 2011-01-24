@@ -15,3 +15,20 @@ C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumFondos.csproj.Generat
 C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.exe
 C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.pdb
 C:\TEMP\C#\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.Riesgos.Formularios.frmPrueba.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.exe
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\bin\Release\SpectrumSuite.exe
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\bin\Release\SpectrumSuite.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesComun.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesGUI.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesNegocio.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesDatos.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesComun.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesDatos.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesNegocio.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\bin\Release\ComponentesGUI.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.frmPlaza.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.Properties.Resources.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.Riesgos.Formularios.frmPrueba.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumFondos.csproj.GenerateResource.Cache

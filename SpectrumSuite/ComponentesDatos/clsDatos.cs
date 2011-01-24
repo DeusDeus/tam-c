@@ -9,7 +9,7 @@ namespace ComponentesDatos
 {
     public class clsDatos
     {
-        private const string strServidor = "192.168.0.4";
+        private const string strServidor = "192.168.9.4";
         private const string strCatalogo = "riesgos";
         private const string strUsuario = "sa";
         private const string strContrasena = "sa";
@@ -32,7 +32,7 @@ namespace ComponentesDatos
         {
             try
             {
-                SqlConnection cnn = Conectar();
+                SqlConnection cnn = Conectar("sa","sa");
                 SqlCommand sqlComando = new SqlCommand(pstrComandoSql, cnn);
                 cnn.Open();
                 SqlDataAdapter da = new SqlDataAdapter(sqlComando);
@@ -291,6 +291,55 @@ namespace ComponentesDatos
                     File.Delete(strRutaXML);
                 }
 
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        /*Stored Procedures Estandarizados:*/
+        public static bool Ejecutar(String pstrNombreStoredProcedure, String pstrRutaXML, int pnumTipoOperacion)
+        {
+            try
+            {
+                SqlParameter sqlParametro;
+                SqlConnection cnn = Conectar("sa", "sa");
+                cnn.Open();
+
+                SqlCommand sqlComando = new SqlCommand(pstrNombreStoredProcedure, cnn);
+                sqlComando.CommandType = CommandType.StoredProcedure;
+
+                sqlParametro = new SqlParameter();
+                
+                XmlDocument xmlDocumento = new XmlDocument();
+                xmlDocumento.Load(pstrRutaXML);
+                CambiarXmlEncoding(xmlDocumento, "UTF-16");
+                StringWriter sr = new StringWriter();
+                XmlTextWriter xmltr = new XmlTextWriter(sr);
+                xmlDocumento.WriteTo(xmltr);
+                
+                sqlParametro.ParameterName = "@vchXML";
+                sqlParametro.Value = sr.ToString();
+                sqlParametro.Direction = System.Data.ParameterDirection.Input;
+                sr.Close();
+                xmltr.Close();
+
+                sqlComando.Parameters.Add(sqlParametro);
+
+                sqlParametro = new SqlParameter();
+                sqlParametro.ParameterName = "@tipoOperacion";
+                sqlParametro.Value = pnumTipoOperacion.ToString();
+                sqlParametro.Direction = System.Data.ParameterDirection.Input;
+
+                sqlComando.Parameters.Add(sqlParametro);
+
+                sqlComando.ExecuteNonQuery();
+
+                cnn.Close();
+                
                 return true;
             }
             catch (Exception ex)

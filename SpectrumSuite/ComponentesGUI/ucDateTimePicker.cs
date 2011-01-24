@@ -25,6 +25,8 @@ namespace ComponentesGUI
         private string strIO;
         private string strCalculo;
         private string strFormula;
+        private string strIdent;
+        private string strPk;
 
         public bool Solo_Lectura
         {
@@ -229,6 +231,30 @@ namespace ComponentesGUI
             set
             {
                 strNombreTagXML = value;
+            }
+        }
+
+        public string IndicadorIdentity
+        {
+            get
+            {
+                return strIdent;
+            }
+            set
+            {
+                strIdent = value;
+            }
+        }
+
+        public string IndicadorPK
+        {
+            get
+            {
+                return strPk;
+            }
+            set
+            {
+                strPk = value;
             }
         }
     }

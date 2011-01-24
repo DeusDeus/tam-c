@@ -43,7 +43,7 @@ namespace SpectrumSuite
 
             clsComun.CrearListaControles(this, lstControles);
 
-            dsPlaza = clsNegocio.ConsultarServicio(lstControles, "TRXCR1");
+            dsPlaza = clsNegocio.ConsultarServicio(lstControles, "TRXCR1", false);
 
             dgvPlaza.DataSource = dsPlaza.Tables[0];
 
@@ -74,7 +74,7 @@ namespace SpectrumSuite
 
             clsComun.CrearListaControles(this, lstControles);
 
-            dsPlaza = clsNegocio.ConsultarServicio(lstControles, "TRXCR1");
+            dsPlaza = clsNegocio.ConsultarServicio(lstControles, "TRXCR1", false);
 
             txtCodigo.Text = dsPlaza.Tables[0].Rows[0]["CodPlaza"].ToString();
             txtDescripcion2.Text = dsPlaza.Tables[0].Rows[0]["DescripPlaza"].ToString();
@@ -110,7 +110,7 @@ namespace SpectrumSuite
 
             clsComun.CrearListaControles(this, lstControles);
 
-            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRXCR1");
+            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRXCR1", false);
 
             for (int i = 0; i < dsMonedas.Tables[0].Rows.Count; i++)
             {
@@ -142,7 +142,7 @@ namespace SpectrumSuite
 
             clsComun.CrearListaControles(this, lstControles);
 
-            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRXCR2");
+            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRXCR2", false);
 
             foreach (DataRow dr in dsMonedas.Tables[0].Rows)
             {
@@ -214,7 +214,7 @@ namespace SpectrumSuite
 
             clsComun.CrearListaControles(this, lstControles);
 
-            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRXCR2");
+            dsMonedas = clsNegocio.ConsultarServicio(lstControles, "TRXCR2", false);
 
             strCodigoMoneda = dsMonedas.Tables[0].Rows[0]["CodMoneda"].ToString();
 

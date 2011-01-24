@@ -7,7 +7,7 @@ namespace AdministradorTablas
 {
     public class clsGestorBD
     {
-        private const string strServidor = "192.168.0.4";
+        private const string strServidor = "192.168.9.4";
         private const string strCatalogo = "riesgos";
         private const string strUsuario = "sa";
         private const string strContrasena = "sa";
@@ -114,35 +114,236 @@ namespace AdministradorTablas
             }
         }
 
-        public static bool CrearStoredProcedure(string pstrNombreStoredProcedure, List<clsAtributo> lstAtributos)
+        public static bool CrearStoredProcedure(string pstrNombreStoredProcedure, string strNombreTabla, List<clsAtributo> lstAtributos)
         {
             try
             {
                 string strScript = "";
 
-                strScript += "IF EXISTS (SELECT name FROM sysobjects WHERE TYPE = 'P' AND NAME = '" + pstrNombreStoredProcedure + "')\n";
-                strScript += "DROP PROCEDURE " + pstrNombreStoredProcedure + "\n";
-                strScript += "ELSE\n";
-                strScript += "CREATE PROCEDURE [dbo].[up_WISelProcedimiento]\n";
-                strScript += "( @TipoOperacion INT,\n";
-                strScript += "@vchXML XML\n";
-                strScript += ")\n";
-                strScript += "AS\n";
-                strScript += "BEGIN\n";
-                    strScript += "IF (@TipoOperacion = 0)\n"; //INSERT
-                    strScript += "BEGIN\n";
-                    
-                    strScript += "END\n";
-                    strScript += "IF (@TipoOperacion = 1)\n"; //UPDATE
-                    strScript += "BEGIN\n";
+                strScript += " CREATE PROCEDURE " + pstrNombreStoredProcedure +"\n";
+                strScript += " ( @vchXML XML,\n";
+                strScript += " @tipoOperacion INT\n";
+                strScript += " )\n";
+                strScript += " AS\n";
+                strScript += " BEGIN\n\n";
+                strScript += "declare @idoc int\n";
+                strScript += "declare @cadenaEjecucion varchar(500)\n";
+                strScript += "declare @cadenaEjecucionUpdate varchar(500)\n";
+                strScript += "declare @cadenaEjecucionDelete varchar(500)\n";
+                strScript += "declare @cadenaWhere varchar(500)\n";
+                strScript += "declare @indicador int\n";
+                strScript += "declare @indicadorWhere int\n";
+                strScript += "BEGIN TRAN\n";
+                    strScript += "set @cadenaEjecucion = 'insert into " + strNombreTabla + " values('\n";
+                    strScript += "set @cadenaEjecucionUpdate = 'update " + strNombreTabla + " set '\n";
+                    strScript += "set @cadenaEjecucionDelete = 'delete from "+ strNombreTabla +"'\n";
+                    strScript += "set @cadenaWhere = ' where '\n";
+                    strScript += "set @indicador = 0\n";
+                    strScript += "set @indicadorWhere = 0\n\n";
 
-                    strScript += "END\n";
-                    strScript += "IF (@TipoOperacion = 2)\n"; //DELETE
+                    strScript += "exec sp_xml_preparedocument @idoc output,@vchXML\n\n";
+
+                    strScript += "select nombreCampo,valor,tipo,ident,pk into #te from openxml(@idoc,'/tabla/datos',2)\n";
+                    strScript += "with\n";
+                    strScript += "(\n";
+                        strScript += "nombreCampo varchar(200),\n";
+                        strScript += "valor varchar(200),\n";
+                        strScript += "tipo varchar(50),\n";
+                        strScript += "ident varchar(2),\n";
+                        strScript += "pk varchar(2)\n";
+                    strScript += ")\n\n";
+
+                    strScript += "select * from #te\n\n";
+
+                    strScript += "declare cu_xml cursor for select nombreCampo,valor,tipo,ident,pk from #te\n";
+                    strScript += "declare @nombreCampo varchar(200), @valor varchar(200), @tipo varchar(50), @ident varchar(2), @pk varchar(2)\n\n";
+
+                    strScript += "open cu_xml\n";
+
+                    strScript += "fetch cu_xml into @nombreCampo,@valor,@tipo,@ident,@pk\n";
+
+                    strScript += "IF(@tipoOperacion=1)\n";
+                    strScript += "BEGIN\n\n";
+
+                    strScript += "if @tipo = 'varchar' or @tipo = 'char'\n";
+                    strScript += "begin\n";
+                    strScript += "set @valor = '''' + @valor + ''''\n";
+                    strScript += "end\n\n";
+
+                    strScript += "if @ident = '0'\n";
+                    strScript += "begin\n";
+                    strScript += "set @indicador = 1\n";
+                    strScript += "set @cadenaEjecucion = @cadenaEjecucion + @valor\n";
+                    strScript += "end\n";
+
+                    strScript += "fetch cu_xml into @nombreCampo,@valor,@tipo,@ident,@pk\n\n";
+
+                    strScript += "while (@@fetch_status = 0)\n";
+                    strScript += "begin\n";
+                    strScript += "if @tipo = 'varchar' or @tipo = 'char'\n";
+                    strScript += "begin\n";
+                    strScript += "set @valor = '''' + @valor + ''''\n";
+                    strScript += "end\n";
+
+                    strScript += "if @indicador = 0\n";
+                    strScript += "begin\n";
+                    strScript += "set @cadenaEjecucion = @cadenaEjecucion + @valor\n";
+                    strScript += "set @indicador = 1\n";
+                    strScript += "end\n";
+                    strScript += "else\n";
+                    strScript += "begin\n";
+                    strScript += "set @cadenaEjecucion = @cadenaEjecucion + ',' + @valor\n";
+                    strScript += "end\n";
+
+                    strScript += "fetch cu_xml into @nombreCampo,@valor,@tipo,@ident,@pk\n";
+                    strScript += "end\n\n";
+
+                    strScript += "set @cadenaEjecucion = @cadenaEjecucion + ')'\n\n";
+
+                    strScript += "exec(@cadenaEjecucion)\n\n";
+
+                    strScript += "Close cu_xml\n";
+                    strScript += "deallocate cu_xml\n";
+                    strScript += "EXEC sp_xml_removedocument @idoc\n";
+                    strScript += "END\n\n";
+
+                    strScript += "IF(@tipoOperacion=2)\n";
                     strScript += "BEGIN\n";
-                    
+                    strScript += "if @tipo = 'varchar' or @tipo = 'char'\n";
+                    strScript += "begin\n";
+                    strScript += "set @valor = '''' + @valor + ''''\n";
+                    strScript += "end\n\n";
+
+                    strScript += "if @pk = '0'\n";
+                    strScript += "begin\n";
+                    strScript += "set @indicador = 1\n";
+                    strScript += "set @cadenaEjecucionUpdate = @cadenaEjecucionUpdate + @nombreCampo + '=' + @valor + ' '\n";
+                    strScript += "end\n";
+                    strScript += "else\n";
+                    strScript += "begin\n";
+                    strScript += "set @cadenaWhere = @cadenaWhere + @nombreCampo + '=' + @valor + ' '\n";
+                    strScript += "set @indicadorWhere = 1\n";
+                    strScript += "end\n\n";
+
+                    strScript += "fetch cu_xml into @nombreCampo,@valor,@tipo,@ident,@pk\n\n";
+
+                    strScript += "while (@@fetch_status = 0)\n";
+                    strScript += "begin\n";
+                    strScript += "if @tipo = 'varchar' or @tipo = 'char'\n";
+                    strScript += "begin\n";
+                    strScript += "set @valor = '''' + @valor + ''''\n";
+                    strScript += "end\n\n";
+
+                    strScript += "if @pk = 0\n";
+                    strScript += "begin\n";
+                    strScript += "if @indicador = 1\n";
+                    strScript += "begin\n";
+                    strScript += "set @cadenaEjecucionUpdate = @cadenaEjecucionUpdate + ' , ' + @nombreCampo + '=' + @valor + ' '\n";
+                    strScript += "end\n";
+                    strScript += "else\n";
+                    strScript += "begin\n";
+                    strScript += "set @cadenaEjecucionUpdate = @cadenaEjecucionUpdate + @nombreCampo + '=' + @valor + ' '\n";
+                    strScript += "set @indicador = 1\n";
+                    strScript += "end\n";
+                    strScript += "end\n";
+                    strScript += "else\n";
+                    strScript += "begin\n";
+                    strScript += "if @indicadorWhere = 1\n";
+                    strScript += "begin\n";
+                    strScript += "set @cadenaWhere = @cadenaWhere + ' AND ' + @nombreCampo + '=' + @valor + ' '\n";
+                    strScript += "end\n";
+                    strScript += "else\n";
+                    strScript += "begin\n";
+                    strScript += "set @cadenaWhere = @cadenaWhere + @nombreCampo + '=' + @valor + ' '\n";
+                    strScript += "set @indicadorWhere = 1\n";
+                    strScript += "end\n";
+                    strScript += "end\n\n";
+
+                    strScript += "fetch cu_xml into @nombreCampo,@valor,@tipo,@ident,@pk\n";
+                    strScript += "end\n\n";
+
+                    strScript += "set @cadenaEjecucionUpdate = @cadenaEjecucionUpdate + @cadenaWhere\n\n";
+
+                    strScript += "exec(@cadenaEjecucionUpdate)\n\n";
+
+                    strScript += "Close cu_xml\n";
+                    strScript += "deallocate cu_xml\n";
+                    strScript += "EXEC sp_xml_removedocument @idoc\n";
+                    strScript += "END\n\n";
+
+                    strScript += "IF(@tipoOperacion=3)\n";
+                    strScript += "BEGIN\n";
+                    strScript += "if @tipo = 'varchar' or @tipo = 'char'\n";
+                    strScript += "begin\n";
+                    strScript += "set @valor = '''' + @valor + ''''\n";
+                    strScript += "end\n\n";
+
+                    strScript += "if @pk = '1'\n";
+                    strScript += "begin\n";
+                    strScript += "set @cadenaWhere = @cadenaWhere + @nombreCampo + '=' + @valor + ' '\n";
+                    strScript += "set @indicadorWhere = 1\n";
+                    strScript += "end\n\n";
+
+                    strScript += "fetch cu_xml into @nombreCampo,@valor,@tipo,@ident,@pk\n\n";
+
+                    strScript += "while (@@fetch_status = 0)\n";
+                    strScript += "begin\n";
+                    strScript += "if @tipo = 'varchar' or @tipo = 'char'\n";
+                    strScript += "begin\n";
+                    strScript += "set @valor = '''' + @valor + ''''\n";
+                    strScript += "end\n\n";
+
+                    strScript += "if @pk = '1'\n";
+                    strScript += "begin\n";
+                    strScript += "if @indicadorWhere = 1\n";
+                    strScript += "begin\n";
+                    strScript += "set @cadenaWhere = @cadenaWhere + ' AND ' + @nombreCampo + '=' + @valor + ' '\n";
+                    strScript += "end\n";
+                    strScript += "else\n";
+                    strScript += "begin\n";
+                    strScript += "set @cadenaWhere = @cadenaWhere + @nombreCampo + '=' + @valor + ' '\n";
+                    strScript += "set @indicadorWhere = 1\n";
+                    strScript += "end\n";
+                    strScript += "end\n\n";
+
+                    strScript += "fetch cu_xml into @nombreCampo,@valor,@tipo,@ident,@pk\n";
+                    strScript += "end\n\n";
+
+                    strScript += "set @cadenaEjecucionDelete = @cadenaEjecucionDelete + @cadenaWhere\n\n";
+
+                    strScript += "exec(@cadenaEjecucionDelete)\n\n";
+
+                    strScript += "Close cu_xml\n";
+                    strScript += "deallocate cu_xml\n";
+                    strScript += "EXEC sp_xml_removedocument @idoc\n";
                     strScript += "END\n";
-                strScript += "END";
-                return true;
+                    strScript += "IF @@ERROR<>0\n";
+                    strScript += "BEGIN\n";
+                    strScript += "ROLLBACK TRAN\n";
+                    strScript += "RAISERROR ('Error al guardar los datos.',16,1)\n";
+                    strScript += "RETURN(-1)\n";
+                    strScript += "END\n";
+                    strScript += "ELSE\n";
+                    strScript += "BEGIN\n";
+                    strScript += "COMMIT TRAN\n";
+                    strScript += "END\n";
+		        strScript += " END";
+               
+                try
+                {
+                    SqlConnection cnn = Conectar("sa", "sa");
+                    SqlCommand sqlComando = new SqlCommand(strScript, cnn);
+                    cnn.Open();
+
+                    sqlComando.ExecuteNonQuery();
+                    cnn.Close();
+
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
             }
             catch (Exception e){
                 return false;

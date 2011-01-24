@@ -7,3 +7,12 @@ C:\TEMP\C#\SpectrumSuite\ComponentesComun\bin\Release\ComponentesGUI.pdb
 C:\TEMP\C#\SpectrumSuite\ComponentesComun\obj\Release\ResolveAssemblyReference.cache
 C:\TEMP\C#\SpectrumSuite\ComponentesComun\obj\Release\ComponentesComun.dll
 C:\TEMP\C#\SpectrumSuite\ComponentesComun\obj\Release\ComponentesComun.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesComun\bin\Release\ComponentesComun.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesComun\bin\Release\ComponentesComun.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesComun\bin\Release\ComponentesDatos.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesComun\bin\Release\ComponentesGUI.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesComun\bin\Release\ComponentesDatos.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesComun\bin\Release\ComponentesGUI.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesComun\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesComun\obj\Release\ComponentesComun.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesComun\obj\Release\ComponentesComun.pdb

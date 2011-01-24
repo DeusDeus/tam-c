@@ -9,7 +9,7 @@ namespace Wizard
 {
     public class clsGestorBD
     {
-        private const string strServidor = "192.168.0.4";
+        private const string strServidor = "192.168.9.4";
         private const string strCatalogo = "riesgos";
         private const string strUsuario = "sa";
         private const string strContrasena = "sa";

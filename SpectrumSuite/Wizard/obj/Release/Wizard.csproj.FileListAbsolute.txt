@@ -19,3 +19,24 @@ C:\TEMP\C#\SpectrumSuite\Wizard\bin\ComponentesNegocio.pdb
 C:\TEMP\C#\SpectrumSuite\Wizard\bin\ComponentesGUI.pdb
 C:\TEMP\C#\SpectrumSuite\Wizard\obj\Release\Wizard.dll
 C:\TEMP\C#\SpectrumSuite\Wizard\obj\Release\Wizard.Formularios.frmWizard2Detalle.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\bin\Wizard.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\bin\ComponentesDatos.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\bin\ComponentesGUI.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\bin\SpectrumSuite.exe
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\bin\ComponentesComun.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\bin\ComponentesNegocio.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\bin\SpectrumSuite.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\bin\ComponentesComun.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\bin\ComponentesDatos.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\bin\ComponentesNegocio.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\bin\ComponentesGUI.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\obj\Release\Wizard.csproj.ResolveComReference.cache
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\obj\Release\Wizard.CommandBar.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\obj\Release\Wizard.Formularios.frmWizardPag1.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\obj\Release\Wizard.Formularios.frmWizard2Detalle.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\obj\Release\Wizard.Formularios.frmWizardPag2.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\obj\Release\Wizard.Formularios.frmWizardPag3.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\obj\Release\Wizard.Formularios.frmWizardPag4.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\obj\Release\Wizard.csproj.GenerateResource.Cache
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\Wizard\obj\Release\Wizard.dll

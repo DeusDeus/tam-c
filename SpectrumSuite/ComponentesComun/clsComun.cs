@@ -664,5 +664,172 @@ namespace ComponentesComun
 
             return strRutaArchivoXML;
         }
+
+        public static string RutaXMLEstandarizado(List<Control> plstControles)
+        {
+            XmlDocument xmlDocumento = new XmlDocument();
+
+            XmlNode tabla = xmlDocumento.CreateElement("tabla");
+            XmlNode datos, nombreCampo, valor, tipo, ident, pk;
+
+            xmlDocumento.AppendChild(tabla);
+
+            for (int i = 0; i < plstControles.Count; i++)
+            {
+                if (plstControles[i] is ucButton)
+                {
+                    datos = xmlDocumento.CreateElement("datos");
+                    nombreCampo = xmlDocumento.CreateElement("nombreCampo");
+                    valor = xmlDocumento.CreateElement("valor");
+                    tipo = xmlDocumento.CreateElement("tipo");
+                    ident = xmlDocumento.CreateElement("ident");
+                    pk = xmlDocumento.CreateElement("pk");
+
+                    tabla.AppendChild(datos);
+                    nombreCampo.InnerText = ((ucButton)plstControles[i]).Nombre_Campo;
+                    datos.AppendChild(nombreCampo);
+                    valor.InnerText = ((ucButton)plstControles[i]).Valor;
+                    datos.AppendChild(valor);
+                    tipo.InnerText = ((ucButton)plstControles[i]).Tipo_Dato;
+                    datos.AppendChild(tipo);
+                    ident.InnerText = ((ucButton)plstControles[i]).IndicadorIdentity;
+                    datos.AppendChild(ident);
+                    pk.InnerText = ((ucButton)plstControles[i]).IndicadorPK;
+                    datos.AppendChild(pk);
+                }
+                else
+                {
+                    if (plstControles[i] is ucCheckBox)
+                    {
+                        datos = xmlDocumento.CreateElement("datos");
+                        nombreCampo = xmlDocumento.CreateElement("nombreCampo");
+                        valor = xmlDocumento.CreateElement("valor");
+                        tipo = xmlDocumento.CreateElement("tipo");
+                        ident = xmlDocumento.CreateElement("ident");
+                        pk = xmlDocumento.CreateElement("pk");
+
+                        tabla.AppendChild(datos);
+                        nombreCampo.InnerText = ((ucCheckBox)plstControles[i]).Nombre_Campo;
+                        datos.AppendChild(nombreCampo);
+                        valor.InnerText = ((ucCheckBox)plstControles[i]).Valor;
+                        datos.AppendChild(valor);
+                        tipo.InnerText = ((ucCheckBox)plstControles[i]).Tipo_Dato;
+                        datos.AppendChild(tipo);
+                        ident.InnerText = ((ucCheckBox)plstControles[i]).IndicadorIdentity;
+                        datos.AppendChild(ident);
+                        pk.InnerText = ((ucCheckBox)plstControles[i]).IndicadorPK;
+                        datos.AppendChild(pk);
+                    }
+                    else
+                    {
+                        if (plstControles[i] is ucComboBox)
+                        {
+                            datos = xmlDocumento.CreateElement("datos");
+                            nombreCampo = xmlDocumento.CreateElement("nombreCampo");
+                            valor = xmlDocumento.CreateElement("valor");
+                            tipo = xmlDocumento.CreateElement("tipo");
+                            ident = xmlDocumento.CreateElement("ident");
+                            pk = xmlDocumento.CreateElement("pk");
+
+                            tabla.AppendChild(datos);
+                            nombreCampo.InnerText = ((ucComboBox)plstControles[i]).Nombre_Campo;
+                            datos.AppendChild(nombreCampo);
+                            valor.InnerText = ((ucComboBox)plstControles[i]).Valor;
+                            datos.AppendChild(valor);
+                            tipo.InnerText = ((ucComboBox)plstControles[i]).Tipo_Dato;
+                            datos.AppendChild(tipo);
+                            ident.InnerText = ((ucComboBox)plstControles[i]).IndicadorIdentity;
+                            datos.AppendChild(ident);
+                            pk.InnerText = ((ucComboBox)plstControles[i]).IndicadorPK;
+                            datos.AppendChild(pk);
+                        }
+                        else
+                        {
+                            if (plstControles[i] is ucDateTimePicker)
+                            {
+                                datos = xmlDocumento.CreateElement("datos");
+                                nombreCampo = xmlDocumento.CreateElement("nombreCampo");
+                                valor = xmlDocumento.CreateElement("valor");
+                                tipo = xmlDocumento.CreateElement("tipo");
+                                ident = xmlDocumento.CreateElement("ident");
+                                pk = xmlDocumento.CreateElement("pk");
+
+                                tabla.AppendChild(datos);
+                                nombreCampo.InnerText = ((ucDateTimePicker)plstControles[i]).Nombre_Campo;
+                                datos.AppendChild(nombreCampo);
+                                valor.InnerText = ((ucDateTimePicker)plstControles[i]).Valor;
+                                datos.AppendChild(valor);
+                                tipo.InnerText = ((ucDateTimePicker)plstControles[i]).Tipo_Dato;
+                                datos.AppendChild(tipo);
+                                ident.InnerText = ((ucDateTimePicker)plstControles[i]).IndicadorIdentity;
+                                datos.AppendChild(ident);
+                                pk.InnerText = ((ucDateTimePicker)plstControles[i]).IndicadorPK;
+                                datos.AppendChild(pk);
+                            }
+                            else
+                            {
+                                if (plstControles[i] is ucLabel)
+                                {
+                                    datos = xmlDocumento.CreateElement("datos");
+                                    nombreCampo = xmlDocumento.CreateElement("nombreCampo");
+                                    valor = xmlDocumento.CreateElement("valor");
+                                    tipo = xmlDocumento.CreateElement("tipo");
+                                    ident = xmlDocumento.CreateElement("ident");
+                                    pk = xmlDocumento.CreateElement("pk");
+
+                                    tabla.AppendChild(datos);
+                                    nombreCampo.InnerText = ((ucLabel)plstControles[i]).Nombre_Campo;
+                                    datos.AppendChild(nombreCampo);
+                                    valor.InnerText = ((ucLabel)plstControles[i]).Valor;
+                                    datos.AppendChild(valor);
+                                    tipo.InnerText = ((ucLabel)plstControles[i]).Tipo_Dato;
+                                    datos.AppendChild(tipo);
+                                    ident.InnerText = ((ucLabel)plstControles[i]).IndicadorIdentity;
+                                    datos.AppendChild(ident);
+                                    pk.InnerText = ((ucLabel)plstControles[i]).IndicadorPK;
+                                    datos.AppendChild(pk);
+                                }
+                                else
+                                {
+                                    if (plstControles[i] is ucTextBox)
+                                    {
+                                        datos = xmlDocumento.CreateElement("datos");
+                                        nombreCampo = xmlDocumento.CreateElement("nombreCampo");
+                                        valor = xmlDocumento.CreateElement("valor");
+                                        tipo = xmlDocumento.CreateElement("tipo");
+                                        ident = xmlDocumento.CreateElement("ident");
+                                        pk = xmlDocumento.CreateElement("pk");
+
+                                        tabla.AppendChild(datos);
+                                        nombreCampo.InnerText = ((ucTextBox)plstControles[i]).Nombre_Campo;
+                                        datos.AppendChild(nombreCampo);
+                                        valor.InnerText = ((ucTextBox)plstControles[i]).Valor;
+                                        datos.AppendChild(valor);
+                                        tipo.InnerText = ((ucTextBox)plstControles[i]).Tipo_Dato;
+                                        datos.AppendChild(tipo);
+                                        ident.InnerText = ((ucTextBox)plstControles[i]).IndicadorIdentity;
+                                        datos.AppendChild(ident);
+                                        pk.InnerText = ((ucTextBox)plstControles[i]).IndicadorPK;
+                                        datos.AppendChild(pk);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            string strRutaArchivoXML;
+
+            strRutaArchivoXML = "C:\\TEMP\\" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".xml";
+
+            StreamWriter sw = new StreamWriter(strRutaArchivoXML);
+
+            xmlDocumento.Save(sw);
+
+            sw.Close();
+
+            return strRutaArchivoXML;
+        }
     }
 }

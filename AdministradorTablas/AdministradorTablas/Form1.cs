@@ -211,7 +211,7 @@ namespace AdministradorTablas
                             {
                                 string nombreSP = "up_Man" + txtNombre.Text;
 
-                                clsGestorBD.CrearStoredProcedure(nombreSP, lstAtributos);
+                                clsGestorBD.CrearStoredProcedure(nombreSP, txtNombre.Text, lstAtributos);
 
                                 DialogResult dr = MessageBox.Show("Se creó la tabla " + txtNombre.Text + " satisfactoriamente\n" + "¿Desea crear otra tabla?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 

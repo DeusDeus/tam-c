@@ -21,7 +21,7 @@ namespace ComponentesNegocio
             return ds;
         }
 
-        public static DataSet ConsultarServicio(List<Control> plstControles, string pstrNombreServicio)
+        public static DataSet ConsultarServicio(List<Control> plstControles, string pstrNombreServicio, bool estandarizado)
         {
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
@@ -38,7 +38,7 @@ namespace ComponentesNegocio
             lstNombreStoredProcedure = NombreStoredProcedure(pstrNombreServicio);
 
             xmlDocumento = CrearXML(plstControles);
-
+            
             for (int i=0; i<lstNombreStoredProcedure.Count;i++)
             {
                 dt = clsDatos.Consultar(lstNombreStoredProcedure[i], xmlDocumento);
@@ -66,7 +66,7 @@ namespace ComponentesNegocio
             lstNombreStoredProcedure = NombreStoredProcedure(pstrNombreServicio);
 
             xmlDocumento = CrearXML(plstControles);
-
+          
             for (int i = 0; i < lstNombreStoredProcedure.Count; i++)
             {
                 if (!clsDatos.Ejecutar(lstNombreStoredProcedure[i], xmlDocumento))
@@ -77,6 +77,43 @@ namespace ComponentesNegocio
             }
 
             return exito;
+        }
+
+        public static bool EjecutarServicioEstandarizado(string pstrNombreServicio, string pstrRutaXML, int pnumTipoOperacion)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            List<string> lstNombreStoredProcedure = new List<string>();
+            string strNombreServicio = "";
+            string strTipoServicio = "";
+            bool exito = true;
+
+            dt = clsDatos.Consultar("SELECT * FROM Servicio WHERE NombreServicio = '" + pstrNombreServicio + "'");
+            strNombreServicio = dt.Rows[0]["NombreServicio"].ToString();
+            strTipoServicio = dt.Rows[0]["TipoServicio"].ToString();
+
+            lstNombreStoredProcedure = NombreStoredProcedure(pstrNombreServicio);
+
+            for (int i = 0; i < lstNombreStoredProcedure.Count; i++)
+            {
+                if (!clsDatos.Ejecutar(lstNombreStoredProcedure[i],pstrRutaXML,pnumTipoOperacion))
+                {
+                    exito = false;
+                    break;
+                }
+            }
+
+            return exito;
+
+
+            //bool exito = true;
+
+            //if (!clsDatos.Ejecutar(pstrNombreStoredProcedure, pstrRutaXML, pnumTipoOperacion))
+            //{
+            //    exito = false;
+            //}
+            
+            //return exito;
         }
 
         private static List<string> NombreStoredProcedure(string pstrNombreServicio)

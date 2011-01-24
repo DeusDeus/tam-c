@@ -153,12 +153,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\..\..\Users\Administrador\Documents\Visual Studio 2008\Addins\Wizard - For Testing.AddIn">
-      <Link>Wizard - For Testing.AddIn</Link>
-    </Content>
-    <Content Include="Wizard.AddIn" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ComponentesDatos\ComponentesDatos.csproj">
       <Project>{1222E0B2-FC64-4AEC-94E2-77C2A2662EEF}</Project>
       <Name>ComponentesDatos</Name>
@@ -171,6 +165,10 @@
       <Project>{C94A993F-DE53-40C0-B60E-812497AB1BAE}</Project>
       <Name>SpectrumFondos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Wizard - For Testing.AddIn" />
+    <Content Include="Wizard.AddIn" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
   <PropertyGroup>

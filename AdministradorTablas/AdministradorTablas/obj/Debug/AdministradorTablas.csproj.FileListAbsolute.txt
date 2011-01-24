@@ -14,3 +14,11 @@ C:\TEMP\C#\AdministradorTablas\AdministradorTablas\obj\Debug\ResolveAssemblyRefe
 C:\TEMP\C#\AdministradorTablas\AdministradorTablas\obj\Debug\AdministradorTablas.frmPrueba.resources
 C:\TEMP\C#\AdministradorTablas\AdministradorTablas\obj\Debug\AdministradorTablas.Properties.Resources.resources
 C:\TEMP\C#\AdministradorTablas\AdministradorTablas\obj\Debug\AdministradorTablas.csproj.GenerateResource.Cache
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\AdministradorTablas\AdministradorTablas\obj\Debug\AdministradorTablas.exe
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\AdministradorTablas\AdministradorTablas\obj\Debug\AdministradorTablas.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\AdministradorTablas\AdministradorTablas\bin\Debug\AdministradorTablas.exe
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\AdministradorTablas\AdministradorTablas\bin\Debug\AdministradorTablas.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\AdministradorTablas\AdministradorTablas\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\AdministradorTablas\AdministradorTablas\obj\Debug\AdministradorTablas.frmPrueba.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\AdministradorTablas\AdministradorTablas\obj\Debug\AdministradorTablas.Properties.Resources.resources
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\AdministradorTablas\AdministradorTablas\obj\Debug\AdministradorTablas.csproj.GenerateResource.Cache

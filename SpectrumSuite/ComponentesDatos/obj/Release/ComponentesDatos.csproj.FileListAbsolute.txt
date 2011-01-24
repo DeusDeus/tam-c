@@ -3,3 +3,8 @@ C:\TEMP\C#\SpectrumSuite\ComponentesDatos\bin\Release\ComponentesDatos.pdb
 C:\TEMP\C#\SpectrumSuite\ComponentesDatos\obj\Release\ResolveAssemblyReference.cache
 C:\TEMP\C#\SpectrumSuite\ComponentesDatos\obj\Release\ComponentesDatos.dll
 C:\TEMP\C#\SpectrumSuite\ComponentesDatos\obj\Release\ComponentesDatos.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesDatos\bin\Release\ComponentesDatos.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesDatos\bin\Release\ComponentesDatos.pdb
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesDatos\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesDatos\obj\Release\ComponentesDatos.dll
+C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\ComponentesDatos\obj\Release\ComponentesDatos.pdb

@@ -155,7 +155,7 @@
             this.lblArchivoXML.IndicadorPK = null;
             this.lblArchivoXML.IndicadorXML = false;
             this.lblArchivoXML.IO = null;
-            this.lblArchivoXML.Location = new System.Drawing.Point(357, 103);
+            this.lblArchivoXML.Location = new System.Drawing.Point(355, 103);
             this.lblArchivoXML.Longitud = null;
             this.lblArchivoXML.Name = "lblArchivoXML";
             this.lblArchivoXML.Nombre_Campo = null;
@@ -189,10 +189,10 @@
             this.lblTipoListaMoneda.Nombre_Control = null;
             this.lblTipoListaMoneda.NombreTagXML = null;
             this.lblTipoListaMoneda.Precision = null;
-            this.lblTipoListaMoneda.Size = new System.Drawing.Size(50, 13);
+            this.lblTipoListaMoneda.Size = new System.Drawing.Size(89, 13);
             this.lblTipoListaMoneda.Solo_Lectura = false;
             this.lblTipoListaMoneda.TabIndex = 2;
-            this.lblTipoListaMoneda.Text = "TipoLista";
+            this.lblTipoListaMoneda.Text = "TipoListaMoneda";
             this.lblTipoListaMoneda.Tipo_Dato = null;
             this.lblTipoListaMoneda.Valor = null;
             // 

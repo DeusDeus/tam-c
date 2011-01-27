@@ -117,18 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="lblCabecera.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txtCabecera.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvMetadataDetalle.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="cmdGuardar.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cmdCancelar.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="button1.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDQAA
-        Cw0B7QfALAAAAfxJREFUKFNjYEAFjJLlVrlA/ES6xvq/ZKXVf6lKm3WyNdbaaOogXOlKK0epMsszUhVW
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAAAfxJREFUKFNjYEAFjJLlVrlA/ES6xvq/ZKXVf6lKm3WyNdbaaOogXOlKK0epMsszUhVW
         qyXLLQLZ4nU0+LINTYCaK6Uqrc5KVlhMUZnowQ7XLF5q5ShZYXlHstQmEiaYfDAnp+B0qRGIL15sKSZV
         Yb1BstxyBUO9PQuDPZAAmn5GusIyFKYh7lCmXvKp/P8xu9OWwU1eFcoMVLcfiDMYJCusc6QqLNcguzl+
         f7xGwpGc/zH70ucii0uWW9sANW1jAFr5VKzUMmD//3qWmJ0ZOiActz89JP5Q1v+YvWkb4vZmacfsTdcP
@@ -142,11 +160,14 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="button2.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDQAA
-        Cw0B7QfALAAAAfJJREFUKFNlUr9rFFEQfkLA2KSImEJ3Z3bfzMtd/FGIYBMhKIiVhQRMozaCKDGFAW2t
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDAAA
+        CwwBP0AiyAAAAfJJREFUKFNlUr9rFFEQfkLA2KSImEJ3Z3bfzMtd/FGIYBMhKIiVhQRMozaCKDGFAW2t
         /A+CWIg2QePd7uYu3B3pUljkR2MXk9RRRHLncTFuwLt7zou3onFheLPvzTcz3zej1L/fkRjMVIy0XQ2N
         TZBtOeCkTHTmUNzv3xj0FQleLaKZjYDHk9BcTHx9aSHIPU4Cs5ygnqkxH/0DjpAux8CbUUATXc87djjr
         GhgtiQoCnFtSY31qaUz1CWg18elmCvyso4c3d4DvOuD2yfzxFnD1Z8AfWqBHC+JLy/dVBPTQtdSV0g2g
@@ -157,4 +178,7 @@
         +n/rJDOYlJ6rMXJJ7J0MvVgJTTlBellBM5IBfgEJntTvr+VT0QAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

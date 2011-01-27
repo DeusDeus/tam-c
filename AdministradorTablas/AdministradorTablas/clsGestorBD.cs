@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace AdministradorTablas
 {
@@ -17,6 +18,130 @@ namespace AdministradorTablas
             SqlConnection cnn = new SqlConnection();
             cnn.ConnectionString = "Server = " + strServidor + "; initial catalog = " + strCatalogo + "; user id = " + pstrUsuario + "; password = " + pstrContrasena + "; Trusted_Connection = FALSE";
             return cnn;
+        }
+
+        public static DataTable Consultar(string pstrComandoSql)
+        {
+            try
+            {
+                SqlConnection cnn = Conectar("sa", "sa");
+                SqlCommand sqlComando = new SqlCommand(pstrComandoSql, cnn);
+                cnn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(sqlComando);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                cnn.Close();
+
+                return dt;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Ocurrió un Error \n" + e, "Error", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
+        public static DataTable CargarMetadata(string strCadena)
+        {
+            DataTable dt = new DataTable();
+            string strQuery; 
+
+            if (strCadena == null)
+            {
+                strQuery = "SELECT * FROM MetadataTabla";
+                dt = Consultar(strQuery);
+            }
+            else
+            {
+                strQuery = "SELECT * FROM MetadataTabla WHERE NombreTabla like '%" + strCadena + "%'";
+                dt = Consultar(strQuery);
+            }
+            return dt;
+        }
+
+        public static bool BorrarTabla(string pstrNombreTabla)
+        {
+            try
+            {
+                string strQuery = "DROP TABLE " + pstrNombreTabla;
+
+                SqlConnection cnn = Conectar("sa", "sa");
+                SqlCommand sqlComando = new SqlCommand(strQuery, cnn);
+                cnn.Open();
+
+                sqlComando.ExecuteNonQuery();
+
+                strQuery = "DELETE FROM MetadataTabla WHERE NombreTabla = '" + pstrNombreTabla + "'";
+
+                sqlComando = new SqlCommand(strQuery, cnn);
+
+                sqlComando.ExecuteNonQuery();
+
+                cnn.Close();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool BorrarStoredProcedure(string pstrNombreSP)
+        {
+            try
+            {
+                string strQuery = "DROP PROCEDURE " + pstrNombreSP;
+                
+                SqlConnection cnn = Conectar("sa", "sa");
+                SqlCommand sqlComando = new SqlCommand(strQuery, cnn);
+                cnn.Open();
+
+                sqlComando.ExecuteNonQuery();
+
+                strQuery = "UPDATE MetadataTabla SET NombreSP = '' WHERE NombreSP = '" + pstrNombreSP + "'";
+
+                sqlComando = new SqlCommand(strQuery, cnn);
+
+                sqlComando.ExecuteNonQuery();
+
+                cnn.Close();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool BorrarTrigger(string pstrNombreTrigger)
+        {
+            try
+            {
+                string strQuery = "DROP TRIGGER " + pstrNombreTrigger;
+                
+                SqlConnection cnn = Conectar("sa", "sa");
+                SqlCommand sqlComando = new SqlCommand(strQuery, cnn);
+                cnn.Open();
+
+                sqlComando.ExecuteNonQuery();
+
+                strQuery = "UPDATE MetadataTabla SET NombreTrigger = '' WHERE NombreTrigger = '" + pstrNombreTrigger + "'";
+
+                sqlComando = new SqlCommand(strQuery, cnn);
+
+                sqlComando.ExecuteNonQuery();
+
+                cnn.Close();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public static bool CrearTabla(string pstrNombreTabla, DataGridView pdgvAtributos)
@@ -114,7 +239,7 @@ namespace AdministradorTablas
             }
         }
 
-        public static bool CrearStoredProcedure(string pstrNombreStoredProcedure, string strNombreTabla, List<clsAtributo> lstAtributos)
+        public static bool CrearStoredProcedure(string pstrNombreStoredProcedure, string strNombreTabla)
         {
             try
             {
@@ -346,6 +471,113 @@ namespace AdministradorTablas
                 }
             }
             catch (Exception e){
+                return false;
+            }
+        }
+
+        public static bool CrearTriggerTabla(string strNombreTabla)
+        {
+            try
+            {
+                string strScript = "";
+                strScript += "SET QUOTED_IDENTIFIER OFF\n";
+                strScript += "SET ANSI_NULLS ON\n";
+                strScript += "SET NOCOUNT ON\n\n";
+
+                strScript += "DECLARE @TABLENAME VARCHAR(50)DECLARE @SQLCMD VARCHAR(2000)\n";
+                strScript += "DECLARE TABLES_CURSOR CURSOR FOR\n";
+                strScript += "SELECT name from dbo.sysobjects\n";
+                strScript += "where xtype = 'U' and\n";
+                strScript += "name = '" + strNombreTabla + "'\n\n";
+
+                strScript += "OPEN TABLES_CURSOR\n\n";
+
+                strScript += "FETCH NEXT FROM TABLES_CURSOR INTO @TABLENAME\n";
+                strScript += "WHILE (@@FETCH_STATUS = 0)\n";
+                strScript += "BEGIN\n\n";
+
+                strScript += "SET @SQLCMD = (SELECT 'CREATE TRIGGER tA_') \n";
+                strScript += "SET @SQLCMD = @SQLCMD + @TABLENAME + ' ON dbo.' + @TABLENAME \n";
+                strScript += "SET @SQLCMD = @SQLCMD + ' AFTER INSERT, UPDATE, DELETE AS ' + CHAR(13)\n";
+                strScript += "SET @SQLCMD = @SQLCMD + ' BEGIN ' + CHAR(13)\n";
+                strScript += "SET @SQLCMD = @SQLCMD + ' DECLARE @tblname varchar(128)' + CHAR(13)\n";
+                strScript += "SET @SQLCMD = @SQLCMD + ' SET @tblname = ''' + @TABLENAME + '''' + CHAR(13)\n";
+                strScript += "SET @SQLCMD = @SQLCMD + ' SELECT * INTO #td from deleted ' + CHAR(13) \n";
+                strScript += "SET @SQLCMD = @SQLCMD + ' SELECT * INTO #ti from inserted ' + CHAR(13)\n";
+                strScript += "SET @SQLCMD = @SQLCMD + ' EXEC up_AD_LogTableChanges @tblname' + CHAR(13)\n";
+                strScript += "SET @SQLCMD = @SQLCMD + ' END ' + CHAR(13)\n\n";
+
+                strScript += "SELECT (@SQLCMD)\n\n";
+
+                strScript += "EXEC (@SQLCMD)\n";
+                strScript += "FETCH NEXT FROM TABLES_CURSOR INTO @TABLENAME\n";
+                strScript += "END\n\n";
+
+                strScript += "CLOSE TABLES_CURSOR\n";
+                strScript += "DEALLOCATE TABLES_CURSOR\n\n";
+
+                strScript += "SET NOCOUNT OFF\n";
+
+                try
+                {
+                    SqlConnection cnn = Conectar("sa", "sa");
+                    SqlCommand sqlComando = new SqlCommand(strScript, cnn);
+                    cnn.Open();
+
+                    sqlComando.ExecuteNonQuery();
+                    cnn.Close();
+
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool ActualizarMetadata(string strNombreTabla, string strNombreSP, string strNombreTrigger)
+        {
+            try
+            {
+                string strScript = "UPDATE MetadataTabla SET NombreSP = '" + strNombreSP + "', NombreTrigger = '" + strNombreTrigger + "' WHERE NombreTabla = '" + strNombreTabla + "'";
+                SqlConnection cnn = Conectar("sa", "sa");
+                SqlCommand sqlComando = new SqlCommand(strScript, cnn);
+
+                cnn.Open();
+
+                sqlComando.ExecuteNonQuery();
+                cnn.Close();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool GuardarMetadata(string strNombreTabla, string strNombreSP, string strNombreTrigger)
+        {
+            try
+            {
+                string strScript = "INSERT INTO MetadataTabla VALUES ('" + strNombreTabla + "', '" + strNombreSP + "', '" + strNombreTrigger + "')";
+                SqlConnection cnn = Conectar("sa", "sa");
+                SqlCommand sqlComando = new SqlCommand(strScript, cnn);
+
+                cnn.Open();
+
+                sqlComando.ExecuteNonQuery();
+                cnn.Close();
+
+                return true;
+            }
+            catch (Exception e)
+            {
                 return false;
             }
         }

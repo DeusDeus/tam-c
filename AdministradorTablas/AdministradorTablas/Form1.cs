@@ -5,12 +5,16 @@ using System.Xml.Serialization;
 using System.Xml;
 using System.Text;
 using System.Collections.Generic;
+using System.Data;
 
 namespace AdministradorTablas
 {
     public partial class frmPrueba : Form
     {
         private bool blnIndicador = true;
+        private string nombreTabla = "";
+        private string nombreSP = "";
+        private string nombreTrigger = "";
 
         public frmPrueba()
         {
@@ -64,11 +68,6 @@ namespace AdministradorTablas
                     }   
                 }
             }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -209,9 +208,23 @@ namespace AdministradorTablas
 
                             if (clsGestorBD.CrearTabla(txtNombre.Text, dgvAtributos)) //Crea la Tabla
                             {
-                                string nombreSP = "up_Man" + txtNombre.Text;
+                                nombreTabla = txtNombre.Text;
 
-                                clsGestorBD.CrearStoredProcedure(nombreSP, txtNombre.Text, lstAtributos);
+                                if (cbxAuditoria.Checked)
+                                {
+                                    clsGestorBD.CrearTriggerTabla(txtNombre.Text);
+
+                                    nombreTrigger = "tA_" + nombreTabla;
+                                }
+
+                                if (cbxStoredProcedure.Checked)
+                                {
+                                    nombreSP = "up_Man" + txtNombre.Text;
+
+                                    clsGestorBD.CrearStoredProcedure(nombreSP, txtNombre.Text);
+                                }
+
+                                clsGestorBD.GuardarMetadata(nombreTabla, nombreSP, nombreTrigger);
 
                                 DialogResult dr = MessageBox.Show("Se creó la tabla " + txtNombre.Text + " satisfactoriamente\n" + "¿Desea crear otra tabla?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
@@ -260,6 +273,181 @@ namespace AdministradorTablas
                 }
                 e.Handled = false;
             }
+        }
+
+        private void frmPrueba_Load(object sender, EventArgs e)
+        {
+            CargarGrilla();
+        }
+
+        private void CargarGrilla()
+        {
+            DataTable dt = clsGestorBD.CargarMetadata(null);
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                string strNombre = dr["NombreTabla"].ToString();
+                string strNombreSP = dr["NombreSP"].ToString();
+                bool blnSP = false;
+                bool blnTrigger = false;
+
+                if (dr["NombreSP"].ToString().CompareTo("") != 0)
+                {
+                    blnSP = true;
+                }
+
+                if (dr["NombreTrigger"].ToString().CompareTo("") != 0)
+                {
+                    blnTrigger = true;
+                }
+
+                dgvTablas.Rows.Add(strNombre, blnSP, blnTrigger, strNombreSP);
+            }
+
+            if (dgvTablas.RowCount == 0)
+            {
+                cmdAgregarQuitarSP.Visible = false;
+                cmdAgregarQuitarTrigger.Visible = false;
+            }
+            else
+            {
+                cmdAgregarQuitarSP.Visible = true;
+                cmdAgregarQuitarTrigger.Visible = true;
+            }
+        }
+
+        private void dgvTablas_SelectionChanged(object sender, EventArgs e)
+        {
+            if ((bool)dgvTablas.CurrentRow.Cells[1].Value == true)
+            {
+                cmdAgregarQuitarSP.Text = "Quitar Stored Procedure";
+            }
+            else
+            {
+                cmdAgregarQuitarSP.Text = "Agregar Stored Procedure";
+            }
+
+            if ((bool)dgvTablas.CurrentRow.Cells[2].Value == true)
+            {
+                cmdAgregarQuitarTrigger.Text = "Quitar Trigger";
+            }
+            else
+            {
+                cmdAgregarQuitarTrigger.Text = "Agregar Trigger";
+            }
+        }
+
+        private void LimpiarFormulario()
+        {
+            txtNombre.Clear();
+            dgvAtributos.Rows.Clear();
+            cbxAuditoria.Checked = true;
+            cbxStoredProcedure.Checked = true;
+        }
+
+        private void cmdNuevo_Click(object sender, EventArgs e)
+        {
+            cmdNuevo.Visible = false;
+            cmdEliminar.Visible = false;
+            this.tbcTablas.SelectTab(1);
+            LimpiarFormulario();
+        }
+
+        private void cmdSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            cmdNuevo.Visible = true;
+            cmdEliminar.Visible = true;
+            this.tbcTablas.SelectTab(0);
+            LimpiarFormulario();
+        }
+
+        private void txtNombreTabla_TextChanged(object sender, EventArgs e)
+        {
+            dgvTablas.DataMember = null;
+            DataTable dt = clsGestorBD.CargarMetadata(txtNombreTabla.Text);
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                string strNombre = dr["NombreTabla"].ToString();
+                bool blnSP = false;
+                bool blnTrigger = false;
+
+                if (dr["NombreSP"].ToString().CompareTo("") != 0)
+                {
+                    blnSP = true;
+                }
+
+                if (dr["NombreTrigger"].ToString().CompareTo("") != 0)
+                {
+                    blnTrigger = true;
+                }
+
+                dgvTablas.Rows.Add(strNombre, blnSP, blnTrigger);
+            }
+
+            if (dgvTablas.RowCount == 0)
+            {
+                cmdAgregarQuitarSP.Visible = false;
+                cmdAgregarQuitarTrigger.Visible = false;
+            }
+            else
+            {
+                cmdAgregarQuitarSP.Visible = true;
+                cmdAgregarQuitarTrigger.Visible = true;
+            }
+        }
+
+        private void cmdAgregarQuitarSP_Click(object sender, EventArgs e)
+        {
+            string strNombreTabla = dgvTablas.CurrentRow.Cells[0].Value.ToString();
+            
+            if (cmdAgregarQuitarSP.Text.CompareTo("Agregar Stored Procedure") == 0)
+            {
+                clsGestorBD.CrearStoredProcedure("up_Man" + strNombreTabla, strNombreTabla);
+                
+                string strNombreTrigger = "";
+
+                if ((bool)dgvTablas.CurrentRow.Cells[2].Value == true){
+                    strNombreTrigger = "tA_"+strNombreTabla;
+                }
+
+                clsGestorBD.ActualizarMetadata(strNombreTabla, "up_Man" + strNombreTabla, strNombreTrigger);
+            }
+            else
+            {
+                clsGestorBD.BorrarStoredProcedure("up_Man" + strNombreTabla);
+            }
+
+            dgvTablas.DataMember = null;
+            CargarGrilla();
+        }
+
+        private void cmdAgregarQuitarTrigger_Click(object sender, EventArgs e)
+        {
+            string strNombreTabla = dgvTablas.CurrentRow.Cells[0].Value.ToString();
+            
+            if (cmdAgregarQuitarTrigger.Text.CompareTo("Agregar Trigger") == 0)
+            {
+                clsGestorBD.CrearTriggerTabla(strNombreTabla);
+                clsGestorBD.ActualizarMetadata(strNombreTabla, dgvTablas.CurrentRow.Cells[3].Value.ToString(), "tA_" + strNombreTabla);
+            }
+            else
+            {
+                clsGestorBD.BorrarTrigger("tA_" + strNombreTabla);
+            }
+
+            dgvTablas.DataMember = null;
+            CargarGrilla();
+        }
+
+        private void cmdEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

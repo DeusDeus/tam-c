@@ -32,3 +32,5 @@ C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\
 C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.Properties.Resources.resources
 C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.Riesgos.Formularios.frmPrueba.resources
 C:\Users\Wilder Chicana\Desktop\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumFondos.csproj.GenerateResource.Cache
+C:\Users\Wilder\Desktop\Google Code\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.exe
+C:\Users\Wilder\Desktop\Google Code\Repositorio TAM\SpectrumSuite\SpectrumSuite\obj\Release\SpectrumSuite.pdb

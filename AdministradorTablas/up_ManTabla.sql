@@ -1,6 +1,6 @@
 /*
 EXEC up_ManTabla
-'Prueba',
+'PruebaTAM',
 '<?xml version="1.0" encoding="utf-8"?>
 <tabla>
   <datos>
@@ -18,14 +18,14 @@ EXEC up_ManTabla
     <pk>0</pk>
   </datos>
   <datos>
-    <nombreCampo>Descripcion</nombreCampo>
+    <nombreCampo>Descrip</nombreCampo>
     <valor>Practicante TAM</valor>
     <tipo>VarChar</tipo>
     <ident>0</ident>
     <pk>0</pk>
   </datos>
 </tabla>',
-3;
+2;
 */
 
 CREATE PROCEDURE up_ManTabla
@@ -93,7 +93,7 @@ set @cadenaEjecucionSELECT = @cadenaEjecucionSELECT + ' FROM ' + @nombreTabla
 --SELECT @cadenaEjecucionSELECT
 
 /**/
-Set @cadenaEjecucionSelectAll = @cadenaEjecucionSelect
+Set @cadenaEjecucionSelectAll = @cadenaEjecucionSELECT
 --- Set @cadenaEjecucionSelectAll = 'SELECT * FROM AFPComision'
 Set @cadenaEjecucionInsert = 'insert Into ' + @nombreTabla + ' values('
 Set @cadenaEjecucionUpdate = 'update ' + @nombreTabla + ' Set '
@@ -183,7 +183,7 @@ Begin
 	End	
 
 	Set @cadenaEjecucionSELECT = @cadenaEjecucionSELECT + @cadenaWhere
-	Exec(@cadenaEjecucionSelect)	
+	Exec(@cadenaEjecucionSELECT)	
 	Drop Table #te
 	Close cu_xml
 	Deallocate cu_xml

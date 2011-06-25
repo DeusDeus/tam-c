@@ -52,6 +52,10 @@
             this.cmdAgregarQuitarTrigger = new System.Windows.Forms.Button();
             this.cmdAgregarQuitarSP = new System.Windows.Forms.Button();
             this.dgvTablas = new System.Windows.Forms.DataGridView();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNombreTabla = new System.Windows.Forms.TextBox();
             this.lblNombreTabla = new System.Windows.Forms.Label();
@@ -59,10 +63,6 @@
             this.cmdNuevo = new System.Windows.Forms.Button();
             this.cmdSalir = new System.Windows.Forms.Button();
             this.cmdEliminar = new System.Windows.Forms.Button();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAtributos)).BeginInit();
             this.tbcTablas.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -237,14 +237,13 @@
             // cbxStoredProcedure
             // 
             this.cbxStoredProcedure.AutoSize = true;
-            this.cbxStoredProcedure.Checked = true;
-            this.cbxStoredProcedure.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbxStoredProcedure.Location = new System.Drawing.Point(422, 43);
             this.cbxStoredProcedure.Name = "cbxStoredProcedure";
             this.cbxStoredProcedure.Size = new System.Drawing.Size(137, 17);
             this.cbxStoredProcedure.TabIndex = 10;
             this.cbxStoredProcedure.Text = "Crear Stored Procedure";
             this.cbxStoredProcedure.UseVisualStyleBackColor = true;
+            this.cbxStoredProcedure.Visible = false;
             // 
             // tbcTablas
             // 
@@ -309,6 +308,36 @@
             this.dgvTablas.Size = new System.Drawing.Size(476, 169);
             this.dgvTablas.TabIndex = 2;
             this.dgvTablas.SelectionChanged += new System.EventHandler(this.dgvTablas_SelectionChanged);
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Nombre";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 232;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Stored Procedure";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Auditable";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "NombreSP";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
             // 
             // groupBox1
             // 
@@ -388,36 +417,6 @@
             this.cmdEliminar.Text = "Eliminar";
             this.cmdEliminar.UseVisualStyleBackColor = true;
             this.cmdEliminar.Click += new System.EventHandler(this.cmdEliminar_Click);
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Nombre";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 232;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Stored Procedure";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Auditable";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "NombreSP";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Visible = false;
             // 
             // frmPrueba
             // 
